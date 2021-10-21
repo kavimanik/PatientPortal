@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <BorderPane layoutY="2.0" prefHeight="204.0" prefWidth="200.0">
+         <bottom>
+            <Button mnemonicParsing="false" text="Btn 1" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <TextField promptText="Kavi" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
