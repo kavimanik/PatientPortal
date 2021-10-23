@@ -32,8 +32,9 @@ public class Controller {
     
     public void setRoleItems(MouseEvent event) {
     	event.consume();
-    	ObservableList<String> roles = FXCollections.observableArrayList("Doctor", "Nurse", "Patient");
-    	this.roleCombo = new ComboBox<>(roles);
+    	//ObservableList<String> roles = FXCollections.observableArrayList("Doctor", "Nurse", "Patient");
+    	roleCombo.getItems().addAll("Doctor", "Nurse", "Patient");
+    	//this.roleCombo = new ComboBox<>(roles);
     	roleCombo.setVisibleRowCount(3);
     }
 
