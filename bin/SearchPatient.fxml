@@ -18,9 +18,10 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="404.0" layoutY="85.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="87.0" text="Search" />
-      <TextField layoutX="206.0" layoutY="85.0" prefHeight="31.0" prefWidth="177.0" promptText="Last Name" />
-      <TextField layoutX="14.0" layoutY="85.0" prefHeight="31.0" prefWidth="177.0" promptText="First Name" />
+      <Button layoutX="437.0" layoutY="85.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="69.0" text="Search" />
+      <TextField layoutX="153.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="Last Name" />
+      <TextField layoutX="12.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="First Name" />
       <ListView layoutX="12.0" layoutY="136.0" prefHeight="327.0" prefWidth="494.0" />
+      <TextField layoutX="295.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="Birthdate" />
    </children>
 </AnchorPane>

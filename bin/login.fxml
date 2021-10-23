@@ -24,6 +24,6 @@
       <ComboBox fx:id="roleCombo" layoutX="152.0" layoutY="119.0" onMouseClicked="#setRoleItems" prefHeight="41.0" prefWidth="200.0" promptText="Select Role" visibleRowCount="2" />
       <TextField layoutX="152.0" layoutY="187.0" prefHeight="41.0" prefWidth="200.0" promptText="Username" />
       <TextField layoutX="152.0" layoutY="255.0" prefHeight="41.0" prefWidth="200.0" promptText="Password" />
-      <Button layoutX="226.0" layoutY="318.0" mnemonicParsing="false" text="Login" />
+      <Button onAction="#switchToUserHomePage" layoutX="226.0" layoutY="318.0" mnemonicParsing="false" text="Login" />
    </children>
 </AnchorPane>

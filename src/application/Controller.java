@@ -30,6 +30,30 @@ public class Controller {
         thisStage.getScene().setRoot(loader);
     }
     
+    
+    @FXML
+    private void switchToUserHomePage(ActionEvent event) throws IOException {
+    	event.consume();
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+        //thisStage.hide();
+        Parent nursePageLoader = FXMLLoader.load(getClass().getResource("../NurseHomePage.fxml"));
+        Parent doctorPageLoader = FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml"));
+        Parent patientPageLoader = FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml"));
+        
+        if(roleCombo.getValue() == "Nurse") {
+        	thisStage.getScene().setRoot(nursePageLoader);
+        }
+        else if(roleCombo.getValue() == "Doctor") {
+        	thisStage.getScene().setRoot(doctorPageLoader);
+        } 
+        else if(roleCombo.getValue() == "Patient") {
+        	thisStage.getScene().setRoot(patientPageLoader);
+        } 
+    }
+    
+    
+    @FXML
     public void setRoleItems(MouseEvent event) {
     	event.consume();
     	//ObservableList<String> roles = FXCollections.observableArrayList("Doctor", "Nurse", "Patient");
