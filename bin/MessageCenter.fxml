@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="195.0" text="KHRAB Medical Portal">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="41.0" prefHeight="37.0" prefWidth="161.0" text="Patient Message Portal" />
+      <TextField alignment="TOP_LEFT" layoutX="14.0" layoutY="78.0" prefHeight="306.0" prefWidth="489.0" promptText="Messages" />
+      <TextField layoutX="14.0" layoutY="427.0" prefHeight="31.0" prefWidth="420.0" promptText="Type Message..." />
+      <Button layoutX="441.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="62.0" text="Send" />
+      <ComboBox layoutX="14.0" layoutY="391.0" prefHeight="31.0" prefWidth="420.0" promptText="Doctor or Nurse" />
+   </children>
 </AnchorPane>
-

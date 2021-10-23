@@ -8,7 +8,14 @@
 
 <AnchorPane prefHeight="448.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
-      <BorderPane layoutX="-100.0" layoutY="-100.0" prefHeight="644.0" prefWidth="622.0" />
+      <BorderPane layoutX="6.0" layoutY="1.0" prefHeight="472.0" prefWidth="515.0">
+         <bottom>
+            <Button mnemonicParsing="false" onAction="#switchToCreateAccount" prefHeight="23.0" prefWidth="159.0" text="Create An Account" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Button>
+         </bottom></BorderPane>
       <Label layoutX="121.0" layoutY="46.0" prefHeight="47.0" prefWidth="267.0" text="KHRAB Medical Portal">
          <font>
             <Font size="27.0" />
@@ -18,10 +25,5 @@
       <TextField layoutX="152.0" layoutY="187.0" prefHeight="41.0" prefWidth="200.0" promptText="Username" />
       <TextField layoutX="152.0" layoutY="255.0" prefHeight="41.0" prefWidth="200.0" promptText="Password" />
       <Button layoutX="226.0" layoutY="318.0" mnemonicParsing="false" text="Login" />
-      <Button layoutX="175.0" layoutY="450.0" mnemonicParsing="false" onAction="#switchToCreateAccount" prefHeight="23.0" prefWidth="159.0" text="Create An Account">
-         <font>
-            <Font size="12.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

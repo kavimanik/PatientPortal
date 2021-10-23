@@ -1,8 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="195.0" text="KHRAB Medical Portal">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="51.0" prefHeight="37.0" prefWidth="238.0" text="Patient Medical Inforamtion" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Update Information" />
+      <Label layoutX="14.0" layoutY="131.0" prefHeight="37.0" prefWidth="177.0" text="Visit Date : " textAlignment="CENTER" />
+      <Label layoutX="14.0" layoutY="168.0" prefHeight="37.0" prefWidth="177.0" text="Weight : " textAlignment="CENTER" />
+      <Label layoutX="14.0" layoutY="205.0" prefHeight="37.0" prefWidth="177.0" text="Height : " textAlignment="CENTER" />
+      <Label layoutX="14.0" layoutY="242.0" prefHeight="37.0" prefWidth="177.0" text="Body Tempreature : " textAlignment="CENTER" />
+      <Label layoutX="14.0" layoutY="279.0" prefHeight="37.0" prefWidth="177.0" text="Blood Pressure (only +12) : " textAlignment="CENTER" />
+      <Label layoutX="14.0" layoutY="316.0" prefHeight="37.0" prefWidth="177.0" text="Known Allergies : " textAlignment="CENTER" />
+      <Label layoutX="14.0" layoutY="353.0" prefHeight="37.0" prefWidth="177.0" text="Patient Health Concerns : " textAlignment="CENTER" />
+      <Label layoutX="14.0" layoutY="390.0" prefHeight="37.0" prefWidth="177.0" text="Physical Test : " textAlignment="CENTER" />
+      <Label layoutX="14.0" layoutY="88.0" prefHeight="37.0" prefWidth="177.0" text="Patient Name :" textAlignment="CENTER" />
+      <Label layoutX="258.0" layoutY="88.0" prefHeight="37.0" prefWidth="177.0" text="Assigned Doctor :" textAlignment="CENTER" />
+      <Label layoutX="258.0" layoutY="113.0" prefHeight="37.0" prefWidth="177.0" text="Assigned Nurse :" textAlignment="CENTER" />
+      <Label layoutX="258.0" layoutY="168.0" prefHeight="37.0" prefWidth="177.0" text="Health Issues :" textAlignment="CENTER" />
+      <Label layoutX="258.0" layoutY="199.0" prefHeight="37.0" prefWidth="177.0" text="Patient  Medication :" textAlignment="CENTER" />
+      <Label layoutX="258.0" layoutY="236.0" prefHeight="37.0" prefWidth="177.0" text="Immunization Hitory :" textAlignment="CENTER" />
+      <Label layoutX="258.0" layoutY="150.0" prefHeight="37.0" prefWidth="177.0" text="--------- Precious History --------" textAlignment="CENTER" />
+   </children>
 </AnchorPane>
-
