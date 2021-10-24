@@ -9,24 +9,24 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
 
-public class PatientPageController {
+public class DoctorPageController {
 	@FXML
-    private void switchToPatientProfile(ActionEvent event) throws IOException {
+    private void switchToSearchPatient(ActionEvent event) throws IOException {
         event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
         //thisStage.hide();
-        Parent loader = FXMLLoader.load(getClass().getResource("../PatientProfile.fxml"));
+        Parent loader = FXMLLoader.load(getClass().getResource("../SearchPatient.fxml"));
         thisStage.getScene().setRoot(loader);
     }
 	
 	@FXML
-    private void switchToPatientMedicalInfo(ActionEvent event) throws IOException {
+    private void switchToPrescribeMedication(ActionEvent event) throws IOException {
         event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
         //thisStage.hide();
-        Parent loader = FXMLLoader.load(getClass().getResource("../PatientMedicalInfo.fxml"));
+        Parent loader = FXMLLoader.load(getClass().getResource("../PrescribeMedication.fxml"));
         thisStage.getScene().setRoot(loader);
     }
 }
