@@ -1,4 +1,5 @@
 package JavaCode;
+
 public class Doctor extends Nurse {
 
 	public void setPhyTestResults(String newTest) {

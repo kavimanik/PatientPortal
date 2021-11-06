@@ -1,4 +1,8 @@
 package application;
+
+import JavaCode.*;
+
+import java.util.ArrayList;
 	
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,9 +19,36 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 	
+	private static ArrayList<Patient> allPatients;
+	private static ArrayList<Doctor> allDoctors;
+	private static ArrayList<Nurse> allNurses;
+	
 	public static void main(String[] args) throws FileNotFoundException {
+		int i = 0;
+		
+		// Reads the load file, if empty, nothing will the created
 		readFile();
+		
+		// Launches the JavaFX Scene
 		launch(args);
+		
+		// If creates a new account
+		if(i == 0/* create a new account button is selected*/) {
+			switch("Doctor"/* selected role*/) {
+			case "Doctor": 	allDoctors.add(new Doctor());
+							break;
+			case "Nurse":	allNurses.add(new Nurse());
+							break;
+			case "Patient":	allPatients.add(new Patient());
+							break;
+			}
+			//Returns them to the login Page
+			i++;
+		}
+		else if(i == 1) {
+			// Login and password is entered
+			// Change Page to main page associated with the account
+		}
 		
 	}
 	
@@ -38,7 +69,7 @@ public class Main extends Application {
 		File appData = null; // Initialize it to null, to ensure we can use it later. If the file ends up actually being null, we'll leave the method before we use it.
 		try //create the text file to store the data, if it already exists we move on.
 		{
-		      appData = new File("C:\\Users\\randa\\eclipse-workspace\\CSE360FileRead\\src\\appData.txt");
+		      //appData = new File("C:\\Users\\randa\\eclipse-workspace\\CSE360FileRead\\src\\appData.txt");
 			  //appData = new File("C:\\Users\\Brand\\Desktop\\School\\SophmoreYear\\CSE-360\\PatientPortal\\src\\application\\appData.txt");
 		      
 		      if (appData.createNewFile()) {
@@ -82,6 +113,10 @@ public class Main extends Application {
         }
 		
 		scanner.close();
-		return true; // we've succesfully read the file
+		return true; // we've successfully read the file
 	}
+    
+    public static boolean saveFile() throws FileNotFoundException{
+    	return true;
+    }
 }

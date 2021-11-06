@@ -1,4 +1,5 @@
 package JavaCode;
+
 public class Patient extends User {
 
 	private int phoneNum;
@@ -14,6 +15,8 @@ public class Patient extends User {
 	private Doctor assignedDr;
 
 	private Nurse assignedNurse;
+	
+	private String firstName;
 
 	//private PatientProfilePage profile;
 
@@ -26,6 +29,17 @@ public class Patient extends User {
 	}
 
 	public void setBirthdate(int date) {
+
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void getLastName(String name) {
+
+	}
+
+	public void getBirthdate(int date) {
 
 	}
 

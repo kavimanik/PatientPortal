@@ -1,7 +1,10 @@
 package JavaCode;
+
+import java.util.ArrayList;
+
 public class Nurse extends User {
 
-	private Patient[] patientList;
+	private ArrayList<Patient> patientList;
 
 	public void setWeight(Patient patient, int newWeight) {
 		
@@ -28,6 +31,11 @@ public class Nurse extends User {
 	}
 
 	public Patient searchPatient(String patientName) {
+		for(int i = 0; i < patientList.size(); i++) {
+			if(patientList.get(i).getFirstName().compareTo(patientName) == 0) {
+				return patientList.get(i);
+			}
+		}
 		return new Patient();
 	}
 
