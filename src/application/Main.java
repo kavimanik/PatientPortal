@@ -1,6 +1,6 @@
 package application;
 
-import JavaCode.*;
+//import JavaCode.*;
 
 import java.util.ArrayList;
 	
@@ -19,36 +19,36 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 	
-	private static ArrayList<Patient> allPatients;
-	private static ArrayList<Doctor> allDoctors;
-	private static ArrayList<Nurse> allNurses;
+//	private static ArrayList<Patient> allPatients;
+//	private static ArrayList<Doctor> allDoctors;
+//	private static ArrayList<Nurse> allNurses;
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		int i = 0;
 		
 		// Reads the load file, if empty, nothing will the created
-		readFile();
+		//readFile();
 		
 		// Launches the JavaFX Scene
 		launch(args);
 		
-		// If creates a new account
-		if(i == 0/* create a new account button is selected*/) {
-			switch("Doctor"/* selected role*/) {
-			case "Doctor": 	allDoctors.add(new Doctor());
-							break;
-			case "Nurse":	allNurses.add(new Nurse());
-							break;
-			case "Patient":	allPatients.add(new Patient());
-							break;
-			}
-			//Returns them to the login Page
-			i++;
-		}
-		else if(i == 1) {
-			// Login and password is entered
-			// Change Page to main page associated with the account
-		}
+//		// If creates a new account
+//		if(i == 0/* create a new account button is selected*/) {
+//			switch("Doctor"/* selected role*/) {
+//			case "Doctor": 	allDoctors.add(new Doctor());
+//							break;
+//			case "Nurse":	allNurses.add(new Nurse());
+//							break;
+//			case "Patient":	allPatients.add(new Patient());
+//							break;
+//			}
+//			//Returns them to the login Page
+//			i++;
+//		}
+//		else if(i == 1) {
+//			// Login and password is entered
+//			// Change Page to main page associated with the account
+//		}
 		
 	}
 	
