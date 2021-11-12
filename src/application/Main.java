@@ -22,6 +22,7 @@ public class Main extends Application {
 //	private static ArrayList<Patient> allPatients;
 //	private static ArrayList<Doctor> allDoctors;
 //	private static ArrayList<Nurse> allNurses;
+// 	private static User currentUser;
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		int i = 0;
@@ -31,7 +32,9 @@ public class Main extends Application {
 		
 		// Launches the JavaFX Scene
 		launch(args);
-		
+
+//		Login in Page
+//
 //		// If creates a new account
 //		if(i == 0/* create a new account button is selected*/) {
 //			switch("Doctor"/* selected role*/) {
@@ -48,7 +51,44 @@ public class Main extends Application {
 //		else if(i == 1) {
 //			// Login and password is entered
 //			// Change Page to main page associated with the account
-//		}
+//			switch( // selected role from drop down box)	{
+//				case Doctor:
+//					for(int i = 0; i < allDoctors.size(); i++){
+//						if( allDoctors.get(i).getUsername().equal( // username input ) && allDoctors.get(i).getPassword().equal( // password input ){
+//							currentUser = allDoctors.get(i);
+//						}
+//					}
+//					if(currentUser == null){
+//						// Keep on Login Page, Notify User account doesn't exist
+//					}else{
+//						// Set to Doctor Homepage
+//					}
+//					break;
+//				case Nurse:
+//					for(int i = 0; i < allNurse.size(); i++){
+//						if( allDoctors.get(i).getUsername().equal( // username input ) && allDoctors.get(i).getPassword().equal( // password input ){
+//							currentUser = allNurses.get(i);
+//						}
+//					}
+//					if(currentUser == null){
+//						// Keep on Login Page, Notify User account doesn't exist
+//					}else{ // Set to Nurse Home Page
+//					}
+//					break;
+//				case Patient:
+//					for(int i = 0; i < allNurse.size(); i++){
+//						if( allDoctors.get(i).getUsername().equal( // username input ) && allDoctors.get(i).getPassword().equal( // password input ){
+//							currentUser = allNurses.get(i);
+//						}
+//					}
+//					if(currentUser == null){
+//						// Keep on Login Page, Notify User account doesn't exist
+//					}else{
+//						// Set to Patient Home Page
+//					}
+//					break;
+//
+//			}
 		
 	}
 	

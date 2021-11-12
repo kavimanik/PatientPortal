@@ -10,6 +10,8 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 
 public class PatientPageController {
+	
+	// Change Pages in Patient Profiles
 	@FXML
     private void switchToPatientProfile(ActionEvent event) throws IOException {
         event.consume();
@@ -29,4 +31,7 @@ public class PatientPageController {
         Parent loader = FXMLLoader.load(getClass().getResource("../PatientMedicalInfo.fxml"));
         thisStage.getScene().setRoot(loader);
     }
+	
+	// Submit new information
+	
 }
