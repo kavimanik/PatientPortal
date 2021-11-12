@@ -42,4 +42,7 @@ public class Nurse extends User {
 		a.setNurse(null);
 		patientList.remove(a);
 	}
+	
+	// Message Patient
+	public void msgPatient(Patient p, String msg) { p.nurseMessage(msg, "Nurse"); }
 }

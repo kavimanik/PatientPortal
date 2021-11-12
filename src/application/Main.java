@@ -159,4 +159,11 @@ public class Main extends Application {
     public static boolean saveFile() throws FileNotFoundException{
     	return true;
     }
+    public static void displayMessages(Patient p, String role) {
+    	// Updates the text box for msg between Nurse, Doctors and Patients
+    	for(int i = 0; i < p.size(); i++) {
+    		
+    	}
+    	
+    }
 }

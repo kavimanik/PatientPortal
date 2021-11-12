@@ -1,17 +1,21 @@
 package JavaCode;
 public class Prescription 
 {
-
 	private String medName;
-
 	private int dosage;
 
-	public void setMedName(String med) {
-
+	Precription(){ this("", ""); }
+	Precription(String med, int num){
+		medName = med;
+		dosage = num;
 	}
-
-	public void setDosage(int num) {
-
-	}
+	
+	//Setter
+	public void setMedName(String med) { medName = med; }
+	public void setDosage(int num) { dosage = num; }
+	
+	//Getter
+	public String setMedName(String med) { return medName; }
+	public int setDosage(int num) { return dosage; }
 
 }

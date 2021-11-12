@@ -17,12 +17,10 @@ abstract public class User {
 		birthdate = birth;
 	}
 
-	public void makeAcc() {
-		
-	}
+	//public void makeAcc() {}
 
 	public void loginPortal() {
-
+		
 	}
 
 	public void viewPatientPersonalInfo() {
@@ -37,9 +35,11 @@ abstract public class User {
 
 	}
 
-	public void viewPastVisits() {
-
+	public Visit[] viewPastVisits() {
+		
 	}
+	
+	//Setters
 	public void setFirstName(String name) {
 		firstName = name;
 	}
@@ -49,7 +49,11 @@ abstract public class User {
 	public void setBirth(int birth) {
 		birthdate = birth;
 	}
+	public String getUser() { return username; }
+	public String getPass() { return password; }
+	public String getRole() { return role; }
 	
+	//Getters
 	public String getFirstName() { return firstName; }
 	public String getLastName() { return lastName; }
 	public String getUser() { return username; }

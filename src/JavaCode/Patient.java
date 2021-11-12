@@ -7,7 +7,6 @@ public class Patient extends User {
 	private String email;
 	private String insurance;
 	private String pharmacy;
-	private ArrayList<Visit> pastVisits;
 	private Doctor assignedDr;
 	private Nurse assignedNurse;
 	private int weight;
@@ -16,7 +15,16 @@ public class Patient extends User {
 	private int bloodPressure;
 	private String allergies;
 	private String healthConcerns;
+	private String physicalTestResults;
+	private String immunizationRecords;
 	
+	private ArrayList<Visit> pastVisits;
+	
+	private ArrayList<Precriptions> prescribedMeds;
+	
+	private ArrayList<Strings> docMsg;
+	private ArrayList<Strings> nurseMsg;
+
 	//Constructor
 	public Patient() { this("", "", "", "", 0); }
 	public Patient(String first, String last, String user, String pass, int birth) {
@@ -32,18 +40,61 @@ public class Patient extends User {
 
 	//private PatientProfilePage profile;
 
+	//Messageing
+	// The message will always start with D:, N: or P: indicating who the send is
+	// All users will be able to use the methods but will pass in their respective roles
+	public void docMessage(String msg, String role) {
+		switch(role) {
+		case "Doctor":
+			docMsg.add("D:" + msg);
+			break;
+		case "Patient":
+			docMsg.add("P:" + msg);
+			break;
+		default:
+			// Notify User that msg was unable to send
+			// Should not reach this
+			break;
+		}
+	}
+	public void nurseMessage(String msg, role) {
+		switch(role) {
+		case "Doctor":
+			nurseMsg.add("N:" + msg);
+			break;
+		case "Patient":
+			nurseMsg.add("P:" + msg);
+			break;
+		default:
+			// Notify User that msg was unable to send
+			// Should not reach this
+			break;
+		}
+	}
+	
+	public ArrayList<Strings> getMessage(String role){
+		switch(role) {
+		case "Doctor":
+			return docMsg;
+		case "Nurse":
+			return nurseMsg;
+		}
+	}
+		
+	// Make a Visit object that uses all of the Patients current information
+	public void makeAVisit() {
+		Visit a = new Visit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTestResults, immunizationRecords, prescribedMeds);
+		pastVisits.add(a);
+	}
+	
+	
 	//Setters
-	public void setFirstName(String name) {
-		super.setFirstName(name);
-	}
-
-	public void setLastName(String name) {
-		super.setLastName(name);
-	}
-
-	public void setBirthdate(int date) {
-		super.setBirth(date);
-	}
+	public void setFirstName(String name) { super.setFirstName(name); }
+	public void setLastName(String name) { super.setLastName(name); }
+	public void setUser(String user) { return super.setUser(); }
+	public String setPass() { return super.getPass(); }
+	public void setBirthdate(int date) { super.setBirth(date); }
+	
 	public void setEmail(String mail) { email = mail; }
 	public void setInsurance(String insure) { insurance = insure; }
 	public void setPharmacy(String pharm) { pharmacy = pharm; }

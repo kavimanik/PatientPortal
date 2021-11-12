@@ -8,28 +8,24 @@ public class Doctor extends Nurse {
 	//Constructor
 	public Doctor(String first, String last, String user, String pass, String role, int birth) { super(first, last, user, pass, "Doctor", birth); }
 	
-	
-	public void setPhyTestResults(Patient patient,String newTest) {
-		
-	}
+	//Change Patient Information
+	public void setPhyTestResults(Patient patient,String newTest) { }
+	public void setImmuneRecords(Patient patient,String newImmune) {}
+	public void prescribeMeds(Patient patient, String newMed, int newDose) {}
 
-	public void setImmuneRecords(Patient patient,String newImmune) {
-		
-	}
-
-	public void prescribeMeds(Patient patient, String newMed, int newDose) {
-
-	}
-
+	// Change Patient
 	public void addPatient(String newPatient) {
 		Patient a = searchPatient(newPatient);
 		patientList.add(a);
 		a.setDoctor(this);
 	}
-
 	public void removePatient(String removedPatient) {
-		patientList.remove(searchPatient(removedPatient));
-
+		Patient a = searchPatient(removedPatient);
+		a.setDoctor(null);
+		patientList.remove(a);
 	}
-
+	
+	// Message Patient
+	@Overload
+	public void msgPatient(Patient p, String msg) { p.docMessage(msg, "Doctor"); }
 }
