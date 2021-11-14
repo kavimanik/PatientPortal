@@ -13,9 +13,9 @@ public class Visit {
 	private String healthConcerns;
 	private String physicalTestResults;
 	private String immunizationRecords;
-	private Prescription prescription;
+	private ArrayList<Prescription> prescription;
 
-	Visit(int w, int h, int temp, int bp, String allergies, String hc, String ptr, String ir, Prescription prescript){
+	Visit(int w, int h, int temp, int bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){
 		// Date = set to the current date
 		weight = w;
 		height = h;
