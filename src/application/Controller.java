@@ -15,7 +15,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class Controller {
+import application.*;
+
+public class Controller{
 	
 	@FXML // fx:id="roleCombo"
 	private ComboBox<String> roleCombo;
@@ -30,25 +32,25 @@ public class Controller {
         thisStage.getScene().setRoot(loader);
     }
     
-    
     @FXML
     private void switchToUserHomePage(ActionEvent event) throws IOException {
     	event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
         //thisStage.hide();
-        Parent nursePageLoader = FXMLLoader.load(getClass().getResource("../NurseHomePage.fxml"));
-        Parent doctorPageLoader = FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml"));
-        Parent patientPageLoader = FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml"));
         
         if(roleCombo.getValue() == "Nurse") {
-        	thisStage.getScene().setRoot(nursePageLoader);
+        	// Checks if the Nurse Exists in the list of nurses
+        	// Loads the Nurse's Page
+        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../NurseHomePage.fxml")));
         }
         else if(roleCombo.getValue() == "Doctor") {
-        	thisStage.getScene().setRoot(doctorPageLoader);
+        	// Loads the Nurse's Page
+        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml")));
         } 
         else if(roleCombo.getValue() == "Patient") {
-        	thisStage.getScene().setRoot(patientPageLoader);
+        	// Loads the Nurse's Page
+        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml")));
         } 
     }
     
@@ -56,8 +58,6 @@ public class Controller {
     @FXML
     public void setRoleItems(MouseEvent event) {
     	event.consume();
-    	//ObservableList<String> roles = FXCollections.observableArrayList("Doctor", "Nurse", "Patient");
-    	//this.roleCombo = new ComboBox<>(roles);
     	roleCombo.getItems().addAll("Doctor", "Nurse", "Patient");
     	roleCombo.setVisibleRowCount(3);
     }

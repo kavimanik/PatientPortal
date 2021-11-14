@@ -1,6 +1,6 @@
 package application;
 
-//import JavaCode.*;
+import JavaCode.*;
 
 import java.util.ArrayList;
 	
@@ -25,7 +25,7 @@ public class Main extends Application {
 // 	private static User currentUser;
 	
 	public static void main(String[] args) throws FileNotFoundException {
-		int i = 0;
+		
 		
 		// Reads the load file, if empty, nothing will the created
 		//readFile();

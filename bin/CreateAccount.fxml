@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:controller="application.CreateAccountController" prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CreateAccountController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="195.0" text="KHRAB Medical Portal">
          <font>
@@ -14,13 +14,13 @@
          </font>
       </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="175.0" layoutY="39.0" prefHeight="37.0" prefWidth="127.0" text="Create An Account" textAlignment="CENTER" />
-      <TextField layoutX="164.0" layoutY="124.0" promptText="First Name" />
-      <TextField layoutX="164.0" layoutY="168.0" promptText="Last Name" />
-      <TextField layoutX="164.0" layoutY="211.0" promptText="Birthday (MM/DD/YYYY)" />
-      <TextField layoutX="164.0" layoutY="255.0" promptText="Username" />
-      <TextField layoutX="164.0" layoutY="300.0" promptText="Password" />
-      <TextField layoutX="164.0" layoutY="346.0" promptText="Confirm Password" />
-      <Button onAction="#switchToLogin" layoutX="175.0" layoutY="407.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Create Account" />
+      <TextField fx:id="tfFirstName" layoutX="164.0" layoutY="124.0" promptText="First Name" />
+      <TextField fx:id="tfLastName" layoutX="164.0" layoutY="168.0" promptText="Last Name" />
+      <TextField fx:id="tfBirthday" layoutX="164.0" layoutY="211.0" promptText="Birthday (YYYYMMDD)" />
+      <TextField fx:id="tfUserName2" layoutX="164.0" layoutY="255.0" promptText="Username" />
+      <TextField fx:id="tfPassword2" layoutX="164.0" layoutY="300.0" promptText="Password" />
+      <TextField fx:id="tfConfirmPassword" layoutX="164.0" layoutY="346.0" promptText="Confirm Password" />
+      <Button fx:id="buttonCreateAccount2" layoutX="175.0" layoutY="407.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="31.0" prefWidth="127.0" text="Create Account" />
       <ComboBox fx:id="roleCombo2" layoutX="139.0" layoutY="76.0" onMouseClicked="#setRoleItems" prefHeight="41.0" prefWidth="200.0" promptText="Select Role" visibleRowCount="2" />
    </children>
 </AnchorPane>
