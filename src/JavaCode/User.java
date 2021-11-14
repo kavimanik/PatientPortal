@@ -1,4 +1,6 @@
 package JavaCode;
+import java.util.ArrayList;
+
 abstract public class User {
 
 	private String firstName;
@@ -35,8 +37,8 @@ abstract public class User {
 
 	}
 
-	public Visit[] viewPastVisits() {
-		
+	public ArrayList<Visit> viewPastVisits() {
+		return new ArrayList<Visit>();
 	}
 	
 	//Setters
@@ -49,9 +51,9 @@ abstract public class User {
 	public void setBirth(int birth) {
 		birthdate = birth;
 	}
-	public String getUser() { return username; }
-	public String getPass() { return password; }
-	public String getRole() { return role; }
+	public String setUser() { return username; }
+	public String setPass() { return password; }
+	public String setRole() { return role; }
 	
 	//Getters
 	public String getFirstName() { return firstName; }

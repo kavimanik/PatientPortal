@@ -1,4 +1,7 @@
 package JavaCode;
+
+import java.util.ArrayList;
+
 public class Visit {
 
 	private int date;
@@ -12,7 +15,7 @@ public class Visit {
 	private String immunizationRecords;
 	private Prescription prescription;
 
-	Visit(int w, int h, int temp, int bp, String allergies, String hc, String ptr, String, ir, Presciption[] prescript){
+	Visit(int w, int h, int temp, int bp, String allergies, String hc, String ptr, String ir, Prescription prescript){
 		// Date = set to the current date
 		weight = w;
 		height = h;
@@ -22,6 +25,6 @@ public class Visit {
 		healthConcerns = hc;
 		physicalTestResults = ptr;
 		immunizationRecords = ir;
-		presciption = prescript;
+		prescription = prescript;
 	}
 }

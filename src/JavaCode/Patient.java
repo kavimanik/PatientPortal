@@ -20,10 +20,10 @@ public class Patient extends User {
 	
 	private ArrayList<Visit> pastVisits;
 	
-	private ArrayList<Precriptions> prescribedMeds;
+	private ArrayList<Prescription> prescribedMeds;
 	
-	private ArrayList<Strings> docMsg;
-	private ArrayList<Strings> nurseMsg;
+	private ArrayList<String> docMsg;
+	private ArrayList<String> nurseMsg;
 
 	//Constructor
 	public Patient() { this("", "", "", "", 0); }
@@ -40,7 +40,7 @@ public class Patient extends User {
 
 	//private PatientProfilePage profile;
 
-	//Messageing
+	//Messaging
 	// The message will always start with D:, N: or P: indicating who the send is
 	// All users will be able to use the methods but will pass in their respective roles
 	public void docMessage(String msg, String role) {
@@ -52,12 +52,12 @@ public class Patient extends User {
 			docMsg.add("P:" + msg);
 			break;
 		default:
-			// Notify User that msg was unable to send
+			// Notify User that message was unable to send
 			// Should not reach this
 			break;
 		}
 	}
-	public void nurseMessage(String msg, role) {
+	public void nurseMessage(String msg, String role) {
 		switch(role) {
 		case "Doctor":
 			nurseMsg.add("N:" + msg);
@@ -72,18 +72,21 @@ public class Patient extends User {
 		}
 	}
 	
-	public ArrayList<Strings> getMessage(String role){
+	public ArrayList<String> getMessage(String role){
 		switch(role) {
 		case "Doctor":
 			return docMsg;
 		case "Nurse":
 			return nurseMsg;
+		default:
+			// Should not get here
+			return new ArrayList<String>();
 		}
 	}
 		
 	// Make a Visit object that uses all of the Patients current information
 	public void makeAVisit() {
-		Visit a = new Visit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTestResults, immunizationRecords, prescribedMeds);
+		Visit a = new Visit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTestResults, immunizationRecords, prescribedMeds.get(prescribedMeds.size() - 1));
 		pastVisits.add(a);
 	}
 	
@@ -91,7 +94,7 @@ public class Patient extends User {
 	//Setters
 	public void setFirstName(String name) { super.setFirstName(name); }
 	public void setLastName(String name) { super.setLastName(name); }
-	public void setUser(String user) { return super.setUser(); }
+	public void setUser(String user) { super.setUser(); }
 	public String setPass() { return super.getPass(); }
 	public void setBirthdate(int date) { super.setBirth(date); }
 	
@@ -115,6 +118,6 @@ public class Patient extends User {
 	public String getRole() { return super.getRole(); }
 	public int getBirthdate(int date) { return super.getBirth();}
 	
-	public void viewPastVisits() {}
+	//public void viewPastVisits() {}
 
 }

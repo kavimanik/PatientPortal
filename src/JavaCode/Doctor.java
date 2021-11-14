@@ -26,6 +26,5 @@ public class Doctor extends Nurse {
 	}
 	
 	// Message Patient
-	@Overload
 	public void msgPatient(Patient p, String msg) { p.docMessage(msg, "Doctor"); }
 }

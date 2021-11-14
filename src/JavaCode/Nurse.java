@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Nurse extends User {
 	
 	public ArrayList<Patient> patientList;
+	public Patient currentPatient;
 	
 	//Constructor
 	public Nurse(String first, String last, String user, String pass, String role, int birth) { super(first, last, user, pass, role, birth); }
