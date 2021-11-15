@@ -31,6 +31,7 @@ public class Main extends Application {
 		//readFile();
 		
 		// Launches the JavaFX Scene
+		readFile();
 		launch(args);
 
 //		Login in Page
@@ -109,15 +110,14 @@ public class Main extends Application {
 		File appData = null; // Initialize it to null, to ensure we can use it later. If the file ends up actually being null, we'll leave the method before we use it.
 		try //create the text file to store the data, if it already exists we move on.
 		{
-		      //appData = new File("C:\\Users\\randa\\eclipse-workspace\\CSE360FileRead\\src\\appData.txt");
-			  //appData = new File("C:\\Users\\Brand\\Desktop\\School\\SophmoreYear\\CSE-360\\PatientPortal\\src\\application\\appData.txt");
-		      
-		      if (appData.createNewFile()) {
-		        System.out.println("File created: " + appData.getName());
-		        return false; // there is no data to read
-		      } else {
-		        System.out.println("File already exists.");
-		      }
+			String workingDirectory = System.getProperty("user.dir");				
+			appData = new File(workingDirectory, "appData.txt");
+							
+			if (appData.createNewFile()) {
+				System.out.println("File created, it is called: " + appData.getName() + " \nat the directory: " + appData.getAbsolutePath());
+			} else {
+				System.out.println("File already exists at: " + appData.getAbsolutePath());
+			}
 		} 
 		catch (IOException e) // Should never reach this Code
 		{
