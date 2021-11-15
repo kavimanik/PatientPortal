@@ -19,9 +19,6 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 	
-//	private static ArrayList<Patient> allPatients;
-//	private static ArrayList<Doctor> allDoctors;
-//	private static ArrayList<Nurse> allNurses;
 // 	private static User currentUser;
 	
 	public static void main(String[] args) throws FileNotFoundException {
