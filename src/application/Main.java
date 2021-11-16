@@ -136,7 +136,7 @@ public class Main extends Application {
             	int numOfDoctors = Integer.parseInt(currentLine.substring(5));
             	System.out.println(numOfDoctors);
             }
-            if(subStringIdentifier.compareTo("NON:") == 0)
+            else if(subStringIdentifier.compareTo("NON:") == 0)
             {
             	int numOfNurses = Integer.parseInt(currentLine.substring(5));
             	System.out.println(numOfNurses);
@@ -146,6 +146,24 @@ public class Main extends Application {
             	int numOfPatients = Integer.parseInt(currentLine.substring(5));
             	System.out.println(numOfPatients);
             }
+            /*switch(subStringIdentifier)
+            {
+            	case "NOD:":
+            	{
+            		int numOfDoctors = Integer.parseInt(currentLine.substring(5));
+            		System.out.println(numOfDoctors);
+            	}
+            	case "NON:":
+            	{
+            		int numOfNurses = Integer.parseInt(currentLine.substring(5));
+                	System.out.println(numOfNurses);
+            	}
+            	case "NOP:":
+            	{
+            		int numOfPatients = Integer.parseInt(currentLine.substring(5));
+                	System.out.println(numOfPatients);
+            	}
+            } */
             
         }
 		
