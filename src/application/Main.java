@@ -19,8 +19,6 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 	
-// 	private static User currentUser;
-	ArrayList<Doctor> Doctors = new ArrayList<Doctor>();
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		
@@ -133,28 +131,27 @@ public class Main extends Application {
             if(subStringIdentifier.compareTo("NOD:") == 0)
             {
             	int numOfDoctors = Integer.parseInt(currentLine.substring(5));
-            	System.out.println(numOfDoctors);
             }
             else if(subStringIdentifier.compareTo("NON:") == 0)
             {
             	int numOfNurses = Integer.parseInt(currentLine.substring(5));
-            	System.out.println(numOfNurses);
             }
             else if(subStringIdentifier.compareTo("NOP:") == 0)
             {
             	int numOfPatients = Integer.parseInt(currentLine.substring(5));
-            	System.out.println(numOfPatients);
             }
             else if(subStringIdentifier.compareTo("DOCI") == 0)
-            {											//First Name                              //Last Name                                                                          //    Username                                                //Password
+            {	
+            	System.out.println("Before doctor is created");//First Name                              //Last Name                                                                          //    Username                                                //Password
             	Doctor doctor = new Doctor( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":")+1,currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";")+1,currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(",")+1,currentLine.indexOf(".")), "Doctor", currentLine.substring(currentLine.indexOf("/")+1));
             	// I'm sorry
-            	String DOB = currentLine.substring(currentLine.indexOf("/")+1);
-            	System.out.println(DOB);
-            	System.out.println(doctor.toString());
+            	System.out.println("Before Doctor is added");
+            	Storage.addDoctor(doctor);
             }
             
         }
+		//System.out.println(Storage.getDoctor(0).toString());
+		//System.out.println(Storage.getDoctor(1).toString());
 		
 		scanner.close();
 		return true; // we've successfully read the file
