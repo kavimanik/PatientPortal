@@ -1,5 +1,7 @@
 package application;
 
+import JavaCode.*;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -41,32 +43,44 @@ public class Controller{
     }
     
     @FXML
-    private void switchToUserHomePage(ActionEvent event) throws IOException {
+    public void switchToUserHomePage(ActionEvent event) throws IOException {
     	event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
         String username = tfUserName.getText();
         String password = tfPassword.getText();
+        
         if(username.equals("") || password.equals("")) {
         	Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning");
             alert.setHeaderText("Required Fields Empty");
-
             alert.showAndWait();
         }
         else if(roleCombo.getValue() == "Nurse") {
         	// Checks if the Nurse Exists in the list of nurses
-        	// Loads the Nurse's Page
-        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../NurseHomePage.fxml")));
+        	for(int i = 0; i < Storage.getSize("Nurse"); i++) {
+        		if(Storage.getNurse(i).getUser().equals(username) && Storage.getNurse(i).getPass().equals(password)) {
+                	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../NurseHomePage.fxml")));
+                	Storage.setCurrentUser(Storage.getNurse(i));
+        		}
+        	}
         }
         else if(roleCombo.getValue() == "Doctor") {
-        	// Loads the Nurse's Page
-        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml")));
+        	for(int i = 0; i < Storage.getSize("Doctor"); i++) {
+        		if(Storage.getDoctor(i).getUser().equals(username) && Storage.getDoctor(i).getPass().equals(password)) {
+                	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml")));
+                	Storage.setCurrentUser(Storage.getDoctor(i));
+        		}
+        	}
         } 
         else if(roleCombo.getValue() == "Patient") {
-        	// Loads the Nurse's Page
-        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml")));
-        } 
+        	for(int i = 0; i < Storage.getSize("Patient"); i++) {
+        		if(Storage.getPatient(i).getUser().equals(username) && Storage.getPatient(i).getPass().equals(password)) {
+                	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml")));
+                	Storage.setCurrentUser(Storage.getPatient(i));
+        		}
+        	}
+        }
     }
     
     
