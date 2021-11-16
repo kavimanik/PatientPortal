@@ -18,7 +18,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="14.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Update Information" />
+      <Button fx:id="buttonUpdateInfo" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Update Information" />
       <Label layoutX="14.0" layoutY="131.0" prefHeight="37.0" prefWidth="177.0" text="Visit Date : " textAlignment="CENTER" />
       <Label layoutX="14.0" layoutY="168.0" prefHeight="37.0" prefWidth="177.0" text="Weight : " textAlignment="CENTER" />
       <Label layoutX="14.0" layoutY="205.0" prefHeight="37.0" prefWidth="177.0" text="Height : " textAlignment="CENTER" />

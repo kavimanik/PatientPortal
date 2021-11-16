@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:controller="application.PatientProfileController" prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PatientProfileController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="195.0" text="KHRAB Medical Portal">
          <font>
@@ -14,12 +14,12 @@
          </font>
       </Label>
       <Label layoutX="14.0" layoutY="51.0" prefHeight="37.0" prefWidth="127.0" text="Patient Profile" />
-      <TextField layoutX="164.0" layoutY="124.0" promptText="Name" />
-      <TextField layoutX="164.0" layoutY="168.0" promptText="Birthday (MM/DD/YYYY)" />
-      <TextField layoutX="164.0" layoutY="211.0" promptText="Phone Number" />
-      <TextField layoutX="164.0" layoutY="255.0" promptText="Email" />
-      <TextField layoutX="164.0" layoutY="300.0" promptText="Insurance" />
-      <TextField layoutX="164.0" layoutY="346.0" promptText="Pharmacy" />
-      <Button onAction="#switchToPatientHomePage" layoutX="175.0" layoutY="398.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Submit" />
+      <TextField fx:id="ftName" layoutX="164.0" layoutY="124.0" promptText="Name" />
+      <TextField fx:id="tfBirthday" layoutX="164.0" layoutY="168.0" promptText="Birthday (MM/DD/YYYY)" />
+      <TextField fx:id="ftPhoneNumber" layoutX="164.0" layoutY="211.0" promptText="Phone Number" />
+      <TextField fx:id="ftEmail" layoutX="164.0" layoutY="255.0" promptText="Email" />
+      <TextField fx:id="ftInsurance" layoutX="164.0" layoutY="300.0" promptText="Insurance" />
+      <TextField fx:id="ftPharmacy" layoutX="164.0" layoutY="346.0" promptText="Pharmacy" />
+      <Button layoutX="175.0" layoutY="398.0" mnemonicParsing="false" onAction="#switchToPatientHomePage" prefHeight="31.0" prefWidth="127.0" text="Submit" />
    </children>
 </AnchorPane>

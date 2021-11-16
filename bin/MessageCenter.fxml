@@ -14,9 +14,9 @@
          </font>
       </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="41.0" prefHeight="37.0" prefWidth="161.0" text="Patient Message Portal" />
-      <TextField alignment="TOP_LEFT" layoutX="14.0" layoutY="78.0" prefHeight="306.0" prefWidth="489.0" promptText="Messages" />
+      <TextField fx:id="tfMessageBoard" alignment="TOP_LEFT" layoutX="14.0" layoutY="78.0" prefHeight="306.0" prefWidth="489.0" promptText="Messages" />
       <TextField fx:id="textMessage" layoutX="14.0" layoutY="427.0" prefHeight="31.0" prefWidth="420.0" promptText="Type Message..." />
       <Button fx:id="buttonSend" layoutX="441.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="62.0" text="Send" />
-      <ComboBox layoutX="14.0" layoutY="391.0" prefHeight="31.0" prefWidth="420.0" promptText="Doctor or Nurse" />
+      <ComboBox fx:id="cbDocOrNurse" layoutX="14.0" layoutY="391.0" prefHeight="31.0" prefWidth="420.0" promptText="Doctor or Nurse" />
    </children>
 </AnchorPane>

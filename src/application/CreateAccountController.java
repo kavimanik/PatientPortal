@@ -84,7 +84,7 @@ public class CreateAccountController {
 			Patient patient = new Patient(firstName, lastName, userName, password, birthday);
 			Storage.addPatient(patient);
 		}
-		
+		System.out.println("User added");
         event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
