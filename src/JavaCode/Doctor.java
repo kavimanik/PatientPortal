@@ -24,6 +24,10 @@ public class Doctor extends Nurse {
 		a.setDoctor(null);
 		patientList.remove(a);
 	}
+	public String toString()
+	{
+		return "First name: " + this.getFirstName() + "\nLastName: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " + this.getPass() + "\nBirth: " + this.getBirth();
+	}
 	
 	// Message Patient
 	public void msgPatient(Patient p, String msg) { p.docMessage(msg, "Doctor"); }

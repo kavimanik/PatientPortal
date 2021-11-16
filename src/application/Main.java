@@ -20,15 +20,14 @@ import javafx.scene.layout.BorderPane;
 public class Main extends Application {
 	
 // 	private static User currentUser;
-	
+	ArrayList<Doctor> Doctors = new ArrayList<Doctor>();
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		
 		// Reads the load file, if empty, nothing will the created
-		//readFile();
+		readFile();
 		
 		// Launches the JavaFX Scene
-		readFile();
 		launch(args);
 
 //		Login in Page
@@ -141,29 +140,17 @@ public class Main extends Application {
             	int numOfNurses = Integer.parseInt(currentLine.substring(5));
             	System.out.println(numOfNurses);
             }
-            if(subStringIdentifier.compareTo("NOP:") == 0)
+            else if(subStringIdentifier.compareTo("NOP:") == 0)
             {
             	int numOfPatients = Integer.parseInt(currentLine.substring(5));
             	System.out.println(numOfPatients);
             }
-            /*switch(subStringIdentifier)
-            {
-            	case "NOD:":
-            	{
-            		int numOfDoctors = Integer.parseInt(currentLine.substring(5));
-            		System.out.println(numOfDoctors);
-            	}
-            	case "NON:":
-            	{
-            		int numOfNurses = Integer.parseInt(currentLine.substring(5));
-                	System.out.println(numOfNurses);
-            	}
-            	case "NOP:":
-            	{
-            		int numOfPatients = Integer.parseInt(currentLine.substring(5));
-                	System.out.println(numOfPatients);
-            	}
-            } */
+            else if(subStringIdentifier.compareTo("DOCI") == 0)
+            {											//First Name                              //Last Name                                                                          //    Username                                                //Password
+            	//Doctor doctor = new Doctor( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":"),currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";"),currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(","),currentLine.indexOf(".")), "Doctor", Integer.parseInt(currentLine.substring(currentLine.indexOf("/"))));
+            	// I'm sorry
+            	//System.out.println(doctor.toString());
+            }
             
         }
 		
