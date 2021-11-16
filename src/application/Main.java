@@ -128,30 +128,16 @@ public class Main extends Application {
 			String currentLine = scanner.nextLine(); // put the line into this string, notably this passes through the line in the file, so no going back
 			String subStringIdentifier = currentLine.substring(0, 4); // take the substring of the first 4 characters, This is our identifier for each type of data 
 			// we will need to be reading. Essentially the rest of the code will be comparing the identifier to see what we should be doing with our next Line.
-            if(subStringIdentifier.compareTo("NOD:") == 0)
-            {
-            	int numOfDoctors = Integer.parseInt(currentLine.substring(5));
-            }
-            else if(subStringIdentifier.compareTo("NON:") == 0)
-            {
-            	int numOfNurses = Integer.parseInt(currentLine.substring(5));
-            }
-            else if(subStringIdentifier.compareTo("NOP:") == 0)
-            {
-            	int numOfPatients = Integer.parseInt(currentLine.substring(5));
-            }
-            else if(subStringIdentifier.compareTo("DOCI") == 0)
+            if(subStringIdentifier.compareTo("DOCI") == 0)
             {	
-            	System.out.println("Before doctor is created");//First Name                              //Last Name                                                                          //    Username                                                //Password
+            												//First Name                              //Last Name                                                                          //    Username                                                //Password
             	Doctor doctor = new Doctor( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":")+1,currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";")+1,currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(",")+1,currentLine.indexOf(".")), "Doctor", currentLine.substring(currentLine.indexOf("/")+1));
-            	// I'm sorry
-            	System.out.println("Before Doctor is added");
             	Storage.addDoctor(doctor);
             }
             
         }
-		//System.out.println(Storage.getDoctor(0).toString());
-		//System.out.println(Storage.getDoctor(1).toString());
+		System.out.println(Storage.getDoctor(0).toString());
+		System.out.println(Storage.getDoctor(1).toString());
 		
 		scanner.close();
 		return true; // we've successfully read the file
