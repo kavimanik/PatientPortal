@@ -21,7 +21,7 @@ public class Main extends Application {
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		
-		
+		Storage s = new Storage();
 		// Reads the load file, if empty, nothing will the created
 		readFile();
 		

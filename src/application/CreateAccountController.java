@@ -1,13 +1,16 @@
 package application;
 
 import java.io.IOException;
+import JavaCode.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -15,6 +18,24 @@ public class CreateAccountController {
 	
 	@FXML // fx:id="roleCombo2"
 	private ComboBox<String> roleCombo2;
+	
+	@FXML // fx:id="tfFirstName"
+	private TextField tfFirstName;
+	
+	@FXML // fx:id="tfLastName"
+	private TextField tfLastName;
+	
+	@FXML // fx:id="tfBirthday"
+	private TextField tfBirthday;
+	
+	@FXML // fx:id="tfUserName2"
+	private TextField tfUserName2;
+	
+	@FXML // fx:id="tfPassword2"
+	private TextField tfPassword2;
+	
+	@FXML // fx:id="tfConfirmPassword"
+	private TextField tfConfirmPassword;
 	
 	@FXML
     public void setRoleItems(MouseEvent event) {
@@ -27,6 +48,43 @@ public class CreateAccountController {
 	
 	@FXML
     private void switchToLogin(ActionEvent event) throws IOException {
+		String role = roleCombo2.getValue();
+		String firstName = tfFirstName.getText();
+		String lastName = tfLastName.getText();
+		String birthday = tfBirthday.getText();
+		String userName = tfUserName2.getText();
+		String password = tfPassword2.getText();
+		String confirmPassword = tfConfirmPassword.getText();
+		
+		if(!password.equals(confirmPassword)) {
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Passwords do not match");
+            alert.showAndWait();
+            return;
+		}
+		else if(role.equals("") || firstName.equals("") || lastName.equals("") || 
+				birthday.equals("") || userName.equals("") || password.equals("")) {
+			Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Missing required fields");
+            alert.showAndWait();
+            return;
+		}
+		
+		if(role.equals("Doctor")) {
+			Doctor doctor = new Doctor(firstName, lastName, userName, password, role, birthday);
+			Storage.addDoctor(doctor);
+		}
+		else if(role.equals("Nurse")) {
+			Nurse nurse = new Nurse(firstName, lastName, userName, password, role, birthday);
+			Storage.addNurse(nurse);
+		}
+		else if(role.equals("Patient")) {
+			Patient patient = new Patient(firstName, lastName, userName, password, birthday);
+			Storage.addPatient(patient);
+		}
+		
         event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
