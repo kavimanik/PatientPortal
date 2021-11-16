@@ -134,12 +134,17 @@ public class Main extends Application {
             	Doctor doctor = new Doctor( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":")+1,currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";")+1,currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(",")+1,currentLine.indexOf(".")), "Doctor", currentLine.substring(currentLine.indexOf("/")+1));
             	Storage.addDoctor(doctor);
             }
+            else if(subStringIdentifier.compareTo("NURI") == 0)
+            {
+            	Nurse nurse = new Nurse( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":")+1,currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";")+1,currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(",")+1,currentLine.indexOf(".")), "Nurse", currentLine.substring(currentLine.indexOf("/")+1));
+            	Storage.addNurse(nurse);
+            }
+            
             
         }
-		System.out.println(Storage.getDoctor(0).toString());
-		System.out.println(Storage.getDoctor(1).toString());
-		System.out.print("pp poo");
 		
+		//System.out.println(Storage.getDoctor(0).toString());
+        //System.out.println(Storage.getNurse(0).toString());
 		scanner.close();
 		return true; // we've successfully read the file
 	}

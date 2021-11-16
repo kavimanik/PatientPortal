@@ -1,5 +1,3 @@
-NOD: 3
-NOP: 5
-NON: 1
 DOCI John:Smith;JoshSmith1,BruhHill."Doctor"/01022003
 DOCI Brandon:Tran;BrondonTron15,S0ccerMan!ac."Doctor"/01132002
+NURI Kavi:Maniack;BrawlStarPlayer,BuildPath."Nurse"/11162021

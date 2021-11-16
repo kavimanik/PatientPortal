@@ -36,7 +36,8 @@ public class Storage {
 	}}
 	
 	// Adder, adds a class to the respective linkedList
-	public static void addNurse(Nurse i) { allNurses.add(i); }
+	public static void addNurse(Nurse i) { allNurses.add(i);
+	System.out.println();}
 	public static void addDoctor(Doctor i) { allDoctors.add(i); }
 	public static void addPatient(Patient i) { allPatients.add(i); }
 	public static void setCurrentUser(User i) { currentUser = i; }
