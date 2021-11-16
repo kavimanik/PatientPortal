@@ -59,4 +59,8 @@ public class Storage {
 		default: return new User("", "", "", "", "", "");// Shouldn't reach here
 		}
 	}
+	
+	public static void print(String role) {
+		
+	}
 }
