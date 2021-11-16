@@ -19,16 +19,13 @@ import javafx.scene.layout.BorderPane;
 
 public class Main extends Application {
 	
-//	private static ArrayList<Patient> allPatients;
-//	private static ArrayList<Doctor> allDoctors;
-//	private static ArrayList<Nurse> allNurses;
 // 	private static User currentUser;
-	
+	ArrayList<Doctor> Doctors = new ArrayList<Doctor>();
 	public static void main(String[] args) throws FileNotFoundException {
 		
 		
 		// Reads the load file, if empty, nothing will the created
-		//readFile();
+		readFile();
 		
 		// Launches the JavaFX Scene
 		launch(args);
@@ -109,15 +106,14 @@ public class Main extends Application {
 		File appData = null; // Initialize it to null, to ensure we can use it later. If the file ends up actually being null, we'll leave the method before we use it.
 		try //create the text file to store the data, if it already exists we move on.
 		{
-		      //appData = new File("C:\\Users\\randa\\eclipse-workspace\\CSE360FileRead\\src\\appData.txt");
-			  //appData = new File("C:\\Users\\Brand\\Desktop\\School\\SophmoreYear\\CSE-360\\PatientPortal\\src\\application\\appData.txt");
-		      
-		      if (appData.createNewFile()) {
-		        System.out.println("File created: " + appData.getName());
-		        return false; // there is no data to read
-		      } else {
-		        System.out.println("File already exists.");
-		      }
+			String workingDirectory = System.getProperty("user.dir");				
+			appData = new File(workingDirectory, "appData.txt");
+							
+			if (appData.createNewFile()) {
+				System.out.println("File created, it is called: " + appData.getName() + " \nat the directory: " + appData.getAbsolutePath());
+			} else {
+				System.out.println("File already exists at: " + appData.getAbsolutePath());
+			}
 		} 
 		catch (IOException e) // Should never reach this Code
 		{
@@ -139,15 +135,21 @@ public class Main extends Application {
             	int numOfDoctors = Integer.parseInt(currentLine.substring(5));
             	System.out.println(numOfDoctors);
             }
-            if(subStringIdentifier.compareTo("NON:") == 0)
+            else if(subStringIdentifier.compareTo("NON:") == 0)
             {
             	int numOfNurses = Integer.parseInt(currentLine.substring(5));
             	System.out.println(numOfNurses);
             }
-            if(subStringIdentifier.compareTo("NOP:") == 0)
+            else if(subStringIdentifier.compareTo("NOP:") == 0)
             {
             	int numOfPatients = Integer.parseInt(currentLine.substring(5));
             	System.out.println(numOfPatients);
+            }
+            else if(subStringIdentifier.compareTo("DOCI") == 0)
+            {											//First Name                              //Last Name                                                                          //    Username                                                //Password
+            	//Doctor doctor = new Doctor( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":"),currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";"),currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(","),currentLine.indexOf(".")), "Doctor", Integer.parseInt(currentLine.substring(currentLine.indexOf("/"))));
+            	// I'm sorry
+            	//System.out.println(doctor.toString());
             }
             
         }

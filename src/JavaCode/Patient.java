@@ -59,7 +59,7 @@ public class Patient extends User {
 	}
 	public void nurseMessage(String msg, String role) {
 		switch(role) {
-		case "Doctor":
+		case "Nurse":
 			nurseMsg.add("N:" + msg);
 			break;
 		case "Patient":
