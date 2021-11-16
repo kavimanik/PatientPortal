@@ -4,6 +4,8 @@ package JavaCode;
 
 import java.util.ArrayList;
 
+import javafx.fxml.FXMLLoader;
+
 public class Storage {
 
 	private static ArrayList<Patient> allPatients;
@@ -34,4 +36,23 @@ public class Storage {
 	public static void addDoctor(Doctor i) { allDoctors.add(i); }
 	public static void addPatient(Patient i) { allPatients.add(i); }
 	public static void setCurrentUser(User i) { currentUser = i; }
+	
+	// Search Function, returns empty User not found
+	public static User Search(String role, String First, String Last, String Birth) {
+		switch(role) {
+		case "Doctor": 
+			for(int i = 0; i < allDoctors.size(); i++) {
+        		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getDoctor(i); }}
+			return new User("", "", "", "", "", "");
+		case "Nurse":
+			for(int i = 0; i < allNurses.size(); i++) {
+        		if(getNurse(i).getFirstName().equals(First) && getNurse(i).getLastName().equals(Last)) { return getNurse(i); }}
+			return new User("", "", "", "", "", "");
+		case "Patient":
+			for(int i = 0; i < allPatients.size(); i++) {
+        		if(getPatient(i).getFirstName().equals(First) && getPatient(i).getLastName().equals(Last)) { return getPatient(i); }}
+			return new User("", "", "", "", "", "");
+		default: return new User("", "", "", "", "", "");// Shouldn't reach here
+		}
+	}
 }
