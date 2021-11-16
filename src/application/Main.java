@@ -138,6 +138,7 @@ public class Main extends Application {
         }
 		System.out.println(Storage.getDoctor(0).toString());
 		System.out.println(Storage.getDoctor(1).toString());
+		System.out.print("pp poo poo");
 		
 		scanner.close();
 		return true; // we've successfully read the file
