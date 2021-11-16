@@ -11,7 +11,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -21,6 +23,12 @@ public class Controller{
 	
 	@FXML // fx:id="roleCombo"
 	private ComboBox<String> roleCombo;
+	
+	@FXML // fx:id="tfUserName"
+	private TextField tfUserName;
+	
+	@FXML // fx:id="tfPassword
+	private TextField tfPassword;
 	
     @FXML
     private void switchToCreateAccount(ActionEvent event) throws IOException {
@@ -37,9 +45,16 @@ public class Controller{
     	event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
-        //thisStage.hide();
-        
-        if(roleCombo.getValue() == "Nurse") {
+        String username = tfUserName.getText();
+        String password = tfPassword.getText();
+        if(username.equals("") || password.equals("")) {
+        	Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Required Fields Empty");
+
+            alert.showAndWait();
+        }
+        else if(roleCombo.getValue() == "Nurse") {
         	// Checks if the Nurse Exists in the list of nurses
         	// Loads the Nurse's Page
         	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../NurseHomePage.fxml")));
