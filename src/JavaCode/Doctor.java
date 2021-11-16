@@ -6,7 +6,7 @@ public class Doctor extends Nurse {
 	public ArrayList<Patient> patientList;
 	
 	//Constructor
-	public Doctor(String first, String last, String user, String pass, String role, int birth) { super(first, last, user, pass, "Doctor", birth); }
+	public Doctor(String first, String last, String user, String pass, String role, String birth) { super(first, last, user, pass, "Doctor", birth); }
 	
 	//Change Patient Information
 	public void setPhyTestResults(Patient patient,String newTest) { }

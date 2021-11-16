@@ -147,9 +147,11 @@ public class Main extends Application {
             }
             else if(subStringIdentifier.compareTo("DOCI") == 0)
             {											//First Name                              //Last Name                                                                          //    Username                                                //Password
-            	//Doctor doctor = new Doctor( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":"),currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";"),currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(","),currentLine.indexOf(".")), "Doctor", Integer.parseInt(currentLine.substring(currentLine.indexOf("/"))));
+            	Doctor doctor = new Doctor( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":")+1,currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";")+1,currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(",")+1,currentLine.indexOf(".")), "Doctor", currentLine.substring(currentLine.indexOf("/")+1));
             	// I'm sorry
-            	//System.out.println(doctor.toString());
+            	String DOB = currentLine.substring(currentLine.indexOf("/")+1);
+            	System.out.println(DOB);
+            	System.out.println(doctor.toString());
             }
             
         }

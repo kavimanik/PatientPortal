@@ -26,8 +26,8 @@ public class Patient extends User {
 	private ArrayList<String> nurseMsg;
 
 	//Constructor
-	public Patient() { this("", "", "", "", 0); }
-	public Patient(String first, String last, String user, String pass, int birth) {
+	public Patient() { this("", "", "", "", ""); }
+	public Patient(String first, String last, String user, String pass, String birth) {
 		super(first, last, user, pass, "Patient", birth);
 		phoneNum = 0;
 		email = "";
@@ -97,7 +97,7 @@ public class Patient extends User {
 	public void setLastName(String name) { super.setLastName(name); }
 	public void setUser(String user) { super.setUser(); }
 	public String setPass() { return super.getPass(); }
-	public void setBirthdate(int date) { super.setBirth(date); }
+	public void setBirthdate(String date) { super.setBirth(date); }
 	
 	public void setEmail(String mail) { email = mail; }
 	public void setInsurance(String insure) { insurance = insure; }
@@ -118,7 +118,7 @@ public class Patient extends User {
 	public String getUser() { return super.getUser(); }
 	public String getPass() { return super.getPass(); }
 	public String getRole() { return super.getRole(); }
-	public int getBirthdate() { return super.getBirth();}
+	public String getBirthdate() { return super.getBirth();}
 	
 	public String getEmail() { return email; }
 	public String getInsurance() { return insurance; }

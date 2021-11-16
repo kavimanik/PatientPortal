@@ -8,8 +8,8 @@ public class Nurse extends User {
 	public Patient currentPatient;
 	
 	//Constructor
-	public Nurse(String first, String last, String user, String pass, String role, int birth) { super(first, last, user, pass, role, birth); }
-	public Nurse(String first, String last, String user, String pass, int birth) { super(first, last, user, pass, "Nurse", birth); }
+	public Nurse(String first, String last, String user, String pass, String role, String birth) { super(first, last, user, pass, role, birth); }
+	public Nurse(String first, String last, String user, String pass, String birth) { super(first, last, user, pass, "Nurse", birth); }
 	
 	//Change Patient Information
 	public void setWeight(Patient patient, int newWeight) { patient.setWeight(newWeight); }

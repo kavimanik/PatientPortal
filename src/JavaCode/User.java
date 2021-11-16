@@ -8,9 +8,9 @@ abstract public class User {
 	private String username;
 	private String password;
 	private String role;
-	private int birthdate;
+	private String birthdate;
 	
-	public User(String first, String last, String user, String pass, String roles, int birth){
+	public User(String first, String last, String user, String pass, String roles, String birth){
 		firstName = first;
 		lastName = last;
 		username = user;
@@ -48,7 +48,7 @@ abstract public class User {
 	public void setLastName(String name) {
 		lastName = name;
 	}
-	public void setBirth(int birth) {
+	public void setBirth(String birth) {
 		birthdate = birth;
 	}
 	public String setUser() { return username; }
@@ -61,5 +61,5 @@ abstract public class User {
 	public String getUser() { return username; }
 	public String getPass() { return password; }
 	public String getRole() { return role; }
-	public int getBirth() { return birthdate; }
+	public String getBirth() { return birthdate; }
 }
