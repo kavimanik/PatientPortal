@@ -13,7 +13,11 @@ public class Storage {
 	private static ArrayList<Nurse> allNurses;
 	private static User currentUser;
 	
-	public Storage(){}
+	public Storage(){
+		allPatients = new ArrayList<Patient>();
+		allDoctors = new ArrayList<Doctor>();
+		allNurses = new ArrayList<Nurse>();
+	}
 	
 	// Getter, returns the variable from ArrayList
 	// i is the index of the variable in its respective Array List
