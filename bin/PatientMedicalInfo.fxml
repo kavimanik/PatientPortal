@@ -19,19 +19,19 @@
          </font>
       </Label>
       <Button fx:id="buttonUpdateInfo" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="127.0" text="Update Information" />
-      <Label layoutX="14.0" layoutY="131.0" prefHeight="37.0" prefWidth="177.0" text="Visit Date : " textAlignment="CENTER" />
-      <Label layoutX="14.0" layoutY="168.0" prefHeight="37.0" prefWidth="177.0" text="Weight : " textAlignment="CENTER" />
-      <Label layoutX="14.0" layoutY="205.0" prefHeight="37.0" prefWidth="177.0" text="Height : " textAlignment="CENTER" />
-      <Label layoutX="14.0" layoutY="242.0" prefHeight="37.0" prefWidth="177.0" text="Body Tempreature : " textAlignment="CENTER" />
-      <Label layoutX="14.0" layoutY="279.0" prefHeight="37.0" prefWidth="177.0" text="Blood Pressure (only +12) : " textAlignment="CENTER" />
-      <Label layoutX="14.0" layoutY="316.0" prefHeight="37.0" prefWidth="177.0" text="Known Allergies : " textAlignment="CENTER" />
-      <Label layoutX="14.0" layoutY="353.0" prefHeight="37.0" prefWidth="177.0" text="Patient Health Concerns : " textAlignment="CENTER" />
-      <Label layoutX="14.0" layoutY="390.0" prefHeight="37.0" prefWidth="177.0" text="Physical Test : " textAlignment="CENTER" />
-      <Label layoutX="14.0" layoutY="88.0" prefHeight="37.0" prefWidth="177.0" text="Patient Name :" textAlignment="CENTER" />
-      <Label layoutX="258.0" layoutY="88.0" prefHeight="37.0" prefWidth="177.0" text="Assigned Doctor :" textAlignment="CENTER" />
-      <Label layoutX="258.0" layoutY="113.0" prefHeight="37.0" prefWidth="177.0" text="Assigned Nurse :" textAlignment="CENTER" />
+      <Label fx:id="tfVisitDate" layoutX="14.0" layoutY="131.0" prefHeight="37.0" prefWidth="177.0" text="Visit Date : " textAlignment="CENTER" />
+      <Label fx:id="tfWeight" layoutX="14.0" layoutY="168.0" prefHeight="37.0" prefWidth="177.0" text="Weight : " textAlignment="CENTER" />
+      <Label fx:id="tfHeight" layoutX="14.0" layoutY="205.0" prefHeight="37.0" prefWidth="177.0" text="Height : " textAlignment="CENTER" />
+      <Label fx:id="tfBodyTemp" layoutX="14.0" layoutY="242.0" prefHeight="37.0" prefWidth="177.0" text="Body Tempreature : " textAlignment="CENTER" />
+      <Label fx:id="tfBloodPressure" layoutX="14.0" layoutY="279.0" prefHeight="37.0" prefWidth="177.0" text="Blood Pressure (only +12) : " textAlignment="CENTER" />
+      <Label fx:id="tfKnownAllergies" layoutX="14.0" layoutY="316.0" prefHeight="37.0" prefWidth="177.0" text="Known Allergies : " textAlignment="CENTER" />
+      <Label fx:id="tfHealthConcerns" layoutX="14.0" layoutY="353.0" prefHeight="37.0" prefWidth="177.0" text="Patient Health Concerns : " textAlignment="CENTER" />
+      <Label fx:id="tfPhysicalTest" layoutX="14.0" layoutY="390.0" prefHeight="37.0" prefWidth="177.0" text="Physical Test : " textAlignment="CENTER" />
+      <Label fx:id="tfName" layoutX="14.0" layoutY="88.0" prefHeight="37.0" prefWidth="177.0" text="Patient Name :" textAlignment="CENTER" />
+      <Label fx:id="tfDoctor" layoutX="258.0" layoutY="88.0" prefHeight="37.0" prefWidth="177.0" text="Assigned Doctor :" textAlignment="CENTER" />
+      <Label fx:id="tfNurse" layoutX="258.0" layoutY="113.0" prefHeight="37.0" prefWidth="177.0" text="Assigned Nurse :" textAlignment="CENTER" />
       <Label layoutX="258.0" layoutY="168.0" prefHeight="37.0" prefWidth="177.0" text="Health Issues :" textAlignment="CENTER" />
-      <Label layoutX="258.0" layoutY="199.0" prefHeight="37.0" prefWidth="177.0" text="Patient  Medication :" textAlignment="CENTER" />
+      <Label layoutX="258.0" layoutY="199.0" prefHeight="37.0" prefWidth="177.0" text="Patient Medication :" textAlignment="CENTER" />
       <Label layoutX="258.0" layoutY="236.0" prefHeight="37.0" prefWidth="177.0" text="Immunization Hitory :" textAlignment="CENTER" />
       <Label layoutX="258.0" layoutY="150.0" prefHeight="37.0" prefWidth="177.0" text="--------- Precious History --------" textAlignment="CENTER" />
    </children>

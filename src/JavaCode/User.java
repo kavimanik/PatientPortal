@@ -21,36 +21,20 @@ public class User {
 
 	//public void makeAcc() {}
 
-	public void loginPortal() {
-		
-	}
+	public void loginPortal() {}
 
-	public void viewPatientPersonalInfo() {
+	public void viewPatientPersonalInfo() {}
 
-	}
+	public void viewPatientMedInfo() {}
 
-	public void viewPatientMedInfo() {
+	public void accessMesPortal() {}
 
-	}
-
-	public void accessMesPortal() {
-
-	}
-
-	public ArrayList<Visit> viewPastVisits() {
-		return new ArrayList<Visit>();
-	}
+	public ArrayList<Visit> viewPastVisits() { return new ArrayList<Visit>(); }
 	
 	//Setters
-	public void setFirstName(String name) {
-		firstName = name;
-	}
-	public void setLastName(String name) {
-		lastName = name;
-	}
-	public void setBirth(String birth) {
-		birthdate = birth;
-	}
+	public void setFirstName(String name) { firstName = name; }
+	public void setLastName(String name) { lastName = name; }
+	public void setBirth(String birth) { birthdate = birth; }
 	public String setUser() { return username; }
 	public String setPass() { return password; }
 	public String setRole() { return role; }

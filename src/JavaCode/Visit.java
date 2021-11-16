@@ -42,6 +42,13 @@ public class Visit {
 
 		return formatter.format(today);
 	}
+	
+	
+	public String toString() {
+		return "Date: " + date + "\nWeight: " + weight + "\nHeight: " + height + "\nBodyTemp: " + bodyTemp + "\nBloodPressure: " 
+	+ bloodPressure + "\nAllergies: " + allergies + "\nHealth Concerns: " + healthConcerns + "\nPhysical Test Results: " + physicalTestResults 
+	+ "\nImmunization Records: " + immunizationRecords + "\nPrescription: " + prescription;
+	}
 }
 
 

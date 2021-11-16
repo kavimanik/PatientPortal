@@ -27,64 +27,6 @@ public class Main extends Application {
 		
 		// Launches the JavaFX Scene
 		launch(args);
-
-//		Login in Page
-//
-//		// If creates a new account
-//		if(i == 0/* create a new account button is selected*/) {
-//			switch("Doctor"/* selected role*/) {
-//			case "Doctor": 	allDoctors.add(new Doctor());
-//							break;
-//			case "Nurse":	allNurses.add(new Nurse());
-//							break;
-//			case "Patient":	allPatients.add(new Patient());
-//							break;
-//			}
-//			//Returns them to the login Page
-//			i++;
-//		}
-//		else if(i == 1) {
-//			// Login and password is entered
-//			// Change Page to main page associated with the account
-//			switch( // selected role from drop down box)	{
-//				case Doctor:
-//					for(int i = 0; i < allDoctors.size(); i++){
-//						if( allDoctors.get(i).getUsername().equal( // username input ) && allDoctors.get(i).getPassword().equal( // password input ){
-//							currentUser = allDoctors.get(i);
-//						}
-//					}
-//					if(currentUser == null){
-//						// Keep on Login Page, Notify User account doesn't exist
-//					}else{
-//						// Set to Doctor Homepage
-//					}
-//					break;
-//				case Nurse:
-//					for(int i = 0; i < allNurse.size(); i++){
-//						if( allDoctors.get(i).getUsername().equal( // username input ) && allDoctors.get(i).getPassword().equal( // password input ){
-//							currentUser = allNurses.get(i);
-//						}
-//					}
-//					if(currentUser == null){
-//						// Keep on Login Page, Notify User account doesn't exist
-//					}else{ // Set to Nurse Home Page
-//					}
-//					break;
-//				case Patient:
-//					for(int i = 0; i < allNurse.size(); i++){
-//						if( allDoctors.get(i).getUsername().equal( // username input ) && allDoctors.get(i).getPassword().equal( // password input ){
-//							currentUser = allNurses.get(i);
-//						}
-//					}
-//					if(currentUser == null){
-//						// Keep on Login Page, Notify User account doesn't exist
-//					}else{
-//						// Set to Patient Home Page
-//					}
-//					break;
-//
-//			}
-		
 	}
 	
     @Override
@@ -138,9 +80,7 @@ public class Main extends Application {
             {
             	Nurse nurse = new Nurse( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":")+1,currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";")+1,currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(",")+1,currentLine.indexOf(".")), "Nurse", currentLine.substring(currentLine.indexOf("/")+1));
             	Storage.addNurse(nurse);
-            }
-            
-            
+            }   
         }
 		
 		//System.out.println(Storage.getDoctor(0).toString());
@@ -152,11 +92,4 @@ public class Main extends Application {
     public static boolean saveFile() throws FileNotFoundException{
     	return true;
     }
-//    public static void displayMessages(Patient p, String role) {
-//    	// Updates the text box for msg between Nurse, Doctors and Patients
-//    	for(int i = 0; i < p.size(); i++) {
-//    		
-//    	}
-//    	
-//   }
 }

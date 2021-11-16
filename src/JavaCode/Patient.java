@@ -133,5 +133,53 @@ public class Patient extends User {
 	public String getHealthConcerns() { return healthConcerns; }
 	
 	//public void viewPastVisits() {}
+	
+	public String toString()
+	{
+		// Complies All the ArrayList in Patient into a Printable Strings for toString
+		String allPastVisits, allPrescribedMeds, allDocMsg, allNurseMsg;
+		allPastVisits = ""; allPrescribedMeds = ""; allDocMsg = ""; allNurseMsg = "";
+		for(int i = 0; i < pastVisits.size(); i++){ allPastVisits = allPastVisits + pastVisits.get(i).toString() + "\n"; }
+		for(int i = 0; i < prescribedMeds.size(); i++){ allPrescribedMeds = allPrescribedMeds + prescribedMeds.get(i).toString() + "\n"; }
+		for(int i = 0; i < docMsg.size(); i++){ allDocMsg = allDocMsg + docMsg.get(i)+ "\n"; }
+		for(int i = 0; i < nurseMsg.size(); i++){ allNurseMsg = allNurseMsg + nurseMsg.get(i)+ "\n"; }
+		
+		/* First Name: Jon
+		 * Last Name: Smith
+		 * Username: Smith
+		 * Password: Jon
+		 * Birth: 01011990
+		 * Phone Num: 1234567890
+		 * Email: JonSmith@gmail.com
+		 * Insurance:
+		 * Pharmacy:
+		 * Doctor First:
+		 * Doctor Last:
+		 * Nurse First:
+		 * Nurse Last:
+		 * Weight:
+		 * Height:
+		 * BodyTemp:
+		 * BloodPressure:
+		 * Allergies:
+		 * Health Concerns:
+		 * Physical Test Results:
+		 * Immunization Records: 
+		 * PastVisits:
+		 * 
+		 * Prescribed Meds:
+		 * 
+		 * Doctor Messages:
+		 * 
+		 * Nurse Messages:
+		*/
+		return "First name: " + this.getFirstName() + "\nLast Name: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " + this.getPass() 
+		+ "\nBirth: " + this.getBirth() + "\nPhone Num: " + this.phoneNum + "\nEmail: " + this.email + "\nInsurance: " + this.insurance + "\nPharmacy: " + this.pharmacy 
+		+ "\nDoctor First: " + this.getDoctor().getFirstName() + "\nDoctor Last: " +  this.getDoctor().getLastName() + "\nNurse First: " + this.getNurse().getFirstName() 
+		+ "\nNurse Last: " +  this.getNurse().getLastName()  + "\nWeight: " + this.weight + "\nHeight: " + this.height + "\nBodyTemp: " + this.temperature 
+		+ "\nBloodPressure: " + this.bloodPressure + "\nAllergies: " + this.allergies  + "\nHealth Concerns: " + this.healthConcerns + "\nPhysical Test Results: " + 
+		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits: " + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds
+		+ "\nDoctor Msg: "  + allDocMsg + "\nNurse Msg: " + allNurseMsg;
+	}
 
 }

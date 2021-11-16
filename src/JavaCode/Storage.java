@@ -61,7 +61,16 @@ public class Storage {
 		}
 	}
 	
+	//Prints all the elements of an array specified by the role
 	public static void print(String role) {
-		
+		switch(role) {
+		case "Doctor": 
+			for(int i = 0; i < allDoctors.size(); i++) { System.out.println(getDoctor(i).toString()); } 	break;
+		case "Nurse":
+			for(int i = 0; i < allNurses.size(); i++) { System.out.println(getNurse(i).toString()); } 		break;
+		case "Patient":
+			for(int i = 0; i < allPatients.size(); i++) { System.out.println(getPatient(i).toString()); } 	break;
+		default: System.out.println("Shouldn't reach here, Print ArrayList"); break;
+		}
 	}
 }
