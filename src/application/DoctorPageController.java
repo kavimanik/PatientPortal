@@ -41,8 +41,6 @@ public class DoctorPageController {
     @FXML
     public void setRoleItems(MouseEvent event) {
     	event.consume();
-    	User a = Storage.getCurrentUser();
-    	Doctor b = Storage.searchDoc(a.getFirstName(), a.getLastName());
     	cbPatients.getItems().addAll("Doctor", "Nurse", "Patient");
     	cbPatients.setVisibleRowCount(3);
     }
