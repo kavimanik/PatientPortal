@@ -25,6 +25,7 @@ public class Storage {
 	public static Doctor getDoctor(int i) { return allDoctors.get(i); }
 	public static Patient getPatient(int i) { return allPatients.get(i); }
 	public static User getCurrentUser(int i) { return currentUser; }
+	public static ArrayList<Patient> getAllPatients() { return allPatients; }
 	
 	// Gets the Size of any of the ArrayLists with "Doctor", "Nurse" or "Patient"
 	public static int getSize(String a) {
@@ -43,21 +44,19 @@ public class Storage {
 	public static void setCurrentUser(User i) { currentUser = i; }
 	
 	// Search Function, returns empty User not found
-	public static User Search(String role, String First, String Last, String Birth) {
+	public static ArrayList<User> Search(String role, String First, String Last, String Birth) {
+		ArrayList<User> a = new ArrayList<User>();
 		switch(role) {
 		case "Doctor": 
 			for(int i = 0; i < allDoctors.size(); i++) {
-        		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getDoctor(i); }}
-			return new User("", "", "", "", "", "");
+        		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { a.add(getDoctor(i)); }} return a;
 		case "Nurse":
 			for(int i = 0; i < allNurses.size(); i++) {
-        		if(getNurse(i).getFirstName().equals(First) && getNurse(i).getLastName().equals(Last)) { return getNurse(i); }}
-			return new User("", "", "", "", "", "");
+        		if(getNurse(i).getFirstName().equals(First) && getNurse(i).getLastName().equals(Last)) { a.add(getNurse(i)); }} return a;
 		case "Patient":
 			for(int i = 0; i < allPatients.size(); i++) {
-        		if(getPatient(i).getFirstName().equals(First) && getPatient(i).getLastName().equals(Last)) { return getPatient(i); }}
-			return new User("", "", "", "", "", "");
-		default: return new User("", "", "", "", "", "");// Shouldn't reach here
+        		if(getPatient(i).getFirstName().equals(First) && getPatient(i).getLastName().equals(Last)) { a.add(getPatient(i)); }} return a;
+		default: return a;// Shouldn't reach here
 		}
 	}
 	

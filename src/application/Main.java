@@ -83,7 +83,7 @@ public class Main extends Application {
             }
             else if(subStringIdentifier.compareTo("PATI") == 0)
             {
-            	System.out.println(currentLine);
+            	//System.out.println(currentLine);
             	currentLine = currentLine.substring(5); // remove the identifier from the line before splitting
             	String[] splitInfo = currentLine.split(":");
             	Patient patient = new Patient(splitInfo[0],splitInfo[1],splitInfo[2],splitInfo[3],splitInfo[4]);
@@ -101,14 +101,23 @@ public class Main extends Application {
             	patient.setHealthConcerns(splitInfo[18]);
             	patient.setPhysicalTestResults(splitInfo[19]);
             	patient.setImmunizationRecord(splitInfo[20]);
-            	//21 is Past visits
-            	//22 is the prescriptions
-            	//patient.setBloodPres(Integer.parseInt(splitInfo[16])); TODO make it a string
-            	patient.setAllergies(splitInfo[17]);
-            	patient.setHealthConcerns(splitInfo[18]);
-            	// 19 is physical test results
-            	//20 is immunization record
+            	
             	//21 is past visits
+            	String[] visits = splitInfo[21].split(";");
+            	if(visits[0].compareTo("") == 0)
+            	{
+            		//There are no visits, so we do nothing
+            	}
+            	else
+            	{
+            		for(int i = 0; i < visits.length; i++) // in this case we have at least 1 visit
+                	{
+                		String[] visitInfo = visits[i].split(","); // split the visits into the various parts
+                		//weight height temp bloodPressure,allergies, health concern physical test result, immunization records, prescription
+                		Visit visit = new Visit(Integer.parseInt(visitInfo[0]), visitInfo[1], Integer.parseInt(visitInfo[2]), visitInfo[3], visitInfo[4], visitInfo[5], visitInfo[6], visitInfo[7], null);
+                		patient.pastVisits.add(visit);
+                	} 	
+            	}
             	//22 is prescribed Medicine
             	Storage.addPatient(patient);
             }
