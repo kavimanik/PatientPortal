@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="448.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<AnchorPane fx:controller="application.Controller" prefHeight="448.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <BorderPane layoutX="6.0" layoutY="1.0" prefHeight="472.0" prefWidth="515.0">
          <bottom>
@@ -24,6 +24,6 @@
       <ComboBox fx:id="roleCombo" layoutX="152.0" layoutY="119.0" onMouseClicked="#setRoleItems" prefHeight="41.0" prefWidth="200.0" promptText="Select Role" visibleRowCount="2" />
       <TextField fx:id="tfUserName" layoutX="152.0" layoutY="187.0" prefHeight="41.0" prefWidth="200.0" promptText="Username" />
       <TextField fx:id="tfPassword" layoutX="152.0" layoutY="255.0" prefHeight="41.0" prefWidth="200.0" promptText="Password" />
-      <Button fx:id="buttonLogin" layoutX="226.0" layoutY="318.0" mnemonicParsing="false" onAction="#switchToUserHomePage" text="Login" />
+      <Button layoutX="226.0" layoutY="318.0" mnemonicParsing="false" onAction="#switchToUserHomePage" text="Login" />
    </children>
 </AnchorPane>
