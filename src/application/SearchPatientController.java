@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import JavaCode.*;
 
@@ -30,7 +31,9 @@ public class SearchPatientController {
 		lvSearches.getItems().clear();
 		String firstName = tfFirstName.getText();
 		String lastName = tfLastName.getText();
-	    
-	    
+		ArrayList<User> list = Storage.search("Patient", firstName, lastName);
+		for(int i = 0; i < list.size(); i++) {
+			lvSearches.getItems().add(list.get(i).getFirstName() + " " + list.get(i).getLastName() + " " + list.get(i).getBirth());
+		}
 	}
 }
