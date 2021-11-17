@@ -12,7 +12,7 @@ public class Patient extends User {
 	private int weight;
 	private String height;
 	private int temperature;
-	private int bloodPressure;
+	private String bloodPressure;
 	private String allergies;
 	private String healthConcerns;
 	private String physicalTestResults;
@@ -96,8 +96,10 @@ public class Patient extends User {
 	public void setFirstName(String name) { super.setFirstName(name); }
 	public void setLastName(String name) { super.setLastName(name); }
 	public void setUser(String user) { super.setUser(); }
-	public String setPass() { return super.getPass(); }
+	public void setPass(String pass) { super.setPass(); }
 	public void setBirthdate(String date) { super.setBirth(date); }
+	public void setPhysicalTestResults(String results) {physicalTestResults = results; }
+	public void setImmunizationRecord(String records) {immunizationRecords = records; }
 	
 	public void setEmail(String mail) { email = mail; }
 	public void setInsurance(String insure) { insurance = insure; }
@@ -107,7 +109,7 @@ public class Patient extends User {
 	public void setWeight(int w) {	weight = w; }
 	public void setHeight(String h) {	height = h; }
 	public void setTemp(int t) { temperature = t; }
-	public void setBloodPres(int bp) { bloodPressure = bp; }
+	public void setBloodPres(String bp) { bloodPressure = bp; }
 	public void setAllergies(String a) { allergies = a; }
 	public void setHealthConcerns(String hc) { healthConcerns = hc; }
 
@@ -128,7 +130,7 @@ public class Patient extends User {
 	public int getWeight() { return weight; }
 	public String getHeight() { return height; }
 	public int getTemp() { return temperature; }
-	public int getBloodPres() { return bloodPressure; }
+	public String getBloodPres() { return bloodPressure; }
 	public String getAllergies() { return allergies; }
 	public String getHealthConcerns() { return healthConcerns; }
 	

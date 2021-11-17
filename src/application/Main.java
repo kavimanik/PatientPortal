@@ -99,7 +99,7 @@ public class Main extends Application {
             	//atient.setBloodPres(Integer.parseInt(splitInfo[16])); TODO make it a string
             	patient.setAllergies(splitInfo[17]);
             	patient.setHealthConcerns(splitInfo[18]);
-            	// 19 is physical test results
+            	//19 is physical test results
             	//20 is immunization record
             	//21 is Past visits
             	//22 is the allergies

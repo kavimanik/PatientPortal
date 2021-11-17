@@ -11,7 +11,7 @@ public class Visit {
 	private int weight;
 	private String height;
 	private int bodyTemp;
-	private int bloodPressure;
+	private String bloodPressure;
 	private String allergies;
 	private String healthConcerns;
 	private String physicalTestResults;
@@ -21,7 +21,7 @@ public class Visit {
 	
 	
 
-	Visit(int w, String height2, int temp, int bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){
+	Visit(int w, String height2, int temp, String bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){
 		date = getDate();
 		weight = w;
 		height = height2;
