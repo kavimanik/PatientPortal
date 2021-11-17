@@ -103,6 +103,13 @@ public class Main extends Application {
             	patient.setImmunizationRecord(splitInfo[20]);
             	//21 is Past visits
             	//22 is the prescriptions
+            	//patient.setBloodPres(Integer.parseInt(splitInfo[16])); TODO make it a string
+            	patient.setAllergies(splitInfo[17]);
+            	patient.setHealthConcerns(splitInfo[18]);
+            	// 19 is physical test results
+            	//20 is immunization record
+            	//21 is past visits
+            	//22 is prescribed Medicine
             	Storage.addPatient(patient);
             }
         }
