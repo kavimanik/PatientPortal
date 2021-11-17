@@ -21,6 +21,6 @@
       <Button layoutX="352.0" layoutY="85.0" mnemonicParsing="false" onAction="#populateListView" prefHeight="31.0" prefWidth="69.0" text="Search" />
       <TextField fx:id="tfLastName" layoutX="185.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="Last Name" />
       <TextField fx:id="tfFirstName" layoutX="44.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="First Name" />
-      <ListView fx:id="lvSearches" layoutX="12.0" layoutY="136.0" prefHeight="327.0" prefWidth="494.0" />
+      <ListView fx:id="lvSearches" onMouseClicked="#handleMouseClick" layoutX="12.0" layoutY="136.0" prefHeight="327.0" prefWidth="494.0" />
    </children>
 </AnchorPane>
