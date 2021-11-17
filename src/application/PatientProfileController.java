@@ -62,12 +62,12 @@ public class PatientProfileController {
     @FXML
     public void setText(MouseEvent event) {
     	event.consume();
-    	Patient a = Storage.searchPatient(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
-    	ftName.setText(a.getFirstName()+ " " + a.getLastName());
-    	tfBirthday.setText(a.getBirth());
-    	ftPhoneNumber.setText(a.getPhoneNumber());
-    	ftEmail.setText(a.getEmail());
-    	ftInsurance.setText(a.getInsurance());
-    	ftPharmacy.setText(a.getPharmacy());
+    	//Patient a = Storage.searchPatient(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+    	//ftName.setText(a.getFirstName()+ " " + a.getLastName());
+    	//tfBirthday.setText(a.getBirth());
+    	//ftPhoneNumber.setText(a.getPhoneNumber());
+    	//ftEmail.setText(a.getEmail());
+    	//ftInsurance.setText(a.getInsurance());
+    	//ftPharmacy.setText(a.getPharmacy());
     }
 }
