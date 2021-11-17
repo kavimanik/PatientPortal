@@ -87,15 +87,15 @@ public class Main extends Application {
             	currentLine = currentLine.substring(5); // remove the identifier from the line before splitting
             	String[] splitInfo = currentLine.split(":");
             	Patient patient = new Patient(splitInfo[0],splitInfo[1],splitInfo[2],splitInfo[3],splitInfo[4]);
-            	patient.setPhoneNumber(Integer.parseInt(splitInfo[5]));
+            	patient.setPhoneNumber(splitInfo[5]);
             	patient.setEmail(splitInfo[6]);
             	patient.setInsurance(splitInfo[7]);
             	patient.setPharmacy(splitInfo[8]);
             	// splitInfo 9 and 10 are the doctors first/last name if they have one associated with them.
             	//splitInfo 11 and 12 are the nurse's first/last name if they have one associated with them.
-            	patient.setWeight(Integer.parseInt(splitInfo[13]));
+            	patient.setWeight(splitInfo[13]);
             	patient.setHeight(splitInfo[14]);
-            	patient.setTemp(Integer.parseInt(splitInfo[15]));
+            	patient.setTemp(splitInfo[15]);
             	patient.setBloodPres(splitInfo[16]); 
             	patient.setAllergies(splitInfo[17]);
             	patient.setHealthConcerns(splitInfo[18]);
@@ -114,7 +114,7 @@ public class Main extends Application {
                 	{
                 		String[] visitInfo = visits[i].split(","); // split the visits into the various parts
                 		//weight height temp bloodPressure,allergies, health concern physical test result, immunization records, prescription
-                		Visit visit = new Visit(Integer.parseInt(visitInfo[0]), visitInfo[1], Integer.parseInt(visitInfo[2]), visitInfo[3], visitInfo[4], visitInfo[5], visitInfo[6], visitInfo[7], null);
+                		Visit visit = new Visit(visitInfo[0], visitInfo[1], visitInfo[2], visitInfo[3], visitInfo[4], visitInfo[5], visitInfo[6], visitInfo[7], null);
                 		patient.pastVisits.add(visit);
                 	} 	
             	}

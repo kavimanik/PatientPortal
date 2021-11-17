@@ -8,9 +8,9 @@ public class Visit {
 
 	//private int date;
 	private String date;
-	private int weight;
+	private String weight;
 	private String height;
-	private int bodyTemp;
+	private String bodyTemp;
 	private String bloodPressure;
 	private String allergies;
 	private String healthConcerns;
@@ -21,7 +21,7 @@ public class Visit {
 	
 	
 
-	public Visit(int w, String height2, int temp, String bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){ //TODO change Date/prescription
+	public Visit(String w, String height2, String temp, String bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){ //TODO change Date/prescription
 		date = getDate();
 		weight = w;
 		height = height2;

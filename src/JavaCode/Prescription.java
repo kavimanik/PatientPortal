@@ -2,21 +2,21 @@ package JavaCode;
 public class Prescription 
 {
 	private String medName;
-	private int dosage;
+	private String dosage;
 
-	Prescription(){ this("", 0); }
-	Prescription(String med, int num){
+	public Prescription(){ this("", ""); }
+	public Prescription(String med, String num){
 		medName = med;
 		dosage = num;
 	}
 	
 	//Setter
 	public void setMedName(String med) { medName = med; }
-	public void setDosage(int num) { dosage = num; }
+	public void setDosage(String num) { dosage = num; }
 	
 	//Getter
 	public String getMedName(String med) { return medName; }
-	public int getDosage(int num) { return dosage; }
+	public String getDosage(int num) { return dosage; }
 
 	public String toString() { return "Med Name: " + medName + "\nDosage: " + dosage; }
 }

@@ -11,6 +11,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -21,6 +23,15 @@ public class PrescribeMedicationController {
 	
 	@FXML // fx:id="cbPatients"
 	private ComboBox<String> cbPatients;
+	
+	@FXML // fx:id="buttonAddPrescription"
+	private Button buttonAddPrescription;
+	
+	@FXML // fx:id="buttonSendToPharmacy"
+	private Button buttonSendToPharmacy;
+	
+	@FXML // fx:id="tfNewMedicationName"
+	private TextField tfNewMedicationName;
     
     @FXML
     public void setRoleItems(MouseEvent event) {
@@ -32,6 +43,37 @@ public class PrescribeMedicationController {
     	
     	cbDosageAmount.getItems().addAll("1", "2", "3", "4", "5");
     	cbDosageAmount.setVisibleRowCount(5);
+    }
+    
+    @FXML
+    private void addPresciption(ActionEvent event) throws IOException {
+		event.consume();
+	    Node node = (Node) event.getSource();
+	    Stage thisStage = (Stage) node.getScene().getWindow();
+	    
+    	// Gets Values for Prescription and Name of Patient from JavaFX
+    	String dosage = cbDosageAmount.getValue();
+    	String prescipt = tfNewMedicationName.getText();
+    	String[] name = cbPatients.getValue().split("\\s+");		// ["John", "Doe"]
+    	
+    	// Adds it to the Patient's prescribedMeds List
+    	Storage.searchPatient(name[0], name[1]).addAPrescription(prescipt, dosage);
+	    
+    	//Sends the Doctor back to the same PrescribeMeds Page
+        Parent loader = FXMLLoader.load(getClass().getResource("../PrescribeMedication.fxml"));
+	    thisStage.getScene().setRoot(loader);
+    }
+    
+    @FXML
+    private void sendToPharmacy(ActionEvent event) throws IOException {
+		
+    	//Sends the Doctor back to the main pages after sending the mediation to the Pharmacy
+		event.consume();
+	    Node node = (Node) event.getSource();
+	    Stage thisStage = (Stage) node.getScene().getWindow();
+	    //thisStage.hide();
+	    Parent loader = FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml"));
+	    thisStage.getScene().setRoot(loader);
     }
 
 }

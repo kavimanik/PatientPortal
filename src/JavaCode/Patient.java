@@ -3,15 +3,15 @@ import java.util.ArrayList;
 
 public class Patient extends User {
 
-	private int phoneNum;
+	private String phoneNum;
 	private String email;
 	private String insurance;
 	private String pharmacy;
 	private Doctor assignedDr;
 	private Nurse assignedNurse;
-	private int weight;
+	private String weight;
 	private String height;
-	private int temperature;
+	private String temperature;
 	private String bloodPressure;
 	private String allergies;
 	private String healthConcerns;
@@ -29,10 +29,17 @@ public class Patient extends User {
 	public Patient() { this("", "", "", "", ""); }
 	public Patient(String first, String last, String user, String pass, String birth) {
 		super(first, last, user, pass, "Patient", birth);
-		phoneNum = 0;
+		phoneNum = "";
 		email = "";
 		insurance = "";
 		pharmacy = "";
+		weight = "";
+		height = "";
+		temperature = "";
+		allergies = "";
+		healthConcerns = "";
+		physicalTestResults = "";
+		immunizationRecords = "";
 		pastVisits = new ArrayList<Visit>();
 		assignedDr = null;
 		assignedNurse = null;
@@ -90,9 +97,15 @@ public class Patient extends User {
 		pastVisits.add(a);
 	}
 	
+	// Adds a Prescription to the list
+	public void addAPrescription(String name, String dosage) {
+		Prescription a = new Prescription(name, dosage);
+		prescribedMeds.add(a);
+	}
+	
 	
 	//Setters
-	public void setPhoneNumber(int num) { phoneNum = num; }
+	public void setPhoneNumber(String num) { phoneNum = num; }
 	public void setFirstName(String name) { super.setFirstName(name); }
 	public void setLastName(String name) { super.setLastName(name); }
 	public void setUser(String user) { super.setUser(); }
@@ -106,15 +119,15 @@ public class Patient extends User {
 	public void setPharmacy(String pharm) { pharmacy = pharm; }
 	public void setDoctor(Doctor d) { assignedDr = d; }
 	public void setNurse(Nurse n) { assignedNurse = n; }
-	public void setWeight(int w) {	weight = w; }
+	public void setWeight(String w) {	weight = w; }
 	public void setHeight(String h) {	height = h; }
-	public void setTemp(int t) { temperature = t; }
+	public void setTemp(String t) { temperature = t; }
 	public void setBloodPres(String bp) { bloodPressure = bp; }
 	public void setAllergies(String a) { allergies = a; }
 	public void setHealthConcerns(String hc) { healthConcerns = hc; }
 
 	// Getters
-	public int getPhoneNumber() { return phoneNum; }
+	public String getPhoneNumber() { return phoneNum; }
 	public String getFirstName() { return super.getFirstName(); }
 	public String getLastName() { return super.getLastName(); }
 	public String getUser() { return super.getUser(); }
@@ -127,9 +140,9 @@ public class Patient extends User {
 	public String getPharmacy() { return pharmacy; }
 	public Doctor getDoctor() { return assignedDr; }
 	public Nurse getNurse() { return assignedNurse; }
-	public int getWeight() { return weight; }
+	public String getWeight() { return weight; }
 	public String getHeight() { return height; }
-	public int getTemp() { return temperature; }
+	public String getTemp() { return temperature; }
 	public String getBloodPres() { return bloodPressure; }
 	public String getAllergies() { return allergies; }
 	public String getHealthConcerns() { return healthConcerns; }
