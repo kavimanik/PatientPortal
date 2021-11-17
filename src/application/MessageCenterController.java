@@ -31,10 +31,13 @@ public class MessageCenterController {
 	@FXML
     private void sendMsgButton(ActionEvent event) throws IOException {
         event.consume();
+        
+        // Pulls the information from the JavaFx Page
         String msg = textMessage.getText();
         String toPerson = cbDocOrNurse.getValue();
         Patient a = Storage.searchPatient(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
         
+        // Determines the receiver of the msg
         if(toPerson == "Doctor") {
         	// Sends Msg to Doctor
         	a.docMessage("Doctor", msg);

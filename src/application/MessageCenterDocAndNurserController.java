@@ -30,11 +30,13 @@ public class MessageCenterDocAndNurserController {
 	@FXML
     private void sendMsgButton(ActionEvent event) throws IOException {
         event.consume();
+        
+        // Pulls the information from the JavaFx Page
         String msg = textMessage.getText();
         String[] patient = cbPatient.getValue().split("\\s+");
-        
         Patient a = Storage.searchPatient(patient[0], patient[1]);
         
+        // Determines the receiver of the msg
         switch(Storage.getCurrentUser().getRole()) {
         case "Doctor":
         	a.docMessage("Doctor", msg);

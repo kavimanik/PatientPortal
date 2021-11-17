@@ -29,6 +29,16 @@ public class DoctorPageController {
     }
 	
 	@FXML
+    private void switchToMessageCenter(ActionEvent event) throws IOException {
+        event.consume();
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+        //thisStage.hide();
+        Parent loader = FXMLLoader.load(getClass().getResource("../MessageCenterDocAndNurse.fxml"));
+        thisStage.getScene().setRoot(loader);
+    }
+	
+	@FXML
     private void switchToPrescribeMedication(ActionEvent event) throws IOException {
         event.consume();
         Node node = (Node) event.getSource();

@@ -108,7 +108,7 @@ public class PatientMedicalInfoController {
         case "Patient":
         	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml")));
         	break;
-        default: break; // Should never get here
+        default: System.out.println("Didn't Update"); break; // Should never get here
         }
 	}
 	
