@@ -21,7 +21,7 @@ public class Visit {
 	
 	
 
-	public Visit(int w, String height2, int temp, String bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){
+	public Visit(int w, String height2, int temp, String bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){ //TODO change Date/prescription
 		date = getDate();
 		weight = w;
 		height = height2;

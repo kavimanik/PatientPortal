@@ -1,4 +1,4 @@
 DOCI John:Smith;JoshSmith1,BruhHill."Doctor"/01022003
 DOCI Brandon:Tran;BrondonTron15,S0ccerMan!ac."Doctor"/01132002
 NURI Kavi:Maniack;BrawlStarPlayer,BuildPath."Nurse"/11162021
-PATI Justin:Bui:JustDon't:D0gWater:01011990:1234567890:JustinBooey@gmail.com:StateFarm:CVS:John:Smith:None:None:130:5'13":86:150/40:Devil's Lettuce:N/A:Good:Bovid::Advair,Grog
+PATI Justin:Bui:JustDon't:D0gWater:01011990:1234567890:JustinBooey@gmail.com:StateFarm:CVS:John:Smith:None:None:130:5'13":86:150/40:Devil's Lettuce:N/A:Good:Bovid:150,5'12",90,150/20,N/A,asthma,Great,SmallPox,N/A;160,5'11",80,90/30,Cats,Balding,Poor,Flu,N/A:Advair,Grog

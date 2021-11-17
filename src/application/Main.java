@@ -83,7 +83,7 @@ public class Main extends Application {
             }
             else if(subStringIdentifier.compareTo("PATI") == 0)
             {
-            	System.out.println(currentLine);
+            	//System.out.println(currentLine);
             	currentLine = currentLine.substring(5); // remove the identifier from the line before splitting
             	String[] splitInfo = currentLine.split(":");
             	Patient patient = new Patient(splitInfo[0],splitInfo[1],splitInfo[2],splitInfo[3],splitInfo[4]);
