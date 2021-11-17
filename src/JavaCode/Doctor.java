@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Doctor extends Nurse {
 
-	public ArrayList<Patient> patientList;
+	public ArrayList<Patient> patientList; //each doctor has a list of their patients 
 	
 	//Constructor
 	public Doctor(String first, String last, String user, String pass, String role, String birth) { super(first, last, user, pass, "Doctor", birth); }
@@ -17,11 +17,11 @@ public class Doctor extends Nurse {
 	public void addPatient(String newPatient) {
 		Patient a = searchPatient(newPatient);
 		patientList.add(a);
-		a.setDoctor(this);
+		a.setDoctor(this); //set the patient's doctor as the current doctor
 	}
 	public void removePatient(String removedPatient) {
 		Patient a = searchPatient(removedPatient);
-		a.setDoctor(null);
+		a.setDoctor(null); //patient is no longer associated with a doctor
 		patientList.remove(a);
 	}
 	public String toString()
@@ -30,5 +30,5 @@ public class Doctor extends Nurse {
 	}
 	
 	// Message Patient
-	public void msgPatient(Patient p, String msg) { p.docMessage(msg, "Doctor"); }
+	public void msgPatient(Patient p, String msg) { p.docMessage(msg, "Doctor"); } //doctors can only message patients
 }

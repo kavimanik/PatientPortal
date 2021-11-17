@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Nurse extends User {
 	
-	public ArrayList<Patient> patientList;
+	public ArrayList<Patient> patientList; //each nurse has a list of their patients
 	public Patient currentPatient;
 	
 	//Constructor
@@ -20,17 +20,15 @@ public class Nurse extends User {
 	
 	public ArrayList<Patient> getAllPatients() { return patientList; }
 
+	//Search for a Patient
+	//search using just patient's name
 	public Patient searchPatient(String patientName) {
 		for(int i = 0; i < patientList.size(); i++) {
 			if(patientList.get(i).getFirstName().compareTo(patientName) == 0) {
 				return patientList.get(i);
 			}
 		}
-		return new Patient();
-	}
-
-	public Patient searchPatient(String patientName, int bday) {
-		return new Patient();
+		return new Patient(); //if the patient does not exist, return a new Patient object 
 	}
 
 	// Changes to Patient List
