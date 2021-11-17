@@ -18,7 +18,7 @@ public class Patient extends User {
 	private String physicalTestResults;
 	private String immunizationRecords;
 	
-	private ArrayList<Visit> pastVisits;
+	public ArrayList<Visit> pastVisits;
 	
 	private ArrayList<Prescription> prescribedMeds;
 	
