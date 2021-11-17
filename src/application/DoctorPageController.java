@@ -1,5 +1,7 @@
 package application;
 
+import JavaCode.*;
+
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -7,9 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.ComboBox;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class DoctorPageController {
+	
+	@FXML // fx:id="cbPatients"
+	private ComboBox<String> cbPatients;
+	
 	@FXML
     private void switchToSearchPatient(ActionEvent event) throws IOException {
         event.consume();
@@ -28,5 +36,14 @@ public class DoctorPageController {
         //thisStage.hide();
         Parent loader = FXMLLoader.load(getClass().getResource("../PrescribeMedication.fxml"));
         thisStage.getScene().setRoot(loader);
+    }
+	
+    @FXML
+    public void setRoleItems(MouseEvent event) {
+    	event.consume();
+    	User a = Storage.getCurrentUser();
+    	Doctor b = Storage.searchDoc(a.getFirstName(), a.getLastName());
+    	cbPatients.getItems().addAll("Doctor", "Nurse", "Patient");
+    	cbPatients.setVisibleRowCount(3);
     }
 }
