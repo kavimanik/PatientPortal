@@ -18,10 +18,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="buttonSearch" layoutX="437.0" layoutY="85.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="69.0" text="Search" />
-      <TextField fx:id="ftLastName" layoutX="153.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="Last Name" />
-      <TextField fx:id="ftFirstName" layoutX="12.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="First Name" />
-      <ListView fx:id="tfSearches" layoutX="12.0" layoutY="136.0" prefHeight="327.0" prefWidth="494.0" />
-      <TextField fx:id="ftBirthdate" layoutX="295.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="Birthdate" />
+      <Button fx:id="buttonSearch" layoutX="352.0" layoutY="85.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="69.0" text="Search" />
+      <TextField fx:id="ftLastName" layoutX="185.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="Last Name" />
+      <TextField fx:id="ftFirstName" layoutX="44.0" layoutY="85.0" prefHeight="31.0" prefWidth="135.0" promptText="First Name" />
+      <ListView fx:id="lvSearches" layoutX="12.0" layoutY="136.0" prefHeight="327.0" prefWidth="494.0" />
    </children>
 </AnchorPane>
