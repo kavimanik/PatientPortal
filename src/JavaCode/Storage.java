@@ -24,7 +24,7 @@ public class Storage {
 	public static Nurse getNurse(int i) { return allNurses.get(i); }
 	public static Doctor getDoctor(int i) { return allDoctors.get(i); }
 	public static Patient getPatient(int i) { return allPatients.get(i); }
-	public static User getCurrentUser(int i) { return currentUser; }
+	public static User getCurrentUser() { return currentUser; }
 	public static ArrayList<Patient> getAllPatients() { return allPatients; }
 	
 	// Gets the Size of any of the ArrayLists with "Doctor", "Nurse" or "Patient"
@@ -37,14 +37,13 @@ public class Storage {
 	}}
 	
 	// Adder, adds a class to the respective linkedList
-	public static void addNurse(Nurse i) { allNurses.add(i);
-	System.out.println();}
+	public static void addNurse(Nurse i) { allNurses.add(i); }
 	public static void addDoctor(Doctor i) { allDoctors.add(i); }
 	public static void addPatient(Patient i) { allPatients.add(i); }
 	public static void setCurrentUser(User i) { currentUser = i; }
 	
 	// Search Function, returns empty User not found
-	public static ArrayList<User> Search(String role, String First, String Last, String Birth) {
+	public static ArrayList<User> search(String role, String First, String Last) {
 		ArrayList<User> a = new ArrayList<User>();
 		switch(role) {
 		case "Doctor": 
@@ -59,6 +58,26 @@ public class Storage {
 		default: return a;// Shouldn't reach here
 		}
 	}
+	
+	public static Doctor searchDoc(String First, String Last) {
+		for(int i = 0; i < allDoctors.size(); i++) {
+    		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getDoctor(i); }}
+		// If the Doctor isn't found
+		return new Doctor("", "", "", "", "", "");
+	}
+	public static Nurse searchNurse(String First, String Last) {
+		for(int i = 0; i < allDoctors.size(); i++) {
+    		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getNurse(i); }}
+		// If the Nurse isn't found
+		return new Nurse("", "", "", "", "", "");
+	}
+	public static Patient searchPatient(String First, String Last) {
+		for(int i = 0; i < allDoctors.size(); i++) {
+    		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getDoctor(i); }}
+		// If the Patient isn't found
+		return new Patient("", "", "", "", "");
+	}
+	
 	
 	//Prints all the elements of an array specified by the role
 	public static void print(String role) {
