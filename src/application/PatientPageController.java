@@ -23,6 +23,16 @@ public class PatientPageController {
     }
 	
 	@FXML
+    private void switchToMessagePortal(ActionEvent event) throws IOException {
+        event.consume();
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+        //thisStage.hide();
+        Parent loader = FXMLLoader.load(getClass().getResource("../MessageCenter.fxml"));
+        thisStage.getScene().setRoot(loader);
+    }
+	
+	@FXML
     private void switchToPatientMedicalInfo(ActionEvent event) throws IOException {
         event.consume();
         Node node = (Node) event.getSource();
