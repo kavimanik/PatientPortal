@@ -73,7 +73,7 @@ public class Storage {
 	}
 	public static Patient searchPatient(String First, String Last) {
 		for(int i = 0; i < allDoctors.size(); i++) {
-    		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getDoctor(i); }}
+    		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getPatient(i); }}
 		// If the Patient isn't found
 		return new Patient("", "", "", "", "");
 	}
