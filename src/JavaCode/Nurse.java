@@ -12,9 +12,9 @@ public class Nurse extends User {
 	
 	//Change Patient Information
 	public void setWeight(Patient patient, int newWeight) { patient.setWeight(newWeight); }
-	public void setHeight(Patient patient, int newHeight) { patient.setHeight(newHeight); }
+	public void setHeight(Patient patient, String newHeight) { patient.setHeight(newHeight); }
 	public void setBodyTemp(Patient patient, int newTemp) { patient.setTemp(newTemp); }
-	public void setBloodPressure(Patient patient, int newPres) { patient.setBloodPres(newPres); }
+	public void setBloodPressure(Patient patient, String newPres) { patient.setBloodPres(newPres); }
 	public void setAllergies(Patient patient, String newAllergies) { patient.setAllergies(newAllergies); }
 	public void setHealthConcerns(Patient patient, String newConcerns) { patient.setHealthConcerns(newConcerns); }
 
