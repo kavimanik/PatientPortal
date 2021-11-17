@@ -22,5 +22,6 @@
       <TextField fx:id="tfConfirmPassword" layoutX="164.0" layoutY="346.0" promptText="Confirm Password" />
       <Button fx:id="buttonCreateAccount2" layoutX="175.0" layoutY="407.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="31.0" prefWidth="127.0" text="Create Account" />
       <ComboBox fx:id="roleCombo2" layoutX="139.0" layoutY="76.0" onMouseClicked="#setRoleItems" prefHeight="41.0" prefWidth="200.0" promptText="Select Role" visibleRowCount="2" />
+      <Label fx:id="tfErrorText" alignment="CENTER" contentDisplay="CENTER" layoutX="78.0" layoutY="371.0" prefHeight="37.0" prefWidth="321.0" textAlignment="CENTER" />
    </children>
 </AnchorPane>

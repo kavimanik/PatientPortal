@@ -27,6 +27,20 @@ public class Storage {
 	public static User getCurrentUser() { return currentUser; }
 	public static ArrayList<Patient> getAllPatients() { return allPatients; }
 	
+	// Checks if this username and password combination already exists in array list
+	public static boolean exisit(String role, String user, String pass) {
+		switch(role) {
+		case "Doctor":
+			for(int i = 0; i < allDoctors.size(); i++) { if(getDoctor(i).getUser().equals(user) && getDoctor(i).getPass().equals(pass)) { return true; }} break;
+		case "Nurse":
+			for(int i = 0; i < allNurses.size(); i++) { if(getNurse(i).getUser().equals(user) && getNurse(i).getPass().equals(pass)) { return true; }} break;
+		case "Patient":
+			for(int i = 0; i < allDoctors.size(); i++) { if(getDoctor(i).getUser().equals(user) && getDoctor(i).getPass().equals(pass)) { return true; }} break;
+		default: //Should not get here
+		}
+		return false;
+	}
+	
 	// Gets the Size of any of the ArrayLists with "Doctor", "Nurse" or "Patient"
 	public static int getSize(String a) {
 		switch(a) {

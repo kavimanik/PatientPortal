@@ -11,9 +11,9 @@ public class Nurse extends User {
 	public Nurse(String first, String last, String user, String pass, String role, String birth) { super(first, last, user, pass, role, birth); }
 	
 	//Change Patient Information
-	public void setWeight(Patient patient, int newWeight) { patient.setWeight(newWeight); }
+	public void setWeight(Patient patient, String newWeight) { patient.setWeight(newWeight); }
 	public void setHeight(Patient patient, String newHeight) { patient.setHeight(newHeight); }
-	public void setBodyTemp(Patient patient, int newTemp) { patient.setTemp(newTemp); }
+	public void setBodyTemp(Patient patient, String newTemp) { patient.setTemp(newTemp); }
 	public void setBloodPressure(Patient patient, String newPres) { patient.setBloodPres(newPres); }
 	public void setAllergies(Patient patient, String newAllergies) { patient.setAllergies(newAllergies); }
 	public void setHealthConcerns(Patient patient, String newConcerns) { patient.setHealthConcerns(newConcerns); }

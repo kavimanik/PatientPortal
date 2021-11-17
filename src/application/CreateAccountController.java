@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -36,6 +37,10 @@ public class CreateAccountController {
 	
 	@FXML // fx:id="tfConfirmPassword"
 	private TextField tfConfirmPassword;
+	
+	@FXML // fx:id="tfErrorText"
+	private Label tfErrorText;
+	
 	
 	@FXML
     public void setRoleItems(MouseEvent event) {
@@ -72,24 +77,30 @@ public class CreateAccountController {
             return;
 		}
 		
-		if(role.equals("Doctor")) {
-			Doctor doctor = new Doctor(firstName, lastName, userName, password, role, birthday);
-			Storage.addDoctor(doctor);
+		if(!Storage.exisit(role, userName, password)) {
+			if(role.equals("Doctor")) {
+				Doctor doctor = new Doctor(firstName, lastName, userName, password, role, birthday);
+				Storage.addDoctor(doctor);
+			}
+			else if(role.equals("Nurse") && !Storage.exisit("Nurse", userName, password)) {
+				Nurse nurse = new Nurse(firstName, lastName, userName, password, role, birthday);
+				Storage.addNurse(nurse);
+			}
+			else if(role.equals("Patient") && !Storage.exisit("Patient", userName, password)) {
+				Patient patient = new Patient(firstName, lastName, userName, password, birthday);
+				Storage.addPatient(patient);
+			}
+			System.out.println("User added");
+	        event.consume();
+	        Node node = (Node) event.getSource();
+	        Stage thisStage = (Stage) node.getScene().getWindow();
+	        //thisStage.hide();
+	        Parent loader = FXMLLoader.load(getClass().getResource("../login.fxml"));
+	        thisStage.getScene().setRoot(loader);
 		}
-		else if(role.equals("Nurse")) {
-			Nurse nurse = new Nurse(firstName, lastName, userName, password, role, birthday);
-			Storage.addNurse(nurse);
+		else {
+			tfErrorText.setText("Please Pick a differnt combination for a username and password");
 		}
-		else if(role.equals("Patient")) {
-			Patient patient = new Patient(firstName, lastName, userName, password, birthday);
-			Storage.addPatient(patient);
-		}
-		System.out.println("User added");
-        event.consume();
-        Node node = (Node) event.getSource();
-        Stage thisStage = (Stage) node.getScene().getWindow();
-        //thisStage.hide();
-        Parent loader = FXMLLoader.load(getClass().getResource("../login.fxml"));
-        thisStage.getScene().setRoot(loader);
+
     }
 }
