@@ -17,6 +17,8 @@ public class Nurse extends User {
 	public void setBloodPressure(Patient patient, String newPres) { patient.setBloodPres(newPres); }
 	public void setAllergies(Patient patient, String newAllergies) { patient.setAllergies(newAllergies); }
 	public void setHealthConcerns(Patient patient, String newConcerns) { patient.setHealthConcerns(newConcerns); }
+	
+	public ArrayList<Patient> getAllPatients() { return patientList; }
 
 	public Patient searchPatient(String patientName) {
 		for(int i = 0; i < patientList.size(); i++) {

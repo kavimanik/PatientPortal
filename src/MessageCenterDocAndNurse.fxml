@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="195.0" text="KHRAB Medical Portal">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="lableTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="178.0" layoutY="41.0" prefHeight="37.0" prefWidth="161.0" text="Message Portal" />
+      <TextField fx:id="tfMessageBoard" alignment="TOP_LEFT" layoutX="14.0" layoutY="78.0" prefHeight="306.0" prefWidth="489.0" promptText="Messages" />
+      <TextField fx:id="textMessage" layoutX="14.0" layoutY="427.0" prefHeight="31.0" prefWidth="420.0" promptText="Type Message..." />
+      <Button fx:id="buttonSend" layoutX="441.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="62.0" text="Send" />
+      <ComboBox fx:id="cbPatient" layoutX="14.0" layoutY="391.0" prefHeight="31.0" prefWidth="420.0" promptText="Select Patient" />
+   </children>
+</AnchorPane>
