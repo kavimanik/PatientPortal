@@ -80,10 +80,35 @@ public class Main extends Application {
             {
             	Nurse nurse = new Nurse( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":")+1,currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";")+1,currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(",")+1,currentLine.indexOf(".")), "Nurse", currentLine.substring(currentLine.indexOf("/")+1));
             	Storage.addNurse(nurse);
-            }   
+            }
+            else if(subStringIdentifier.compareTo("PATI") == 0)
+            {
+            	System.out.println(currentLine);
+            	currentLine = currentLine.substring(5); // remove the identifier from the line before splitting
+            	String[] splitInfo = currentLine.split(":");
+            	Patient patient = new Patient(splitInfo[0],splitInfo[1],splitInfo[2],splitInfo[3],splitInfo[4]);
+            	patient.setPhoneNumber(Integer.parseInt(splitInfo[5]));
+            	patient.setEmail(splitInfo[6]);
+            	patient.setInsurance(splitInfo[7]);
+            	patient.setPharmacy(splitInfo[8]);
+            	// splitInfo 9 and 10 are the doctors first/last name if they have one associated with them.
+            	//splitInfo 11 and 12 are the nurse's first/last name if they have one associated with them.
+            	patient.setWeight(Integer.parseInt(splitInfo[13]));
+            	patient.setHeight(splitInfo[14]);
+            	patient.setTemp(Integer.parseInt(splitInfo[15]));
+            	//atient.setBloodPres(Integer.parseInt(splitInfo[16])); TODO make it a string
+            	patient.setAllergies(splitInfo[17]);
+            	patient.setHealthConcerns(splitInfo[18]);
+            	// 19 is physical test results
+            	//20 is immunization record
+            	//21 is Past visits
+            	//22 is the allergies
+            	Storage.addPatient(patient);
+            }
         }
-		
+		System.out.println(Storage.getPatient(0).toString());
 		//System.out.println(Storage.getDoctor(0).toString());
+		//System.out.println(Storage.getDoctor(1).toString());
         //System.out.println(Storage.getNurse(0).toString());
 		scanner.close();
 		return true; // we've successfully read the file

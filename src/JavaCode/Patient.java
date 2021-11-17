@@ -10,7 +10,7 @@ public class Patient extends User {
 	private Doctor assignedDr;
 	private Nurse assignedNurse;
 	private int weight;
-	private int height;
+	private String height;
 	private int temperature;
 	private int bloodPressure;
 	private String allergies;
@@ -105,7 +105,7 @@ public class Patient extends User {
 	public void setDoctor(Doctor d) { assignedDr = d; }
 	public void setNurse(Nurse n) { assignedNurse = n; }
 	public void setWeight(int w) {	weight = w; }
-	public void setHeight(int h) {	height = h; }
+	public void setHeight(String h) {	height = h; }
 	public void setTemp(int t) { temperature = t; }
 	public void setBloodPres(int bp) { bloodPressure = bp; }
 	public void setAllergies(String a) { allergies = a; }
@@ -126,7 +126,7 @@ public class Patient extends User {
 	public Doctor getDoctor() { return assignedDr; }
 	public Nurse getNurse() { return assignedNurse; }
 	public int getWeight() { return weight; }
-	public int getHeight() { return height; }
+	public String getHeight() { return height; }
 	public int getTemp() { return temperature; }
 	public int getBloodPres() { return bloodPressure; }
 	public String getAllergies() { return allergies; }
@@ -140,9 +140,9 @@ public class Patient extends User {
 		String allPastVisits, allPrescribedMeds, allDocMsg, allNurseMsg;
 		allPastVisits = ""; allPrescribedMeds = ""; allDocMsg = ""; allNurseMsg = "";
 		for(int i = 0; i < pastVisits.size(); i++){ allPastVisits = allPastVisits + pastVisits.get(i).toString() + "\n"; }
-		for(int i = 0; i < prescribedMeds.size(); i++){ allPrescribedMeds = allPrescribedMeds + prescribedMeds.get(i).toString() + "\n"; }
-		for(int i = 0; i < docMsg.size(); i++){ allDocMsg = allDocMsg + docMsg.get(i)+ "\n"; }
-		for(int i = 0; i < nurseMsg.size(); i++){ allNurseMsg = allNurseMsg + nurseMsg.get(i)+ "\n"; }
+		//for(int i = 0; i < prescribedMeds.size(); i++){ allPrescribedMeds = allPrescribedMeds + prescribedMeds.get(i).toString() + "\n"; }
+		//for(int i = 0; i < docMsg.size(); i++){ allDocMsg = allDocMsg + docMsg.get(i)+ "\n"; }
+		//for(int i = 0; i < nurseMsg.size(); i++){ allNurseMsg = allNurseMsg + nurseMsg.get(i)+ "\n"; }
 		
 		/* First Name: Jon
 		 * Last Name: Smith
@@ -168,18 +168,12 @@ public class Patient extends User {
 		 * PastVisits:
 		 * 
 		 * Prescribed Meds:
-		 * 
-		 * Doctor Messages:
-		 * 
-		 * Nurse Messages:
 		*/
 		return "First name: " + this.getFirstName() + "\nLast Name: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " + this.getPass() 
 		+ "\nBirth: " + this.getBirth() + "\nPhone Num: " + this.phoneNum + "\nEmail: " + this.email + "\nInsurance: " + this.insurance + "\nPharmacy: " + this.pharmacy 
-		+ "\nDoctor First: " + this.getDoctor().getFirstName() + "\nDoctor Last: " +  this.getDoctor().getLastName() + "\nNurse First: " + this.getNurse().getFirstName() 
-		+ "\nNurse Last: " +  this.getNurse().getLastName()  + "\nWeight: " + this.weight + "\nHeight: " + this.height + "\nBodyTemp: " + this.temperature 
+		+ "\nWeight: " + this.weight + "\nHeight: " + this.height + "\nBodyTemp: " + this.temperature 
 		+ "\nBloodPressure: " + this.bloodPressure + "\nAllergies: " + this.allergies  + "\nHealth Concerns: " + this.healthConcerns + "\nPhysical Test Results: " + 
-		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits: " + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds
-		+ "\nDoctor Msg: "  + allDocMsg + "\nNurse Msg: " + allNurseMsg;
+		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits: " + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds;
 	}
 
 }

@@ -48,11 +48,11 @@ public class Nurse extends User {
 	
 	public String toString()
 	{
-		String allPatients = "";
-		for(int i = 0; i < patientList.size(); i++){ allPatients = allPatients + "First Name: " +  patientList.get(i).getFirstName() + "\nLast Name: " + patientList.get(i).getLastName() 
-				+ "Birthdate: " +  patientList.get(i).getBirth() + '\n'; }
+		//String allPatients = "";
+		//for(int i = 0; i < patientList.size() -1; i++){ allPatients = allPatients + "First Name: " +  patientList.get(i).getFirstName() + "\nLast Name: " + patientList.get(i).getLastName() 
+			//	+ "Birthdate: " +  patientList.get(i).getBirth() + '\n'; }
 		
 		return "First name: " + this.getFirstName() + "\nLastName: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " 
-	+ this.getPass() + "\nBirth: " + this.getBirth() + "\nPatients: " + allPatients;
+	+ this.getPass() + "\nBirth: " + this.getBirth();
 	}
 }

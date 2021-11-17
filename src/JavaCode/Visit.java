@@ -9,7 +9,7 @@ public class Visit {
 	//private int date;
 	private String date;
 	private int weight;
-	private int height;
+	private String height;
 	private int bodyTemp;
 	private int bloodPressure;
 	private String allergies;
@@ -21,10 +21,10 @@ public class Visit {
 	
 	
 
-	Visit(int w, int h, int temp, int bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){
+	Visit(int w, String height2, int temp, int bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){
 		date = getDate();
 		weight = w;
-		height = h;
+		height = height2;
 		bodyTemp = temp;
 		bloodPressure = bp;
 		this.allergies = allergies;
