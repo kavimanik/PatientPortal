@@ -213,7 +213,7 @@ public class Patient extends User {
 		+ doctorToString + nurseToString + "\nWeight: " + this.weight + "\nHeight: " + this.height + "\nBodyTemp: " + this.temperature 
 		+ "\nBloodPressure: " + this.bloodPressure + "\nAllergies: " + this.allergies  + "\nHealth Concerns: " + this.healthConcerns + "\nPhysical Test Results: " + 
 		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits:\n" + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds + 
-		"\nDoctor Messages:\n " + allDocMsg + "\nNurse Messages:\n " + allNurseMsg;
+		"\nDoctor Messages:\n" + allDocMsg + "\nNurse Messages:\n" + allNurseMsg;
 	}
 
 }

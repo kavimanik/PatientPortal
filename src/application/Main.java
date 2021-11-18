@@ -175,7 +175,7 @@ public class Main extends Application {
             	{
                 	for(int i = 0; i < nurseMessages.length; i++)
                 	{
-                		patient.addNurseMessage(nurseMessages[i]);	
+                		patient.addNurseMessage(nurseMessages[i]);
                 	}	
             	}
             	
