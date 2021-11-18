@@ -17,6 +17,6 @@
       <TextField fx:id="tfMessageBoard" alignment="TOP_LEFT" layoutX="14.0" layoutY="78.0" prefHeight="306.0" prefWidth="475.0" promptText="Messages" />
       <TextField fx:id="textMessage" layoutX="14.0" layoutY="427.0" prefHeight="31.0" prefWidth="412.0" promptText="Type Message..." />
       <Button fx:id="buttonSend" layoutX="427.0" layoutY="427.0" mnemonicParsing="false" onAction="#sendMsgButton" prefHeight="31.0" prefWidth="62.0" text="Send" />
-      <ComboBox fx:id="cbDocOrNurse" layoutX="14.0" layoutY="391.0" prefHeight="31.0" prefWidth="412.0" promptText="Doctor or Nurse" />
+      <ComboBox fx:id="cbDocOrNurse" onMouseClicked="#setRoleItems" layoutX="14.0" layoutY="391.0" prefHeight="31.0" prefWidth="412.0" promptText="Doctor or Nurse" />
    </children>
 </AnchorPane>
