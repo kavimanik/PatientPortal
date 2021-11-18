@@ -30,22 +30,33 @@ public class SearchPatientController {
 	private TextField tfFirstName;
 	
 	@FXML
+	//code for list view
+	//all patients with the same first and last name (as the one that was entered) will be displayed in the list view
 	private void populateListView(ActionEvent event) throws IOException {
 		event.consume();
 		lvSearches.getItems().clear();
+		
+		//get the information from the text fields
 		String firstName = tfFirstName.getText();
 		String lastName = tfLastName.getText();
+		
+		//search for the patient with same name
 		ArrayList<User> list = Storage.search("Patient", firstName, lastName);
+		
+		//display the patients and their birthdays in the list view
 		for(int i = 0; i < list.size(); i++) {
 			lvSearches.getItems().add(list.get(i).getFirstName() + " " + list.get(i).getLastName() + " " + list.get(i).getBirth());
 		}
 	}
 	
 	@FXML
+	//code for the selecting one of the patients from the list view
 	private void handleMouseClick(MouseEvent event) throws IOException {
 		event.consume();
+		//the line (patient's first name, last name, and birthday) that was selected from the list view
 		String patientName = lvSearches.getSelectionModel().getSelectedItem().toString();
 		
+		//find the index of the character where the birthday starts 
 		int count = 0;
 		for(int j = 0; j < patientName.length(); j++) {
 			if(Character.isDigit(patientName.charAt(j))) {
@@ -53,8 +64,11 @@ public class SearchPatientController {
 				break;
 			}
 		}
+		
+		//string with only the patient's name
 		String fullName = patientName.substring(0,count-1);
 		
+		//separating the name into first and last
 		count = 0;
 		for(int i = 0; i < fullName.length(); i++) {
 			if(fullName.charAt(i) == ' '){
@@ -66,13 +80,18 @@ public class SearchPatientController {
 		String firstName = fullName.substring(0,count);
 		String lastName = fullName.substring(count+1,fullName.length());
 		
+		//search for the patient 
 		Patient patient = Storage.searchPatient(firstName, lastName);
 		
+		//send the user to the patient's medical information page 
+		//the page should be updated with the patient's most recent information 
 		Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
         AnchorPane loader = FXMLLoader.load(getClass().getResource("../PatientMedicalInfo.fxml"));
         thisStage.getScene().setRoot(loader);
         ObservableList<Node> list = loader.getChildren();
+        
+        //setting the text fields with the patient's most recent information 
         for(int i = 0; i < list.size(); i++) {
         	if(list.get(i).getId() != null && list.get(i).getId().equals("tfPatientName")) {
         		TextField tfPatientName = (TextField) list.get(i);
@@ -93,10 +112,6 @@ public class SearchPatientController {
         	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfBloodPressure")) {
         		TextField tfBloodPressure = (TextField) list.get(i);
         		tfBloodPressure.setText(patient.getBloodPres());
-        	}
-        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfKnownAllergies")) {
-        		TextField tfAllergies = (TextField) list.get(i);
-        		tfAllergies.setText(patient.getAllergies());
         	}
         	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfKnownAllergies")) {
         		TextField tfAllergies = (TextField) list.get(i);

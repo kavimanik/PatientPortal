@@ -115,8 +115,18 @@ public class Main extends Application {
             		for(int i = 0; i < visits.length; i++) // in this case we have at least 1 visit
                 	{
                 		String[] visitInfo = visits[i].split(","); // split the visits into the various parts
+                		Visit visit;
                 		//weight height temp bloodPressure,allergies, health concern physical test result, immunization records, prescription
-                		Visit visit = new Visit(visitInfo[0], visitInfo[1], visitInfo[2], visitInfo[3], visitInfo[4], visitInfo[5], visitInfo[6], visitInfo[7], null);
+                		if(visitInfo[8].compareTo("null") != 0) // in this case there is a prescription
+                		{
+                			System.out.println(visitInfo[8]);
+                			Prescription visitPrescription = new Prescription(visitInfo[8],visitInfo[9]);
+                    		visit = new Visit(visitInfo[0], visitInfo[1], visitInfo[2], visitInfo[3], visitInfo[4], visitInfo[5], visitInfo[6], visitInfo[7], visitPrescription);
+                		}
+                		else // in this case there is not
+                		{
+                			visit = new Visit(visitInfo[0], visitInfo[1], visitInfo[2], visitInfo[3], visitInfo[4], visitInfo[5], visitInfo[6], visitInfo[7], null);
+                		}
                 		patient.pastVisits.add(visit);
                 	} 	
             	}
@@ -128,7 +138,7 @@ public class Main extends Application {
             	}
             	else
             	{
-            		for(int i = 0; i < prescriptions.length; i++) // in this case we have at least 1 visit
+            		for(int i = 0; i < prescriptions.length; i++) // in this case we have at least 1 prescription
                 	{
                 		String[] prescriptionInfo = prescriptions[i].split(","); // split the prescriptions into the name/dosage
                 		patient.addAPrescription(prescriptionInfo[0], prescriptionInfo[1]);
@@ -227,8 +237,8 @@ public class Main extends Application {
     	{
     		patientInfo += Storage.getPatient(i).fileToString();
     	}
-    	System.out.println(nurseInfo);
-    	System.out.println(docInfo);
+    	//System.out.println(nurseInfo);
+    	//System.out.println(docInfo);
     	System.out.println(patientInfo);
     	try {
 			appData.write(docInfo);
