@@ -6,7 +6,10 @@ public class Doctor extends Nurse {
 	public ArrayList<Patient> patientList; //each doctor has a list of their patients 
 	
 	//Constructor
-	public Doctor(String first, String last, String user, String pass, String role, String birth) { super(first, last, user, pass, "Doctor", birth); }
+	public Doctor(String first, String last, String user, String pass, String role, String birth) { 
+		super(first, last, user, pass, "Doctor", birth);
+		patientList = new ArrayList<Patient>();
+	}
 	
 	//Change Patient Information
 	public void setPhyTestResults(Patient patient,String newTest) { }
@@ -14,8 +17,8 @@ public class Doctor extends Nurse {
 	public void prescribeMeds(Patient patient, String newMed, int newDose) {}
 
 	// Change Patient
-	public void addPatient(String newPatient) {
-		Patient a = searchPatient(newPatient);
+	public void addPatient(String patientFirst, String patientLast) {
+		Patient a = Storage.searchPatient(patientFirst,patientLast);
 		patientList.add(a);
 		a.setDoctor(this); //set the patient's doctor as the current doctor
 	}

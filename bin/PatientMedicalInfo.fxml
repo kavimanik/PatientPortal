@@ -6,7 +6,11 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<<<<<<< HEAD
 <AnchorPane fx:controller="application.PatientMedicalInfoController" prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+=======
+<AnchorPane prefHeight="472.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PatientMedicalInfoController">
+>>>>>>> 531a120db682c7b18b9a9ebe0a2de0c487a0d729
    <children>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="37.0" prefWidth="195.0" text="KHRAB Medical Portal">
          <font>
@@ -18,7 +22,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="buttonUpdateInfo" onAction="#switchToHomePage" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="187.0" text="Update Information" />
+      <Button fx:id="buttonUpdateInfo" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" onAction="#switchToHomePage" prefHeight="31.0" prefWidth="187.0" text="Update Information" />
       <Label layoutX="258.0" layoutY="150.0" prefHeight="37.0" prefWidth="177.0" text="----  Previous History --------" textAlignment="CENTER" />
       <TextField fx:id="tfPatientName" layoutX="18.0" layoutY="88.0" promptText="Patient Name" />
       <TextField fx:id="tfVisitDate" layoutX="18.0" layoutY="125.0" promptText="Visit Date" />
