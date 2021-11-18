@@ -112,5 +112,44 @@ public class PatientMedicalInfoController {
         }
 	}
 	
+	@FXML
+	private void addVisit(ActionEvent event) throws IOException {
+		event.consume();
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+        //thisStage.hide();
+        
+        // Sets information into Patient Class
+        String[] name = tfPatientName.getText().split("\\s+");
+        String visit = tfVisitDate.getText();
+        String weight = tfWeight.getText();
+    	String height = tfHeight.getText();
+    	String temperature = tfBodyTemperature.getText();
+    	String bloodPressure = tfBloodPressure.getText();
+    	String allergies = tfKnownAllergies.getText();
+    	String healthConcerns = tfHealthConcerns.getText();
+    	String physicalTest = tfPhysicalTest.getText();
+    	String[] doc = tfAssignedDoctor.getText().split("\\s+");
+    	String[] nurse = tfAssignedNurse.getText().split("\\s+");
+    	String healthIssues = tfHealthIssues.getText();
+    	String immunizationHistory = tfImmunizationHistory.getText();
+    	
+    	Patient a = Storage.searchPatient(name[0], name[1]);
+    	
+    	a.makeAVisit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTest, immunizationHistory, a.getPrescribedMeds());
+		
+        switch(Storage.getCurrentUser().getRole()) {
+        case "Doctor":
+        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml")));
+        	break;
+        case "Nurse":
+        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../NurseHomePage.fxml")));
+        	break;
+        case "Patient":
+        	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml")));
+        	break;
+        default: System.out.println("Didn't Update"); break; // Should never get here
+        }
+	}
 	
 }

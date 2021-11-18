@@ -101,7 +101,7 @@ public class Patient extends User {
 	}
 		
 	// Make a Visit object that uses all of the Patients current information
-	public void makeAVisit() {
+	public void makeAVisit(String weight2, String height2, String temperature2, String bloodPressure2, String allergies2, String healthConcerns2, String physicalTest, String immunizationHistory, ArrayList<Prescription> arrayList) {
 		Visit a = new Visit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTestResults, immunizationRecords, prescribedMeds);
 		pastVisits.add(a);
 	}
@@ -156,7 +156,7 @@ public class Patient extends User {
 	public String getAllergies() { return allergies; }
 	public String getHealthConcerns() { return healthConcerns; }
 	public String getPhysicalTestResults() {return physicalTestResults; }
-	
+	public ArrayList<Prescription> getPrescribedMeds() { return prescribedMeds; }
 	
 	public String toString()
 	{

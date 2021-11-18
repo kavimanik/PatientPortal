@@ -35,5 +35,6 @@
       <TextField fx:id="tfHealthIssues" layoutX="253.0" layoutY="184.0" promptText="Health Issues" />
       <TextField fx:id="tfPatientMedication" layoutX="253.0" layoutY="221.0" promptText="Patient Medication" />
       <TextField fx:id="tfImmunizationHistory" layoutX="253.0" layoutY="258.0" promptText="Immunization History" />
+      <Button fx:id="buttonMakeVisit" layoutX="253.0" layoutY="296.0" mnemonicParsing="false" onAction="#addVisit" prefHeight="31.0" prefWidth="149.0" text="Add Visit" />
    </children>
 </AnchorPane>

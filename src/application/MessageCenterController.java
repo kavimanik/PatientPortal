@@ -32,8 +32,8 @@ public class MessageCenterController {
     @FXML
     public void setRoleItems(MouseEvent event) {
     	event.consume();
-    	cbDocOrNurse.getItems().addAll("Doctor", "Nurse");
-    	cbDocOrNurse.setVisibleRowCount(2);
+    	cbDocOrNurse.getItems().addAll("Doctor", "Nurse", "");
+    	cbDocOrNurse.setVisibleRowCount(3);
     }
 	
 	@FXML

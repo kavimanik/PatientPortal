@@ -187,6 +187,13 @@ public class Main extends Application {
 		//System.out.println(Storage.getDoctor(1).toString());
         //System.out.println(Storage.getNurse(0).toString());
 		scanner.close();
+		System.out.println("----------------------------------------------------------------------------------------------------------------------\n\n\n");
+		Storage.print("Doctor");
+		System.out.print("\n\nNurse\n\n");
+		Storage.print("Nurse");
+		System.out.print("\n\nPatient\n\n");
+		Storage.print("Patient");
+		
 		return true; // we've successfully read the file
 	}
     
