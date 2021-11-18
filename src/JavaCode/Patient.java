@@ -184,9 +184,19 @@ public class Patient extends User {
 		 * 
 		 * Prescribed Meds:
 		*/
+		String doctorToString = "\nDoctor First Name:\nDoctor Last Name:";
+		if(this.getDoctor() != null)
+		{
+			doctorToString = "\nDoctor First Name: " + this.getDoctor().getFirstName() + "\nDoctor Last Name: " + this.getDoctor().getLastName();
+		}
+		String nurseToString = "\nNurse First Name:\nNurse Last Name:";
+		if(this.getNurse() != null)
+		{
+			nurseToString = "\nNurse First Name: " + this.getNurse().getFirstName() + "\nNurse Last Name: " + this.getNurse().getLastName();
+		}
 		return "First name: " + this.getFirstName() + "\nLast Name: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " + this.getPass() 
 		+ "\nBirth: " + this.getBirth() + "\nPhone Num: " + this.phoneNum + "\nEmail: " + this.email + "\nInsurance: " + this.insurance + "\nPharmacy: " + this.pharmacy 
-		+ "\nWeight: " + this.weight + "\nHeight: " + this.height + "\nBodyTemp: " + this.temperature 
+		+ doctorToString + nurseToString + "\nWeight: " + this.weight + "\nHeight: " + this.height + "\nBodyTemp: " + this.temperature 
 		+ "\nBloodPressure: " + this.bloodPressure + "\nAllergies: " + this.allergies  + "\nHealth Concerns: " + this.healthConcerns + "\nPhysical Test Results: " + 
 		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits: " + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds;
 	}

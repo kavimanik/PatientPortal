@@ -8,7 +8,10 @@ public class Nurse extends User {
 	public Patient currentPatient;
 	
 	//Constructor
-	public Nurse(String first, String last, String user, String pass, String role, String birth) { super(first, last, user, pass, role, birth); }
+	public Nurse(String first, String last, String user, String pass, String role, String birth) { 
+		super(first, last, user, pass, role, birth);
+		patientList = new ArrayList<Patient>();
+		}
 	
 	//Change Patient Information
 	public void setWeight(Patient patient, String newWeight) { patient.setWeight(newWeight); }
@@ -32,8 +35,8 @@ public class Nurse extends User {
 	}
 
 	// Changes to Patient List
-	public void addPatient(String patient) {
-		Patient a = searchPatient(patient);
+	public void addPatient(String patientFirst, String patientLast) {
+		Patient a = Storage.searchPatient(patientFirst, patientLast);
 		patientList.add(a);
 		a.setNurse(this);
 	}
