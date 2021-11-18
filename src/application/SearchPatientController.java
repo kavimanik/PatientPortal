@@ -53,8 +53,16 @@ public class SearchPatientController {
         for(int i = 0; i < list.size(); i++) {
         	if(list.get(i).getId() != null && list.get(i).getId().equals("tfPatientName")) {
         		System.out.println(patient);
-        		TextField text = (TextField) list.get(i);
-        		text.setText(patient);
+        		TextField patientName = (TextField) list.get(i);
+        		int count = 0;
+        		for(int j = 0; j < patient.length(); j++) {
+        			if(Character.isDigit(patient.charAt(j))) {
+        				count = j;
+        				break;
+        			}
+        		}
+        		String name = patient.substring(0,count-1);
+        		patientName.setText(name);
         		return;
         	}
         }
