@@ -101,9 +101,14 @@ public class Patient extends User {
 	}
 		
 	// Make a Visit object that uses all of the Patients current information
-	public void makeAVisit(String weight2, String height2, String temperature2, String bloodPressure2, String allergies2, String healthConcerns2, String physicalTest2, String immunizationHistory2, Prescription prescribedMeds2) {
-		Visit a = new Visit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTestResults, immunizationRecords, prescribedMeds.get(prescribedMeds.size()));
-		pastVisits.add(a);
+	// Make a Visit object that uses all of the Patients current information
+		public void makeAVisit() {
+			Visit a = new Visit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTestResults, immunizationRecords, prescribedMeds.get(prescribedMeds.size()));
+			pastVisits.add(a);
+		}
+	public void makeAVisit(String w, String h, String t, String bp, String a, String hc, String ptr, String ir, Prescription p) {
+		Visit oneVisit = new Visit(w, h, t, bp, a, hc, ptr, ir, p);
+		pastVisits.add(oneVisit);
 	}
 	
 	// Adds a Prescription to the list
