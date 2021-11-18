@@ -3,4 +3,4 @@ DOCI Brandon:Tran;BrondonTron15,S0ccerMan!ac."Doctor"/01132002
 DOCI ADMIN:ADMIN;user,pass."Doctor"/010120000
 NURI ADMIN:ADMIN;user,pass."Nurse"/010120000
 NURI Kavi:Maniack;BrawlStarPlayer,BuildPath."Nurse"/11162021
-PATI Justin:Bui:user:pass:01011990:1234567890:JustinBooey@gmail.com:StateFarm:CVS:John:Smith:Kavi:Maniack:130:5'13":86:150/40:Devil's Lettuce:N/A:Good:Bovid:150,5'12",90,150/20,N/A,asthma,Great,SmallPox,N/A;160,5'11",80,90/30,Cats,Balding,Poor,Flu,N/A:Advair,20mg;Grog,Always:D}Hi Justin! How is your AIDS doing?;P} it's all good, i think im cured!:N}Your next appointment is in 5 years.;P} Sounds amazing!;P} Do you recognize the bodies in the water?
+PATI Justin:Bui:user:pass:01011990:1234567890:JustinBooey@gmail.com:StateFarm:CVS:John:Smith:Kavi:Maniack:130:5'13":86:150/40:Devil's Lettuce:null:Good:Bovid:150,5'12",90,150/20,null,asthma,Great,SmallPox,null;160,5'11",80,90/30,Cats,Balding,Poor,Flu,cocaine,5g:Advair,20mg;Grog,Always:D}Hi Justin! How is your AIDS doing?;P} it's all good, i think im cured!:N}Your next appointment is in 5 years.;P} Sounds amazing!;P} Do you recognize the bodies in the water?
