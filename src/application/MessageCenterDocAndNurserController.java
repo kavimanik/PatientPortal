@@ -42,9 +42,12 @@ public class MessageCenterDocAndNurserController {
         switch(Storage.getCurrentUser().getRole()) {
         case "Doctor":
         	a.docMessage("Doctor", msg);
+        	textMessage.setText("");
+
         	break;
         case "Nurse":
         	a.nurseMessage("Nurse", msg);
+        	textMessage.setText("");
         	break;
         default: System.out.println("Wasn't able to send message to a Nurse or Doctor"); break; // Should Not Get Here
         }
@@ -57,15 +60,19 @@ public class MessageCenterDocAndNurserController {
     public void setRoleItems(MouseEvent event) {
     	event.consume();
     	Nurse a;
+    	Doctor b;
     	if(Storage.getCurrentUser().getRole().equals("Doctor")) {
-        	a = Storage.searchDoc(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+        	b = Storage.searchDoc(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+        	for(int i = 0; i < b.patientList.size(); i++) { 
+        		cbPatient.getItems().addAll(b.patientList.get(i).getFirstName() + " " + b.patientList.get(i).getLastName()); 
+        	}
+        	cbPatient.setVisibleRowCount(b.patientList.size());
     	}else {
         	a = Storage.searchNurse(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+        	for(int i = 0; i < a.patientList.size(); i++) { 
+        		cbPatient.getItems().addAll(a.patientList.get(i).getFirstName() + " " + a.patientList.get(i).getLastName()); 
+        	}
+        	cbPatient.setVisibleRowCount(a.patientList.size());
     	}
-		ArrayList<Patient> b = a.getAllPatients();
-    	for(int i = 0; i < b.size(); i++) { 
-    		cbPatient.getItems().addAll(b.get(i).getFirstName() + " " + b.get(i).getLastName()); 
-    	}
-    	cbPatient.setVisibleRowCount(b.size());
     }
 }

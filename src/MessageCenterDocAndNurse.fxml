@@ -16,7 +16,7 @@
       <Label fx:id="lableTitle" alignment="CENTER" contentDisplay="CENTER" layoutX="178.0" layoutY="41.0" prefHeight="37.0" prefWidth="161.0" text="Message Portal" />
       <TextField fx:id="tfMessageBoard" alignment="TOP_LEFT" layoutX="14.0" layoutY="78.0" prefHeight="306.0" prefWidth="481.0" promptText="Messages" />
       <TextField fx:id="textMessage" layoutX="14.0" layoutY="427.0" prefHeight="31.0" prefWidth="420.0" promptText="Type Message..." />
-      <Button fx:id="buttonSend" layoutX="441.0" layoutY="427.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="62.0" text="Send" />
-      <ComboBox fx:id="cbPatient" onMouseClicked="#setRoleItems" layoutX="14.0" layoutY="391.0" prefHeight="31.0" prefWidth="420.0" promptText="Select Patient" />
+      <Button fx:id="buttonSend" layoutX="441.0" layoutY="427.0" mnemonicParsing="false" onAction="#sendMsgButton" prefHeight="31.0" prefWidth="62.0" text="Send" />
+      <ComboBox fx:id="cbPatient" layoutX="14.0" layoutY="391.0" onMouseClicked="#setRoleItems" prefHeight="31.0" prefWidth="420.0" promptText="Select Patient" />
    </children>
 </AnchorPane>
