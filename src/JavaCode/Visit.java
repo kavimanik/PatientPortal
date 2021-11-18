@@ -16,12 +16,12 @@ public class Visit {
 	private String healthConcerns;
 	private String physicalTestResults;
 	private String immunizationRecords;
-	private ArrayList<Prescription> prescription;
+	private Prescription prescription;
 	
 	
 	
 
-	public Visit(String w, String height2, String temp, String bp, String allergies, String hc, String ptr, String ir, ArrayList<Prescription> prescript){ //TODO change Date/prescription
+	public Visit(String w, String height2, String temp, String bp, String allergies, String hc, String ptr, String ir, Prescription prescript){ //TODO change Date/prescription
 		date = getDate();
 		weight = w;
 		height = height2;

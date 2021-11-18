@@ -101,7 +101,7 @@ public class Patient extends User {
 	}
 		
 	// Make a Visit object that uses all of the Patients current information
-	public void makeAVisit(String weight2, String height2, String temperature2, String bloodPressure2, String allergies2, String healthConcerns2, String physicalTest, String immunizationHistory, ArrayList<Prescription> arrayList) {
+	public void makeAVisit(String weight2, String height2, String temperature2, String bloodPressure2, String allergies2, String healthConcerns2, String physicalTest, String immunizationHistory, Prescription prescribedMeds) {
 		Visit a = new Visit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTestResults, immunizationRecords, prescribedMeds);
 		pastVisits.add(a);
 	}
@@ -179,6 +179,16 @@ private String prescriptionFileWrite()
 	allPrescribedMeds = allPrescribedMeds.substring(0,allPrescribedMeds.length()-1);
 	return allPrescribedMeds;
 }
+private String messageFileRead() 
+{
+	String messages = "";
+	for(int i = 0; i < docMsg.size(); i++){ messages += docMsg.get(i)+ ";"; }
+	messages = messages.substring(0,messages.length() -1); //cut off the last ;
+	messages += ":"; // add a separator between doctor/nurse messages
+	for(int i = 0; i < nurseMsg.size(); i++){ messages += nurseMsg.get(i)+ ";"; }
+	messages = messages.substring(0,messages.length() -1); //cut off the last ; agains
+	return messages;
+}
 
 	public String toString()
 	{
@@ -239,8 +249,8 @@ private String prescriptionFileWrite()
 	}
 	public String fileToString() 
 	{
-		return "NURI " + this.getFirstName() + ":" + this.getLastName() + ":" + this.getUser() + ":" + this.getPass() + ":" + this.getBirth() + ":" + this.getPhoneNumber() + ":" + this.getEmail() + ":" + this.getInsurance() + ":" + this.getPharmacy() + ":" +  
+		return "PATI " + this.getFirstName() + ":" + this.getLastName() + ":" + this.getUser() + ":" + this.getPass() + ":" + this.getBirth() + ":" + this.getPhoneNumber() + ":" + this.getEmail() + ":" + this.getInsurance() + ":" + this.getPharmacy() + ":" +  
 	this.getDoctor().getFirstName() + ":" + this.getDoctor().getLastName() + ":" + this.getNurse().getFirstName() + ":" + this.getNurse().getLastName() + ":" + this.getWeight() + ":" + this.getHeight() + ":" + this.getTemp() + ":" + this.getBloodPres() + ":" + 
-				this.getAllergies() + ":" + this.getHealthConcerns() + ":" + this.getPhysicalTestResults() + ":" + this.getImmunizationRecord() + ":" + this.visitFileWrite() + ":" + this.prescriptionFileWrite();
+				this.getAllergies() + ":" + this.getHealthConcerns() + ":" + this.getPhysicalTestResults() + ":" + this.getImmunizationRecord() + ":" + this.visitFileWrite() + ":" + this.prescriptionFileWrite() + ":" + this.messageFileRead();
 	}
 }
