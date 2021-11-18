@@ -98,12 +98,7 @@ public class Main extends Application {
             		//there is no associated Doctor so we don't do anything
             	}
             	else
-            	{
-            		System.out.println("Before doc declaration");
-            		System.out.println(splitInfo[9]);
-            		System.out.println(splitInfo[10]);
-            		System.out.println(Storage.searchDoc("John", "Smith").toString());
-            		
+            	{            		
             		Doctor associatedDoc = Storage.searchDoc(splitInfo[9], splitInfo[10]);
             		associatedDoc.addPatient(splitInfo[0],splitInfo[1]); // add the patient info to the doctor
                 	patient.setDoctor(associatedDoc);	
@@ -158,11 +153,10 @@ public class Main extends Application {
                 		patient.addAPrescription(prescriptionInfo[0], prescriptionInfo[1]);
                 	} 	
             	}
-            	//patient.addAPrescription(name, dosage);
             	Storage.addPatient(patient);
             }
         }
-		System.out.println(Storage.getPatient(0).toString());
+		//System.out.println(Storage.getPatient(0).toString());
 		//System.out.println(Storage.getDoctor(0).toString());
 		//System.out.println(Storage.getDoctor(1).toString());
         //System.out.println(Storage.getNurse(0).toString());
