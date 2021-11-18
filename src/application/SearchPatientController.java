@@ -44,7 +44,30 @@ public class SearchPatientController {
 	@FXML
 	private void handleMouseClick(MouseEvent event) throws IOException {
 		event.consume();
-		String patient = lvSearches.getSelectionModel().getSelectedItem().toString();
+		String patientName = lvSearches.getSelectionModel().getSelectedItem().toString();
+		
+		int count = 0;
+		for(int j = 0; j < patientName.length(); j++) {
+			if(Character.isDigit(patientName.charAt(j))) {
+				count = j;
+				break;
+			}
+		}
+		String fullName = patientName.substring(0,count-1);
+		
+		count = 0;
+		for(int i = 0; i < fullName.length(); i++) {
+			if(fullName.charAt(i) == ' '){
+				count = i;
+				break;
+			}
+		}
+		
+		String firstName = fullName.substring(0,count);
+		String lastName = fullName.substring(count+1,fullName.length());
+		
+		Patient patient = Storage.searchPatient(firstName, lastName);
+		
 		Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
         AnchorPane loader = FXMLLoader.load(getClass().getResource("../PatientMedicalInfo.fxml"));
@@ -52,18 +75,40 @@ public class SearchPatientController {
         ObservableList<Node> list = loader.getChildren();
         for(int i = 0; i < list.size(); i++) {
         	if(list.get(i).getId() != null && list.get(i).getId().equals("tfPatientName")) {
-        		System.out.println(patient);
-        		TextField patientName = (TextField) list.get(i);
-        		int count = 0;
-        		for(int j = 0; j < patient.length(); j++) {
-        			if(Character.isDigit(patient.charAt(j))) {
-        				count = j;
-        				break;
-        			}
-        		}
-        		String name = patient.substring(0,count-1);
-        		patientName.setText(name);
-        		return;
+        		TextField tfPatientName = (TextField) list.get(i);
+        		tfPatientName.setText(fullName);
+        	} 
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfWeight")) {
+        		TextField tfPatientWeight = (TextField) list.get(i);
+        		tfPatientWeight.setText(patient.getWeight());
+        	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfHeight")) {
+        		TextField tfPatientHeight = (TextField) list.get(i);
+        		tfPatientHeight.setText(patient.getHeight());
+        	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfBodyTemperature")) {
+        		TextField tfBodyTemperature = (TextField) list.get(i);
+        		tfBodyTemperature.setText(patient.getTemp());
+        	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfBloodPressure")) {
+        		TextField tfBloodPressure = (TextField) list.get(i);
+        		tfBloodPressure.setText(patient.getBloodPres());
+        	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfKnownAllergies")) {
+        		TextField tfAllergies = (TextField) list.get(i);
+        		tfAllergies.setText(patient.getAllergies());
+        	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfKnownAllergies")) {
+        		TextField tfAllergies = (TextField) list.get(i);
+        		tfAllergies.setText(patient.getAllergies());
+        	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfHealthConcerns")) {
+        		TextField tfHealthConcerns = (TextField) list.get(i);
+        		tfHealthConcerns.setText(patient.getHealthConcerns());
+        	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfPhysicalTest")) {
+        		TextField tfPhysicalTest = (TextField) list.get(i);
+        		tfPhysicalTest.setText(patient.getPhysicalTestResults());
         	}
         }
 	}

@@ -147,6 +147,7 @@ public class Patient extends User {
 	public String getBloodPres() { return bloodPressure; }
 	public String getAllergies() { return allergies; }
 	public String getHealthConcerns() { return healthConcerns; }
+	public String getPhysicalTestResults() {return physicalTestResults; }
 	
 	
 	public String toString()
