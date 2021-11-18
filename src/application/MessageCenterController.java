@@ -10,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -27,6 +28,13 @@ public class MessageCenterController {
 	
 	@FXML // fx:id="buttonSend"
 	private Button buttonSend;
+	
+    @FXML
+    public void setRoleItems(MouseEvent event) {
+    	event.consume();
+    	cbDocOrNurse.getItems().addAll("Doctor", "Nurse");
+    	cbDocOrNurse.setVisibleRowCount(2);
+    }
 	
 	@FXML
     private void sendMsgButton(ActionEvent event) throws IOException {

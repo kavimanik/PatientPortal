@@ -94,5 +94,4 @@ public class Controller{ //This is the controller class for the Login page
     	roleCombo.getItems().addAll("Doctor", "Nurse", "Patient");
     	roleCombo.setVisibleRowCount(3);
     }
-
 }
