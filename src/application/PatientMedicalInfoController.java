@@ -63,11 +63,12 @@ public class PatientMedicalInfoController {
 	private Button buttonUpdateInfo;
 	
 	@FXML
+	//button to switch to the current user's respective home page 
+	//will execute AFTER updating all of the patient's new medical information
     private void switchToHomePage(ActionEvent event) throws IOException {
 		event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
-        //thisStage.hide();
         
         // Sets information into Patient Class
         String[] name = tfPatientName.getText().split("\\s+");
@@ -84,6 +85,7 @@ public class PatientMedicalInfoController {
     	String healthIssues = tfHealthIssues.getText();
     	String immunizationHistory = tfImmunizationHistory.getText();
     	
+    	//searches for the patient using first and last name
     	Patient a = Storage.searchPatient(name[0], name[1]);
     	
     	a.setWeight(weight);
@@ -98,6 +100,7 @@ public class PatientMedicalInfoController {
     	a.setHealthConcerns(healthConcerns);
     	a.setImmunizationRecord(immunizationHistory);
     	
+    	//send the user back to their respective home page
         switch(Storage.getCurrentUser().getRole()) {
         case "Doctor":
         	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml")));
@@ -113,11 +116,12 @@ public class PatientMedicalInfoController {
 	}
 	
 	@FXML
+	//button to add a new visit to the patient's list of visits
+	//will send the user back to their respective home page afterwards
 	private void addVisit(ActionEvent event) throws IOException {
 		event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
-        //thisStage.hide();
         
         // Sets information into Patient Class
         String[] name = tfPatientName.getText().split("\\s+");
@@ -134,10 +138,14 @@ public class PatientMedicalInfoController {
     	String healthIssues = tfHealthIssues.getText();
     	String immunizationHistory = tfImmunizationHistory.getText();
     	
+    	//search for the patient using their first and last name
     	Patient a = Storage.searchPatient(name[0], name[1]);
     	
+    	//making visit using the information that was entered on the page
+    	//also adding the visit to the patient's list of visits
     	a.makeAVisit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTest, immunizationHistory, a.getPrescribedMeds());
 		
+    	//send the user back to their respective home page
         switch(Storage.getCurrentUser().getRole()) {
         case "Doctor":
         	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml")));
