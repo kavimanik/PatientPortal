@@ -183,17 +183,18 @@ public class Main extends Application {
             	Storage.addPatient(patient);
             }
         }
-		System.out.println(Storage.getPatient(0).toString());
-		//System.out.println(Storage.getDoctor(0).toString());
+		//System.out.println(Storage.getPatient(0).toString());
+		System.out.println("\n doctor to string");
+		System.out.println(Storage.getDoctor(0).toString());
 		//System.out.println(Storage.getDoctor(1).toString());
         //System.out.println(Storage.getNurse(0).toString());
 		scanner.close();
-		System.out.println("----------------------------------------------------------------------------------------------------------------------\n\n\n");
+		/*System.out.println("----------------------------------------------------------------------------------------------------------------------\n\n\n");
 		Storage.print("Doctor");
 		System.out.print("\n\nNurse\n\n");
 		Storage.print("Nurse");
 		System.out.print("\n\nPatient\n\n");
-		Storage.print("Patient");
+		Storage.print("Patient"); */
 		
 		return true; // we've successfully read the file
 	}

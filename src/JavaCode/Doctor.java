@@ -29,7 +29,10 @@ public class Doctor extends Nurse {
 	}
 	public String toString()
 	{
-		return "First name: " + this.getFirstName() + "\nLastName: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " + this.getPass() + "\nBirth: " + this.getBirth();
+		System.out.println("ToString");
+		System.out.println(this.patientList.get(0).toString());
+		return "\nhelp";
+		//return "First name: " + this.getFirstName() + "\nLastName: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " + this.getPass() + "\nBirth: " + this.getBirth();
 	}
 	
 	// Message Patient
