@@ -20,4 +20,8 @@ public class Prescription
 	public String getDosage() { return dosage; }
 
 	public String toString() { return "Med Name: " + medName + "\nDosage: " + dosage; }
+	public String fileToString() 
+	{
+		return medName + "," + dosage;
+	}
 }

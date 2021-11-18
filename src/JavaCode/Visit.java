@@ -51,7 +51,11 @@ public class Visit {
 	}
 	public String fileToString()
 	{
-		return weight + "," + height + "," + bodyTemp + "," + bloodPressure + "," + allergies + "," + healthConcerns + "," + physicalTestResults + "," + immunizationRecords + "," + prescription;
+		if(prescription == null)
+		{
+			return weight + "," + height + "," + bodyTemp + "," + bloodPressure + "," + allergies + "," + healthConcerns + "," + physicalTestResults + "," + immunizationRecords + "," + "null";
+		}
+		return weight + "," + height + "," + bodyTemp + "," + bloodPressure + "," + allergies + "," + healthConcerns + "," + physicalTestResults + "," + immunizationRecords + "," + prescription.fileToString();
 	}
 }
 
