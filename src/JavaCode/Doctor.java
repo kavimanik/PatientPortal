@@ -34,4 +34,9 @@ public class Doctor extends Nurse {
 	
 	// Message Patient
 	public void msgPatient(Patient p, String msg) { p.docMessage(msg, "Doctor"); } //doctors can only message patients
+
+	public String fileToString() 
+	{
+		return "DOCI " + this.getFirstName() + ":" + this.getLastName() + ";" + this.getUser() + "," + this.getPass() + ".Doctor/" + this.getBirth() + "\n";
+	}
 }

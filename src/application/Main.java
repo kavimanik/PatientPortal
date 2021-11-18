@@ -6,6 +6,7 @@ import java.util.ArrayList;
 	
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -197,7 +198,29 @@ public class Main extends Application {
 		return true; // we've successfully read the file
 	}
     
-    public static boolean saveFile() throws FileNotFoundException{
+    public static boolean saveFile() throws FileNotFoundException
+    {
+    	FileWriter appData = null; // Initialize it to null, to ensure we can use it later. If the file ends up actually being null, we'll leave the method before we use it.
+		try //create the text file to store the data, if it already exists we move on.
+		{			
+			appData = new FileWriter("appData.txt");
+							
+		} 
+		catch (IOException e) // Should never reach this Code
+		{
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		}
+		String docInfo = "";
+    	for(int i = 0; i < Storage.getSize("Doctor"); i++)
+    	{
+    		docInfo += Storage.getDoctor(i).fileToString();
+    	}
+    	try {
+			appData.write(docInfo);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     	return true;
     }
 }
