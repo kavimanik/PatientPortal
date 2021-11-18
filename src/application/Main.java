@@ -94,27 +94,7 @@ public class Main extends Application {
             	patient.setInsurance(splitInfo[7]);
             	patient.setPharmacy(splitInfo[8]);
             	// splitInfo 9 and 10 are the doctors first/last name if they have one associated with them.
-            	if(splitInfo[9].compareTo("") == 0)
-            	{
-            		//there is no associated Doctor so we don't do anything
-            	}
-            	else
-            	{            		
-            		Doctor associatedDoc = Storage.searchDoc(splitInfo[9], splitInfo[10]);
-            		associatedDoc.addPatient(splitInfo[0],splitInfo[1]); // add the patient info to the doctor
-                	patient.setDoctor(associatedDoc);	
-            	}
-            	//splitInfo 11 and 12 are the nurse's first/last name if they have one associated with them.
-            	if(splitInfo[9].compareTo("") == 0)
-            	{
-            		//there is no associated Nurse so we don't do anything
-            	}
-            	else
-            	{
-                	Nurse associatedNurse = Storage.searchNurse(splitInfo[11],splitInfo[12]);
-                	associatedNurse.addPatient(splitInfo[0],splitInfo[1]);
-                	patient.setNurse(associatedNurse);
-            	}
+            	
             	patient.setWeight(splitInfo[13]);
             	patient.setHeight(splitInfo[14]);
             	patient.setTemp(splitInfo[15]);
@@ -181,6 +161,27 @@ public class Main extends Application {
             	}
             	
             	Storage.addPatient(patient);
+            	if(splitInfo[9].compareTo("") == 0)
+            	{
+            		//there is no associated Doctor so we don't do anything
+            	}
+            	else
+            	{            		
+            		Doctor associatedDoc = Storage.searchDoc(splitInfo[9], splitInfo[10]);
+            		associatedDoc.addPatient(splitInfo[0],splitInfo[1]); // add the patient info to the doctor
+                	patient.setDoctor(associatedDoc);	
+            	}
+            	//splitInfo 11 and 12 are the nurse's first/last name if they have one associated with them.
+            	if(splitInfo[9].compareTo("") == 0)
+            	{
+            		//there is no associated Nurse so we don't do anything
+            	}
+            	else
+            	{
+                	Nurse associatedNurse = Storage.searchNurse(splitInfo[11],splitInfo[12]);
+                	associatedNurse.addPatient(splitInfo[0],splitInfo[1]);
+                	patient.setNurse(associatedNurse);
+            	}
             }
         }
 		//System.out.println(Storage.getPatient(0).toString());
