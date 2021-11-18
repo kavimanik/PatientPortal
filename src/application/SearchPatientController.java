@@ -110,6 +110,15 @@ public class SearchPatientController {
         		TextField tfPhysicalTest = (TextField) list.get(i);
         		tfPhysicalTest.setText(patient.getPhysicalTestResults());
         	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfAssignedDoctor")) {
+        		TextField tfAssignedDoctor = (TextField) list.get(i);
+        		tfAssignedDoctor.setText(patient.getDoctor().getFirstName() + " " + patient.getDoctor().getLastName());
+        	}
+        	else if(list.get(i).getId() != null && list.get(i).getId().equals("tfAssignedNurse")) {
+        		TextField tfAssignedNurse = (TextField) list.get(i);
+        		tfAssignedNurse.setText(patient.getNurse().getFirstName() + " " + patient.getNurse().getLastName());
+        	}
+        	
         }
 	}
 }
