@@ -237,9 +237,9 @@ public class Main extends Application {
     	{
     		patientInfo += Storage.getPatient(i).fileToString();
     	}
-    	System.out.println(nurseInfo);
-    	System.out.println(docInfo);
-    	System.out.println(patientInfo);
+    	//System.out.println(nurseInfo);
+    	//System.out.println(docInfo);
+    	//System.out.println(patientInfo);
     	try {
 			appData.write(docInfo);
 			appData.write(nurseInfo);
