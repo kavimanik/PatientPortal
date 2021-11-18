@@ -51,10 +51,14 @@ public class MessageCenterController {
         if(toPerson == "Doctor") {
         	// Sends Msg to Doctor
         	a.docMessage("Doctor", msg);
+        	textMessage.setText("");
+
         	
         }else if(toPerson == "Nurse"){
         	// Sends Msg to Nurse
         	a.nurseMessage("Nurse", msg);
+        	textMessage.setText("");
+
         }else {
         	System.out.println("Wasn't able to send message to a Nurse or Doctor"); // Should Not Get Here
         }

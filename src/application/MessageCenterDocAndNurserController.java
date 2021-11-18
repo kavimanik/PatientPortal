@@ -43,7 +43,6 @@ public class MessageCenterDocAndNurserController {
         case "Doctor":
         	a.docMessage("Doctor", msg);
         	textMessage.setText("");
-
         	break;
         case "Nurse":
         	a.nurseMessage("Nurse", msg);
