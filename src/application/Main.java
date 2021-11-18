@@ -75,6 +75,7 @@ public class Main extends Application {
             												//First Name                              //Last Name                                                                          //    Username                                                //Password
             	Doctor doctor = new Doctor( currentLine.substring(5,currentLine.indexOf(":")), currentLine.substring(currentLine.indexOf(":")+1,currentLine.indexOf(";")), currentLine.substring(currentLine.indexOf(";")+1,currentLine.indexOf(",")), currentLine.substring(currentLine.indexOf(",")+1,currentLine.indexOf(".")), "Doctor", currentLine.substring(currentLine.indexOf("/")+1));
             	Storage.addDoctor(doctor);
+            	//System.out.println(doctor.toString());
             }
             else if(subStringIdentifier.compareTo("NURI") == 0)
             {
@@ -92,7 +93,32 @@ public class Main extends Application {
             	patient.setInsurance(splitInfo[7]);
             	patient.setPharmacy(splitInfo[8]);
             	// splitInfo 9 and 10 are the doctors first/last name if they have one associated with them.
+            	if(splitInfo[9].compareTo("") == 0)
+            	{
+            		//there is no associated Doctor so we don't do anything
+            	}
+            	else
+            	{
+            		System.out.println("Before doc declaration");
+            		System.out.println(splitInfo[9]);
+            		System.out.println(splitInfo[10]);
+            		System.out.println(Storage.searchDoc("John", "Smith").toString());
+            		
+            		Doctor associatedDoc = Storage.searchDoc(splitInfo[9], splitInfo[10]);
+            		associatedDoc.addPatient(splitInfo[0],splitInfo[1]); // add the patient info to the doctor
+                	patient.setDoctor(associatedDoc);	
+            	}
             	//splitInfo 11 and 12 are the nurse's first/last name if they have one associated with them.
+            	if(splitInfo[9].compareTo("") == 0)
+            	{
+            		//there is no associated Nurse so we don't do anything
+            	}
+            	else
+            	{
+                	Nurse associatedNurse = Storage.searchNurse(splitInfo[11],splitInfo[12]);
+                	associatedNurse.addPatient(splitInfo[0],splitInfo[1]);
+                	patient.setNurse(associatedNurse);
+            	}
             	patient.setWeight(splitInfo[13]);
             	patient.setHeight(splitInfo[14]);
             	patient.setTemp(splitInfo[15]);
