@@ -145,6 +145,20 @@ public class Main extends Application {
                 	} 	
             	}
             	//22 is prescribed Medicine
+            	String[] prescriptions = splitInfo[22].split(";");
+            	if(prescriptions[0].compareTo("") == 0)
+            	{
+            		//There are no prescriptions, so we do nothing
+            	}
+            	else
+            	{
+            		for(int i = 0; i < prescriptions.length; i++) // in this case we have at least 1 visit
+                	{
+                		String[] prescriptionInfo = prescriptions[i].split(","); // split the prescriptions into the name/dosage
+                		patient.addAPrescription(prescriptionInfo[0], prescriptionInfo[1]);
+                	} 	
+            	}
+            	//patient.addAPrescription(name, dosage);
             	Storage.addPatient(patient);
             }
         }

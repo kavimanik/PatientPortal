@@ -160,7 +160,7 @@ public class Patient extends User {
 			numOfVisits++;
 			allPastVisits = allPastVisits + "\nVisit " + numOfVisits + "\n" + pastVisits.get(i).toString() + "\n";
 		}
-		//for(int i = 0; i < prescribedMeds.size(); i++){ allPrescribedMeds = allPrescribedMeds + prescribedMeds.get(i).toString() + "\n"; }
+		for(int i = 0; i < prescribedMeds.size(); i++){ allPrescribedMeds = allPrescribedMeds +"\n" + prescribedMeds.get(i).toString() + "\n"; }
 		//for(int i = 0; i < docMsg.size(); i++){ allDocMsg = allDocMsg + docMsg.get(i)+ "\n"; }
 		//for(int i = 0; i < nurseMsg.size(); i++){ allNurseMsg = allNurseMsg + nurseMsg.get(i)+ "\n"; }
 		
