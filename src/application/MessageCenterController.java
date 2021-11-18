@@ -30,6 +30,7 @@ public class MessageCenterController {
 	private Button buttonSend;
 	
     @FXML
+    //code for the combo box to select either doctor or nurse
     public void setRoleItems(MouseEvent event) {
     	event.consume();
     	cbDocOrNurse.getItems().addAll("Doctor", "Nurse");
@@ -37,6 +38,7 @@ public class MessageCenterController {
     }
 	
 	@FXML
+	//code for the send message button
     private void sendMsgButton(ActionEvent event) throws IOException {
         event.consume();
         
@@ -61,10 +63,4 @@ public class MessageCenterController {
         
 	}
         
-        
-        //Node node = (Node) event.getSource();
-        //Stage thisStage = (Stage) node.getScene().getWindow();
-        //thisStage.hide();
-        //Parent loader = FXMLLoader.load(getClass().getResource("../SearchPatient.fxml"));
-        //thisStage.getScene().setRoot(loader);
 }
