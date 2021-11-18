@@ -184,7 +184,7 @@ public class Main extends Application {
             	}
             }
         }
-		//System.out.println(Storage.getPatient(0).toString());
+		System.out.println(Storage.getPatient(0).toString());
 		//System.out.println(Storage.getDoctor(0).toString());
 		//System.out.println(Storage.getDoctor(1).toString());
         //System.out.println(Storage.getNurse(0).toString());
@@ -222,10 +222,18 @@ public class Main extends Application {
     	{
     		nurseInfo += Storage.getNurse(i).fileToString();
     	}
+    	String patientInfo ="";
+    	for(int i = 0; i < Storage.getSize("Patient"); i++)
+    	{
+    		patientInfo += Storage.getPatient(i).fileToString();
+    	}
     	System.out.println(nurseInfo);
     	System.out.println(docInfo);
+    	System.out.println(patientInfo);
     	try {
 			appData.write(docInfo);
+			appData.write(nurseInfo);
+			appData.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

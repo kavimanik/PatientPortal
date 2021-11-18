@@ -16,8 +16,8 @@ public class Prescription
 	public void setDosage(String num) { dosage = num; }
 	
 	//Getter
-	public String getMedName(String med) { return medName; }
-	public String getDosage(int num) { return dosage; }
+	public String getMedName() { return medName; }
+	public String getDosage() { return dosage; }
 
 	public String toString() { return "Med Name: " + medName + "\nDosage: " + dosage; }
 }

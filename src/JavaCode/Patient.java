@@ -156,8 +156,30 @@ public class Patient extends User {
 	public String getAllergies() { return allergies; }
 	public String getHealthConcerns() { return healthConcerns; }
 	public String getPhysicalTestResults() {return physicalTestResults; }
+	public String getImmunizationRecord() {return immunizationRecords; }
 	public ArrayList<Prescription> getPrescribedMeds() { return prescribedMeds; }
 	
+	private String visitFileWrite() 
+	{
+		String visitString = "";
+		for(int i = 0; i < pastVisits.size(); i++)
+		{
+			visitString += pastVisits.get(i).fileToString() + ";";
+		}
+		visitString = visitString.substring(0,visitString.length()-1);
+		return visitString;
+	}
+private String prescriptionFileWrite()
+{
+	String allPrescribedMeds = "";
+	for(int i = 0; i < prescribedMeds.size(); i++)
+	{
+		allPrescribedMeds += prescribedMeds.get(i).getMedName() + "," + prescribedMeds.get(i).getDosage() + ";"; 
+	}
+	allPrescribedMeds = allPrescribedMeds.substring(0,allPrescribedMeds.length()-1);
+	return allPrescribedMeds;
+}
+
 	public String toString()
 	{
 		// Complies All the ArrayList in Patient into a Printable Strings for toString
@@ -215,5 +237,10 @@ public class Patient extends User {
 		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits:\n" + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds + 
 		"\nDoctor Messages:\n" + allDocMsg + "\nNurse Messages:\n" + allNurseMsg;
 	}
-
+	public String fileToString() 
+	{
+		return "NURI " + this.getFirstName() + ":" + this.getLastName() + ":" + this.getUser() + ":" + this.getPass() + ":" + this.getBirth() + ":" + this.getPhoneNumber() + ":" + this.getEmail() + ":" + this.getInsurance() + ":" + this.getPharmacy() + ":" +  
+	this.getDoctor().getFirstName() + ":" + this.getDoctor().getLastName() + ":" + this.getNurse().getFirstName() + ":" + this.getNurse().getLastName() + ":" + this.getWeight() + ":" + this.getHeight() + ":" + this.getTemp() + ":" + this.getBloodPres() + ":" + 
+				this.getAllergies() + ":" + this.getHealthConcerns() + ":" + this.getPhysicalTestResults() + ":" + this.getImmunizationRecord() + ":" + this.visitFileWrite() + ":" + this.prescriptionFileWrite();
+	}
 }

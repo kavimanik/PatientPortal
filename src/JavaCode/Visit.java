@@ -49,6 +49,10 @@ public class Visit {
 	+ bloodPressure + "\nAllergies: " + allergies + "\nHealth Concerns: " + healthConcerns + "\nPhysical Test Results: " + physicalTestResults 
 	+ "\nImmunization Records: " + immunizationRecords + "\nPrescription: " + prescription;
 	}
+	public String fileToString()
+	{
+		return weight + "," + height + "," + bodyTemp + "," + bloodPressure + "," + allergies + "," + healthConcerns + "," + physicalTestResults + "," + immunizationRecords + "," + prescription;
+	}
 }
 
 
