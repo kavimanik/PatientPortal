@@ -15,7 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class CreateAccountController {
+public class CreateAccountController { //class for the "create account" page    
 	
 	@FXML // fx:id="roleCombo2"
 	private ComboBox<String> roleCombo2;
@@ -43,6 +43,7 @@ public class CreateAccountController {
 	
 	
 	@FXML
+	//code for combo box to select a role
     public void setRoleItems(MouseEvent event) {
     	event.consume();
     	//ObservableList<String> roles = FXCollections.observableArrayList("Doctor", "Nurse", "Patient");
@@ -52,7 +53,9 @@ public class CreateAccountController {
     }
 	
 	@FXML
+	//page will switch to the "login page" if an account was successfully created
     private void switchToLogin(ActionEvent event) throws IOException {
+		//get the strings from the textfields
 		String role = roleCombo2.getValue();
 		String firstName = tfFirstName.getText();
 		String lastName = tfLastName.getText();
@@ -61,6 +64,8 @@ public class CreateAccountController {
 		String password = tfPassword2.getText();
 		String confirmPassword = tfConfirmPassword.getText();
 		
+		//error messages for the following conditions
+		//if the "password" and "confirm password" textfields do not match
 		if(!password.equals(confirmPassword)) {
 			Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning");
@@ -68,6 +73,7 @@ public class CreateAccountController {
             alert.showAndWait();
             return;
 		}
+		//if any of the textfields are empty
 		else if(role.equals("") || firstName.equals("") || lastName.equals("") || 
 				birthday.equals("") || userName.equals("") || password.equals("")) {
 			Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -77,6 +83,7 @@ public class CreateAccountController {
             return;
 		}
 		
+		//if the account does not exist already (checked with the other users in Storage class)
 		if(!Storage.exisit(role, userName, password)) {
 			if(role.equals("Doctor")) {
 				Doctor doctor = new Doctor(firstName, lastName, userName, password, role, birthday);
@@ -91,6 +98,7 @@ public class CreateAccountController {
 				Storage.addPatient(patient);
 			}
 			System.out.println("User added");
+			//send the user back to the login page (after successfully creating a new account)
 	        event.consume();
 	        Node node = (Node) event.getSource();
 	        Stage thisStage = (Stage) node.getScene().getWindow();
@@ -99,6 +107,7 @@ public class CreateAccountController {
 	        thisStage.getScene().setRoot(loader);
 		}
 		else {
+			//if the account already exists then send an error
 			tfErrorText.setText("Please Pick a differnt combination for a username and password");
 		}
 
