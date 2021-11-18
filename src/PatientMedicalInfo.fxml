@@ -20,21 +20,35 @@
          </font>
       </Label>
       <Button fx:id="buttonUpdateInfo" layoutX="14.0" layoutY="427.0" mnemonicParsing="false" onAction="#switchToHomePage" prefHeight="31.0" prefWidth="187.0" text="Update Information" />
-      <Label layoutX="258.0" layoutY="150.0" prefHeight="37.0" prefWidth="177.0" text="----  Previous History --------" textAlignment="CENTER" />
-      <TextField fx:id="tfPatientName" layoutX="18.0" layoutY="88.0" promptText="Patient Name" />
-      <TextField fx:id="tfVisitDate" layoutX="18.0" layoutY="125.0" promptText="Visit Date" />
-      <TextField fx:id="tfWeight" layoutX="18.0" layoutY="162.0" promptText="Weight" />
-      <TextField fx:id="tfHeight" layoutX="18.0" layoutY="199.0" promptText="Height" />
-      <TextField fx:id="tfBodyTemperature" layoutX="18.0" layoutY="236.0" promptText="Body Temperature" />
-      <TextField fx:id="tfBloodPressure" layoutX="18.0" layoutY="273.0" promptText="Blood Pressure" />
-      <TextField fx:id="tfKnownAllergies" layoutX="18.0" layoutY="311.0" promptText="Known Allergies" />
-      <TextField fx:id="tfHealthConcerns" layoutX="18.0" layoutY="350.0" promptText="Patient Health Concerns" />
-      <TextField fx:id="tfPhysicalTest" layoutX="18.0" layoutY="388.0" promptText="Physical Test" />
-      <TextField fx:id="tfAssignedDoctor" layoutX="253.0" layoutY="88.0" promptText="Assigned Doctor" />
-      <TextField fx:id="tfAssignedNurse" layoutX="253.0" layoutY="125.0" promptText="Assigned Nurse" />
-      <TextField fx:id="tfHealthIssues" layoutX="253.0" layoutY="184.0" promptText="Health Issues" />
-      <TextField fx:id="tfPatientMedication" layoutX="253.0" layoutY="221.0" promptText="Patient Medication" />
-      <TextField fx:id="tfImmunizationHistory" layoutX="253.0" layoutY="258.0" promptText="Immunization History" />
-      <Button fx:id="buttonMakeVisit" layoutX="253.0" layoutY="296.0" mnemonicParsing="false" onAction="#addVisit" prefHeight="31.0" prefWidth="149.0" text="Add Visit" />
+      <Label layoutX="260.0" layoutY="156.0" prefHeight="37.0" prefWidth="238.0" text="-------------  Previous History ---------------" textAlignment="CENTER" />
+      <TextField fx:id="tfPatientName" layoutX="93.0" layoutY="88.0" promptText="Patient Name" />
+      <TextField fx:id="tfVisitDate" layoutX="93.0" layoutY="125.0" promptText="Visit Date" />
+      <TextField fx:id="tfWeight" layoutX="93.0" layoutY="162.0" promptText="Weight" />
+      <TextField fx:id="tfHeight" layoutX="93.0" layoutY="197.0" promptText="Height" />
+      <TextField fx:id="tfBodyTemperature" layoutX="93.0" layoutY="234.0" promptText="Body Temperature" />
+      <TextField fx:id="tfBloodPressure" layoutX="93.0" layoutY="271.0" promptText="Blood Pressure" />
+      <TextField fx:id="tfKnownAllergies" layoutX="93.0" layoutY="302.0" promptText="Known Allergies" />
+      <TextField fx:id="tfHealthConcerns" layoutX="93.0" layoutY="334.0" promptText="Patient Health Concerns" />
+      <TextField fx:id="tfPhysicalTest" layoutX="93.0" layoutY="367.0" promptText="Physical Test" />
+      <TextField fx:id="tfAssignedDoctor" layoutX="347.0" layoutY="88.0" promptText="Assigned Doctor" />
+      <TextField fx:id="tfAssignedNurse" layoutX="347.0" layoutY="125.0" promptText="Assigned Nurse" />
+      <TextField fx:id="tfHealthIssues" layoutX="347.0" layoutY="185.0" promptText="Health Issues" />
+      <TextField fx:id="tfPatientMedication" layoutX="347.0" layoutY="222.0" promptText="Patient Medication" />
+      <TextField fx:id="tfImmunizationHistory" layoutX="347.0" layoutY="259.0" promptText="Immunization History" />
+      <Button fx:id="buttonMakeVisit" layoutX="347.0" layoutY="299.0" mnemonicParsing="false" onAction="#addVisit" prefHeight="31.0" prefWidth="149.0" text="Add Visit" />
+      <Label layoutX="14.0" layoutY="92.0" prefHeight="17.0" prefWidth="74.0" text="Name" />
+      <Label layoutX="14.0" layoutY="129.0" prefHeight="17.0" prefWidth="74.0" text="Visit" />
+      <Label layoutX="14.0" layoutY="166.0" prefHeight="17.0" prefWidth="74.0" text="Weight" />
+      <Label layoutX="14.0" layoutY="201.0" prefHeight="17.0" prefWidth="74.0" text="Height" />
+      <Label layoutX="14.0" layoutY="238.0" prefHeight="17.0" prefWidth="74.0" text="Body Temp" />
+      <Label layoutX="14.0" layoutY="275.0" prefHeight="17.0" prefWidth="74.0" text="Blood Press" />
+      <Label layoutX="14.0" layoutY="306.0" prefHeight="17.0" prefWidth="74.0" text="Allergies" />
+      <Label layoutX="14.0" layoutY="338.0" prefHeight="17.0" prefWidth="74.0" text="Concerns" />
+      <Label layoutX="14.0" layoutY="371.0" prefHeight="17.0" prefWidth="74.0" text="Physical" />
+      <Label layoutX="258.0" layoutY="92.0" prefHeight="17.0" prefWidth="74.0" text="Doctor" />
+      <Label layoutX="258.0" layoutY="129.0" prefHeight="17.0" prefWidth="74.0" text="Nurse" />
+      <Label layoutX="258.0" layoutY="189.0" prefHeight="17.0" prefWidth="74.0" text="Health Issue" />
+      <Label layoutX="260.0" layoutY="226.0" prefHeight="17.0" prefWidth="74.0" text="Medication" />
+      <Label layoutX="255.0" layoutY="263.0" prefHeight="17.0" prefWidth="84.0" text="Immunization" />
    </children>
 </AnchorPane>
