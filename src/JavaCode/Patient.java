@@ -162,6 +162,12 @@ public class Patient extends User {
 	private String visitFileWrite() 
 	{
 		String visitString = "";
+		if(pastVisits.size() == 0)
+		{
+			System.out.println("hello");
+			return "";
+		}
+		System.out.println(pastVisits.size());
 		for(int i = 0; i < pastVisits.size(); i++)
 		{
 			visitString += pastVisits.get(i).fileToString() + ";";

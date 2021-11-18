@@ -146,7 +146,7 @@ public class Main extends Application {
             	}
             	//messages from patient to doctor or doctor to patient
             	String[] messages = splitInfo[23].split(";");
-            	if(messages[0].compareTo("") == 0)
+            	if(messages[0].compareTo("null") == 0)
             	{
             		// in this case we have no messages from the doctor so we just move on
             	}
