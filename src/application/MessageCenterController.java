@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import JavaCode.*;
 import javafx.event.ActionEvent;
@@ -9,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.Button;
@@ -24,7 +26,7 @@ public class MessageCenterController {
 	private TextField textMessage;
 	
 	@FXML // fx:id="tfMessageBoard"
-	private TextField tfMessageBoard;
+	private ListView<String> lvMessageBoard;
 	
 	@FXML // fx:id="buttonSend"
 	private Button buttonSend;
@@ -35,6 +37,19 @@ public class MessageCenterController {
     	event.consume();
     	cbDocOrNurse.getItems().addAll("Doctor", "Nurse");
     	cbDocOrNurse.setVisibleRowCount(2);
+    	
+    	Patient a = Storage.searchPatient(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+    	ArrayList<String> msgs = new ArrayList<>();
+        if(Storage.getCurrentUser().getRole().equals("Doctor")) {
+        	msgs = a.docMsg;
+        } 
+        else if(Storage.getCurrentUser().getRole().equals("Nurse")){
+        	msgs = a.nurseMsg;
+        }
+        
+        for(int i = 0; i < msgs.size(); i++) {
+        	lvMessageBoard.getItems().add(msgs.get(i));
+        }
     }
 	
 	@FXML
@@ -64,7 +79,17 @@ public class MessageCenterController {
         }
         
         // Update the Message Board with the New Msg
+        ArrayList<String> msgs = new ArrayList<>();
+        if(Storage.getCurrentUser().getRole().equals("Doctor")) {
+        	msgs = a.docMsg;
+        } 
+        else if(Storage.getCurrentUser().getRole().equals("Nurse")){
+        	msgs = a.nurseMsg;
+        }
         
+        for(int i = 0; i < msgs.size(); i++) {
+        	lvMessageBoard.getItems().add(msgs.get(i));
+        }
 	}
         
 }

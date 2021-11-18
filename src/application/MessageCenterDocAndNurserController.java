@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -23,8 +24,8 @@ public class MessageCenterDocAndNurserController {
 	@FXML // fx:id="textMessage"
 	private TextField textMessage;
 	
-	@FXML // fx:id="tfMessageBoard"
-	private TextField tfMessageBoard;
+	@FXML // fx:id="lvMessageBoard"
+	private ListView<String> lvMessageBoard;
 	
 	@FXML // fx:id="buttonSend"
 	private Button buttonSend;
@@ -52,6 +53,17 @@ public class MessageCenterDocAndNurserController {
         }
         
         // Update the Message Board with the New Msg
+        ArrayList<String> msgs = new ArrayList<>();
+        if(Storage.getCurrentUser().getRole().equals("Doctor")) {
+        	msgs = a.docMsg;
+        } 
+        else if(Storage.getCurrentUser().getRole().equals("Nurse")){
+        	msgs = a.nurseMsg;
+        }
+        
+        for(int i = 0; i < msgs.size(); i++) {
+        	lvMessageBoard.getItems().add(msgs.get(i));
+        }
 	}
 	
     @FXML

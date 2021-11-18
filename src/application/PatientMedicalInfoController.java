@@ -143,7 +143,11 @@ public class PatientMedicalInfoController {
     	
     	//making visit using the information that was entered on the page
     	//also adding the visit to the patient's list of visits
+<<<<<<< Updated upstream
     	//a.makeAVisit();
+=======
+    	//a.makeAVisit(weight, height, temperature, bloodPressure, allergies, healthConcerns, physicalTest, immunizationHistory, a.getPrescribedMeds());
+>>>>>>> Stashed changes
 		
     	//send the user back to their respective home page
         switch(Storage.getCurrentUser().getRole()) {
