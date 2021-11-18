@@ -154,7 +154,12 @@ public class Patient extends User {
 		// Complies All the ArrayList in Patient into a Printable Strings for toString
 		String allPastVisits, allPrescribedMeds, allDocMsg, allNurseMsg;
 		allPastVisits = ""; allPrescribedMeds = ""; allDocMsg = ""; allNurseMsg = "";
-		for(int i = 0; i < pastVisits.size(); i++){ allPastVisits = allPastVisits + pastVisits.get(i).toString() + "\n"; }
+		int numOfVisits = 0;
+		for(int i = 0; i < pastVisits.size(); i++)
+		{ 
+			numOfVisits++;
+			allPastVisits = allPastVisits + "\nVisit " + numOfVisits + "\n" + pastVisits.get(i).toString() + "\n";
+		}
 		//for(int i = 0; i < prescribedMeds.size(); i++){ allPrescribedMeds = allPrescribedMeds + prescribedMeds.get(i).toString() + "\n"; }
 		//for(int i = 0; i < docMsg.size(); i++){ allDocMsg = allDocMsg + docMsg.get(i)+ "\n"; }
 		//for(int i = 0; i < nurseMsg.size(); i++){ allNurseMsg = allNurseMsg + nurseMsg.get(i)+ "\n"; }
@@ -198,7 +203,7 @@ public class Patient extends User {
 		+ "\nBirth: " + this.getBirth() + "\nPhone Num: " + this.phoneNum + "\nEmail: " + this.email + "\nInsurance: " + this.insurance + "\nPharmacy: " + this.pharmacy 
 		+ doctorToString + nurseToString + "\nWeight: " + this.weight + "\nHeight: " + this.height + "\nBodyTemp: " + this.temperature 
 		+ "\nBloodPressure: " + this.bloodPressure + "\nAllergies: " + this.allergies  + "\nHealth Concerns: " + this.healthConcerns + "\nPhysical Test Results: " + 
-		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits: " + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds;
+		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits:\n" + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds;
 	}
 
 }
