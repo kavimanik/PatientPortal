@@ -22,8 +22,8 @@ public class Patient extends User {
 	
 	private ArrayList<Prescription> prescribedMeds;
 	
-	private ArrayList<String> docMsg;
-	private ArrayList<String> nurseMsg;
+	public ArrayList<String> docMsg;
+	public ArrayList<String> nurseMsg;
 
 	//Constructor
 	public Patient() { this("", "", "", "", ""); }
@@ -54,10 +54,10 @@ public class Patient extends User {
 	public void docMessage(String msg, String role) {
 		switch(role) {
 		case "Doctor":
-			docMsg.add("D:" + msg);
+			docMsg.add("D}" + msg);
 			break;
 		case "Patient":
-			docMsg.add("P:" + msg);
+			docMsg.add("P}" + msg);
 			break;
 		default:
 			// Notify User that message was unable to send
@@ -65,19 +65,27 @@ public class Patient extends User {
 			break;
 		}
 	}
+	public void addDocMessage(String msg) // used for reading of the file
+	{
+		docMsg.add(msg);
+	}
 	public void nurseMessage(String msg, String role) {
 		switch(role) {
 		case "Nurse":
-			nurseMsg.add("N:" + msg);
+			nurseMsg.add("N}" + msg);
 			break;
 		case "Patient":
-			nurseMsg.add("P:" + msg);
+			nurseMsg.add("P}" + msg);
 			break;
 		default:
 			// Notify User that message was unable to send
 			// Should not reach this
 			break;
 		}
+	}
+	public void addNurseMessage(String msg)
+	{
+		nurseMsg.add(msg);
 	}
 	
 	public ArrayList<String> getMessage(String role){
@@ -162,8 +170,8 @@ public class Patient extends User {
 			allPastVisits = allPastVisits + "\nVisit " + numOfVisits + "\n" + pastVisits.get(i).toString() + "\n";
 		}
 		for(int i = 0; i < prescribedMeds.size(); i++){ allPrescribedMeds = allPrescribedMeds +" \n" + prescribedMeds.get(i).toString() + "\n"; }
-		//for(int i = 0; i < docMsg.size(); i++){ allDocMsg = allDocMsg + docMsg.get(i)+ "\n"; }
-		//for(int i = 0; i < nurseMsg.size(); i++){ allNurseMsg = allNurseMsg + nurseMsg.get(i)+ "\n"; }
+		for(int i = 0; i < docMsg.size(); i++){ allDocMsg = allDocMsg + docMsg.get(i)+ "\n"; }
+		for(int i = 0; i < nurseMsg.size(); i++){ allNurseMsg = allNurseMsg + nurseMsg.get(i)+ "\n"; }
 		
 		/* First Name: Jon
 		 * Last Name: Smith
@@ -204,7 +212,8 @@ public class Patient extends User {
 		+ "\nBirth: " + this.getBirth() + "\nPhone Num: " + this.phoneNum + "\nEmail: " + this.email + "\nInsurance: " + this.insurance + "\nPharmacy: " + this.pharmacy 
 		+ doctorToString + nurseToString + "\nWeight: " + this.weight + "\nHeight: " + this.height + "\nBodyTemp: " + this.temperature 
 		+ "\nBloodPressure: " + this.bloodPressure + "\nAllergies: " + this.allergies  + "\nHealth Concerns: " + this.healthConcerns + "\nPhysical Test Results: " + 
-		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits:\n" + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds;
+		this.physicalTestResults + "\nImmunizationRecords: " + this.immunizationRecords + "\nPastVisits:\n" + allPastVisits + "\nPrescribed Meds: " + allPrescribedMeds + 
+		"\nDoctor Messages: " + allDocMsg + "\nNurse Messages: " + allNurseMsg;
 	}
 
 }

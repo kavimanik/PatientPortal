@@ -153,10 +153,36 @@ public class Main extends Application {
                 		patient.addAPrescription(prescriptionInfo[0], prescriptionInfo[1]);
                 	} 	
             	}
+            	//messages from patient to doctor or doctor to patient
+            	String[] messages = splitInfo[23].split(";");
+            	if(messages[0].compareTo("") == 0)
+            	{
+            		// in this case we have no messages from the doctor so we just move on
+            	}
+            	else
+            	{
+                	for(int i = 0; i < messages.length; i++)
+                	{
+                		patient.addDocMessage(messages[i]);	
+                	}	
+            	}
+            	String[] nurseMessages = splitInfo[24].split(";");
+            	if(nurseMessages[0].compareTo("") == 0)
+            	{
+            		// in this case we have no messages from the nurse so we just move on
+            	}
+            	else
+            	{
+                	for(int i = 0; i < nurseMessages.length; i++)
+                	{
+                		patient.addNurseMessage(nurseMessages[i]);	
+                	}	
+            	}
+            	
             	Storage.addPatient(patient);
             }
         }
-		//System.out.println(Storage.getPatient(0).toString());
+		System.out.println(Storage.getPatient(0).toString());
 		//System.out.println(Storage.getDoctor(0).toString());
 		//System.out.println(Storage.getDoctor(1).toString());
         //System.out.println(Storage.getNurse(0).toString());
