@@ -8,11 +8,13 @@ import javafx.fxml.FXMLLoader;
 
 public class Storage {
 
+	//ArrayLists to keep track of all the users within the system
 	private static ArrayList<Patient> allPatients;
 	private static ArrayList<Doctor> allDoctors;
 	private static ArrayList<Nurse> allNurses;
 	private static User currentUser;
 	
+	//constructor
 	public Storage(){
 		allPatients = new ArrayList<Patient>();
 		allDoctors = new ArrayList<Doctor>();

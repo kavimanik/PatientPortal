@@ -4,6 +4,7 @@ public class Prescription
 	private String medName;
 	private String dosage;
 
+	//constructors
 	public Prescription(){ this("", ""); }
 	public Prescription(String med, String num){
 		medName = med;

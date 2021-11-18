@@ -41,14 +41,15 @@ public class Patient extends User {
 		physicalTestResults = "";
 		immunizationRecords = "";
 		pastVisits = new ArrayList<Visit>();
+		prescribedMeds = new ArrayList<Prescription>();
+		docMsg = new ArrayList<String>();
+		nurseMsg = new ArrayList<String>();
 		assignedDr = null;
 		assignedNurse = null;
 	}
 
-	//private PatientProfilePage profile;
-
 	//Messaging
-	// The message will always start with D:, N: or P: indicating who the send is
+	// The message will always start with D:, N: or P: indicating who the send is (this is for file reading)
 	// All users will be able to use the methods but will pass in their respective roles
 	public void docMessage(String msg, String role) {
 		switch(role) {
@@ -147,7 +148,6 @@ public class Patient extends User {
 	public String getAllergies() { return allergies; }
 	public String getHealthConcerns() { return healthConcerns; }
 	
-	//public void viewPastVisits() {}
 	
 	public String toString()
 	{
