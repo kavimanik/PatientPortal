@@ -66,6 +66,7 @@ public class Controller{
         	}
         }
         else if(roleCombo.getValue() == "Doctor") {
+        	// Checks if the Doctor Exists in the list of nurses
         	for(int i = 0; i < Storage.getSize("Doctor"); i++) {
         		if(Storage.getDoctor(i).getUser().equals(username) && Storage.getDoctor(i).getPass().equals(password)) {
                 	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../DoctorHomePage.fxml")));
@@ -74,6 +75,7 @@ public class Controller{
         	}
         } 
         else if(roleCombo.getValue() == "Patient") {
+        	// Checks if the Patient Exists in the list of nurses
         	for(int i = 0; i < Storage.getSize("Patient"); i++) {
         		if(Storage.getPatient(i).getUser().equals(username) && Storage.getPatient(i).getPass().equals(password)) {
                 	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml")));
