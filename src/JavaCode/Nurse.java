@@ -57,4 +57,9 @@ public class Nurse extends User {
 		return "First name: " + this.getFirstName() + "\nLastName: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " 
 	+ this.getPass() + "\nBirth: " + this.getBirth();
 	}
+
+	public String fileToString() 
+	{
+		return "NURI " + this.getFirstName() + ":" + this.getLastName() + ";" + this.getUser() + "," + this.getPass() + ".Nurse/" + this.getBirth() + "\n";
+	}
 }

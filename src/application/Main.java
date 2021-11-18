@@ -25,7 +25,7 @@ public class Main extends Application {
 		Storage s = new Storage();
 		// Reads the load file, if empty, nothing will the created
 		readFile();
-		
+		saveFile();
 		// Launches the JavaFX Scene
 		launch(args);
 	}
@@ -185,8 +185,7 @@ public class Main extends Application {
             }
         }
 		//System.out.println(Storage.getPatient(0).toString());
-		System.out.println("\n doctor to string");
-		System.out.println(Storage.getDoctor(0).toString());
+		//System.out.println(Storage.getDoctor(0).toString());
 		//System.out.println(Storage.getDoctor(1).toString());
         //System.out.println(Storage.getNurse(0).toString());
 		scanner.close();
@@ -205,7 +204,7 @@ public class Main extends Application {
     	FileWriter appData = null; // Initialize it to null, to ensure we can use it later. If the file ends up actually being null, we'll leave the method before we use it.
 		try //create the text file to store the data, if it already exists we move on.
 		{			
-			appData = new FileWriter("appData.txt");
+			appData = new FileWriter("appDataSave.txt");
 							
 		} 
 		catch (IOException e) // Should never reach this Code
@@ -218,6 +217,13 @@ public class Main extends Application {
     	{
     		docInfo += Storage.getDoctor(i).fileToString();
     	}
+    	String nurseInfo = "";
+    	for(int i = 0; i < Storage.getSize("Nurse"); i++)
+    	{
+    		nurseInfo += Storage.getNurse(i).fileToString();
+    	}
+    	System.out.println(nurseInfo);
+    	System.out.println(docInfo);
     	try {
 			appData.write(docInfo);
 		} catch (IOException e) {
