@@ -36,14 +36,30 @@ public class PrescribeMedicationController {
     @FXML
     public void setRoleItems(MouseEvent event) {
     	event.consume();
-    	Doctor a = Storage.searchDoc(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
-    	ArrayList<Patient> b = a.getAllPatients();
-    	for(int i = 0; i < b.size(); i++) { cbPatients.getItems().add(b.get(i).getFirstName() + " " + b.get(i).getLastName()); }
-    	cbPatients.setVisibleRowCount(b.size());
+    	//Doctor a = Storage.searchDoc(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+    	//ArrayList<Patient> b = a.getAllPatients();
+    	//for(int i = 0; i < b.size(); i++) { cbPatients.getItems().add(b.get(i).getFirstName() + " " + b.get(i).getLastName()); }
+    	//cbPatients.setVisibleRowCount(b.size());
+    	
+    	Nurse a;
+    	Doctor b;
+    	if(Storage.getCurrentUser().getRole().equals("Doctor")) {
+        	b = Storage.searchDoc(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+        	for(int i = 0; i < b.patientList.size(); i++) { 
+        		cbPatients.getItems().addAll(b.patientList.get(i).getFirstName() + " " + b.patientList.get(i).getLastName()); 
+        	}
+        	cbPatients.setVisibleRowCount(b.patientList.size());
+    	}else {
+        	a = Storage.searchNurse(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+        	for(int i = 0; i < a.patientList.size(); i++) { 
+        		cbPatients.getItems().addAll(a.patientList.get(i).getFirstName() + " " + a.patientList.get(i).getLastName()); 
+        	}
+        	cbPatients.setVisibleRowCount(a.patientList.size());
     	
     	cbDosageAmount.getItems().addAll("1", "2", "3", "4", "5");
     	cbDosageAmount.setVisibleRowCount(5);
     }
+}
     
     @FXML
     private void addPresciption(ActionEvent event) throws IOException {
