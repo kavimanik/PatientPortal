@@ -20,7 +20,7 @@ public class Doctor extends Nurse {
 	public void addPatient(String patientFirst, String patientLast) {
 		Patient a = Storage.searchPatient(patientFirst,patientLast);
 		patientList.add(a);
-		a.setDoctor(this); //set the patient's doctor as the current doctor
+		//a.setDoctor(this); //set the patient's doctor as the current doctor
 	}
 	public void removePatient(String removedPatient) {
 		Patient a = searchPatient(removedPatient);

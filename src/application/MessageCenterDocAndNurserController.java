@@ -56,9 +56,16 @@ public class MessageCenterDocAndNurserController {
     //code for the combo box with the roles 
     public void setRoleItems(MouseEvent event) {
     	event.consume();
-    	Doctor a = Storage.searchDoc(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
-    	ArrayList<Patient> b = a.getAllPatients();
-    	for(int i = 0; i < b.size(); i++) { cbPatient.getItems().add(b.get(i).getFirstName() + " " + b.get(i).getLastName()); }
+    	Nurse a;
+    	if(Storage.getCurrentUser().getRole().equals("Doctor")) {
+        	a = Storage.searchDoc(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+    	}else {
+        	a = Storage.searchNurse(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+    	}
+		ArrayList<Patient> b = a.getAllPatients();
+    	for(int i = 0; i < b.size(); i++) { 
+    		cbPatient.getItems().addAll(b.get(i).getFirstName() + " " + b.get(i).getLastName()); 
+    	}
     	cbPatient.setVisibleRowCount(b.size());
     }
 }
