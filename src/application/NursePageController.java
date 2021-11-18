@@ -10,7 +10,9 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 
 public class NursePageController {
+	
 	@FXML
+	//button for switching to the "search patient" page
     private void switchToSearchPatient(ActionEvent event) throws IOException {
         event.consume();
         Node node = (Node) event.getSource();
@@ -21,6 +23,7 @@ public class NursePageController {
     }
 	
 	@FXML
+	//button for switching to the "message center" page (for the doctor and nurse perspective)
     private void switchToMessageCenter(ActionEvent event) throws IOException {
         event.consume();
         Node node = (Node) event.getSource();
