@@ -21,7 +21,7 @@ import javafx.stage.Stage;
 
 import application.*;
 
-public class Controller{
+public class Controller{ //This is the controller class for the Login page   
 	
 	@FXML // fx:id="roleCombo"
 	private ComboBox<String> roleCombo;
@@ -33,6 +33,7 @@ public class Controller{
 	private TextField tfPassword;
 	
     @FXML
+    //if the user clicks the "create account" button
     private void switchToCreateAccount(ActionEvent event) throws IOException {
         event.consume();
         Node node = (Node) event.getSource();
@@ -43,19 +44,23 @@ public class Controller{
     }
     
     @FXML
+    //if the user types in the "username" and "password" textfields
     public void switchToUserHomePage(ActionEvent event) throws IOException {
     	event.consume();
         Node node = (Node) event.getSource();
         Stage thisStage = (Stage) node.getScene().getWindow();
+        //getting the text from "username" and "password" textfields
         String username = tfUserName.getText();
         String password = tfPassword.getText();
         
+        //if either of the textfields are empty sent an error message
         if(username.equals("") || password.equals("")) {
         	Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Warning");
             alert.setHeaderText("Required Fields Empty");
             alert.showAndWait();
-        }
+        } 
+        //else begin to check if the username and password exists for the role selected
         else if(roleCombo.getValue() == "Nurse") {
         	// Checks if the Nurse Exists in the list of nurses
         	for(int i = 0; i < Storage.getSize("Nurse"); i++) {
@@ -83,6 +88,7 @@ public class Controller{
     }}}}
     
     @FXML
+    //code for the combo box with the roles 
     public void setRoleItems(MouseEvent event) {
     	event.consume();
     	roleCombo.getItems().addAll("Doctor", "Nurse", "Patient");
