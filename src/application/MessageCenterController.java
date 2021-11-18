@@ -25,7 +25,7 @@ public class MessageCenterController {
 	@FXML // fx:id="textMessage"
 	private TextField textMessage;
 	
-	@FXML // fx:id="tfMessageBoard"
+	@FXML // fx:id="lvMessageBoard"
 	private ListView<String> lvMessageBoard;
 	
 	@FXML // fx:id="buttonSend"
