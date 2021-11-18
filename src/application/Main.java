@@ -119,7 +119,6 @@ public class Main extends Application {
                 		//weight height temp bloodPressure,allergies, health concern physical test result, immunization records, prescription
                 		if(visitInfo[8].compareTo("null") != 0) // in this case there is a prescription
                 		{
-                			System.out.println(visitInfo[8]);
                 			Prescription visitPrescription = new Prescription(visitInfo[8],visitInfo[9]);
                     		visit = new Visit(visitInfo[0], visitInfo[1], visitInfo[2], visitInfo[3], visitInfo[4], visitInfo[5], visitInfo[6], visitInfo[7], visitPrescription);
                 		}
@@ -194,7 +193,7 @@ public class Main extends Application {
             	}
             }
         }
-		System.out.println(Storage.getPatient(0).toString());
+		//System.out.println(Storage.getPatient(0).toString());
 		//System.out.println(Storage.getDoctor(0).toString());
 		//System.out.println(Storage.getDoctor(1).toString());
         //System.out.println(Storage.getNurse(0).toString());
@@ -214,8 +213,9 @@ public class Main extends Application {
     	FileWriter appData = null; // Initialize it to null, to ensure we can use it later. If the file ends up actually being null, we'll leave the method before we use it.
 		try //create the text file to store the data, if it already exists we move on.
 		{			
-			appData = new FileWriter("appDataSave.txt");
-							
+			File myFoo = new File("appData.txt");
+			appData = new FileWriter(myFoo, false); // true to append
+			                                                     // false to overwrite.
 		} 
 		catch (IOException e) // Should never reach this Code
 		{
@@ -237,12 +237,13 @@ public class Main extends Application {
     	{
     		patientInfo += Storage.getPatient(i).fileToString();
     	}
-    	//System.out.println(nurseInfo);
-    	//System.out.println(docInfo);
+    	System.out.println(nurseInfo);
+    	System.out.println(docInfo);
     	System.out.println(patientInfo);
     	try {
 			appData.write(docInfo);
 			appData.write(nurseInfo);
+			appData.write(patientInfo);
 			appData.close();
 		} catch (IOException e) {
 			e.printStackTrace();
