@@ -82,14 +82,14 @@ public class Storage {
 		return new Doctor("", "", "", "", "", "");
 	}
 	public static Nurse searchNurse(String First, String Last) {
-		for(int i = 0; i < allDoctors.size(); i++) {
-    		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getNurse(i); }}
+		for(int i = 0; i < allNurses.size(); i++) {
+    		if(getNurse(i).getFirstName().equals(First) && getNurse(i).getLastName().equals(Last)) { return getNurse(i); }}
 		// If the Nurse isn't found
 		return new Nurse("", "", "", "", "", "");
 	}
 	public static Patient searchPatient(String First, String Last) {
-		for(int i = 0; i < allDoctors.size(); i++) {
-    		if(getDoctor(i).getFirstName().equals(First) && getDoctor(i).getLastName().equals(Last)) { return getPatient(i); }}
+		for(int i = 0; i < allPatients.size(); i++) {
+    		if(getPatient(i).getFirstName().equals(First) && getPatient(i).getLastName().equals(Last)) { return getPatient(i); }}
 		// If the Patient isn't found
 		return new Patient("", "", "", "", "");
 	}
