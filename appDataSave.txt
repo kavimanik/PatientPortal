@@ -1,5 +1,5 @@
 DOCI John:Smith;JoshSmith1,BruhHill.Doctor/01022003
-DOCI Brandon:Tran;BrondonTron15,S0ccerMan!ac.Doctor/01132002
-DOCI ADMIN:ADMIN;user,pass.Doctor/010120000
-NURI ADMIN:ADMIN;user,pass.Nurse/010120000
+DOCI Brandon:Tran;BTran,Spr1te.Doctor/01132002
+DOCI April:Tran;user,pass.Doctor/010120000
+NURI Randall:Powers;user,pass.Nurse/010120000
 NURI Kavi:Maniack;BrawlStarPlayer,BuildPath.Nurse/11162021

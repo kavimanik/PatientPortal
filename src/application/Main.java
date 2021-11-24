@@ -235,7 +235,7 @@ public class Main extends Application {
     	String patientInfo ="";
     	for(int i = 0; i < Storage.getSize("Patient"); i++)
     	{
-    		patientInfo += Storage.getPatient(i).fileToString();
+    		//patientInfo += Storage.getPatient(i).fileToString();
     	}
     	//System.out.println(nurseInfo);
     	//System.out.println(docInfo);
