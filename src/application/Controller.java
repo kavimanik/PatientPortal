@@ -85,7 +85,14 @@ public class Controller{ //This is the controller class for the Login page
         		if(Storage.getPatient(i).getUser().equals(username) && Storage.getPatient(i).getPass().equals(password)) {
                 	thisStage.getScene().setRoot(FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml")));
                 	Storage.setCurrentUser(Storage.getPatient(i));
-    }}}}
+    }}}
+        	else {
+        		Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText("Select a role");
+                alert.showAndWait();
+        	}
+        }
     
     @FXML
     //code for the combo box with the roles 
