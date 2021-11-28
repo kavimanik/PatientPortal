@@ -62,6 +62,7 @@ public class Patient extends User {
 		default:
 			// Notify User that message was unable to send
 			// Should not reach this
+			System.out.println("Did not add Msg");
 			break;
 		}
 	}
