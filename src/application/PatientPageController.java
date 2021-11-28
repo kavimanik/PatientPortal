@@ -72,6 +72,19 @@ public class PatientPageController {
     }
 	
 	@FXML
+	// Button to log off and to go back to the log in screen
+    private void logOff(ActionEvent event) throws IOException {
+        Storage.setCurrentUser(null);
+		
+		event.consume();
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+        //thisStage.hide();
+        Parent loader = FXMLLoader.load(getClass().getResource("../login.fxml"));
+        thisStage.getScene().setRoot(loader);
+    }
+	
+	@FXML
     private void switchToPatientMedicalInfo(ActionEvent event) throws IOException {
         event.consume();
         

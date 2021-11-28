@@ -21,5 +21,6 @@
       <Button fx:id="buttonPatientProfile" layoutX="194.0" layoutY="186.0" mnemonicParsing="false" onAction="#switchToPatientProfile" prefHeight="31.0" prefWidth="127.0" text="Patient Profile" />
       <Button fx:id="buttonViewInfo" layoutX="194.0" layoutY="261.0" mnemonicParsing="false" onAction="#switchToPatientMedicalInfo" prefHeight="31.0" prefWidth="127.0" text="Medical Information" />
       <Button fx:id="buttonMsgPortal" layoutX="194.0" layoutY="333.0" mnemonicParsing="false" onAction="#switchToMessagePortal" prefHeight="31.0" prefWidth="127.0" text="Message Center" />
+      <Button fx:id="signOut" layoutX="420.0" layoutY="453.0" mnemonicParsing="false" onAction="#logOff" prefHeight="31.0" prefWidth="77.0" text="Sign Out" />
    </children>
 </AnchorPane>
