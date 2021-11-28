@@ -57,12 +57,12 @@ public class MessageCenterController {
         Patient a = Storage.searchPatient(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
         
         // Determines the receiver of the msg
-        if(toPerson == "Doctor") {
+        if(toPerson == "Doctor" && !msg.equals("")) {
         	// Sends Msg to Doctor
         	a.docMessage(msg, "Patient");
         	textMessage.setText("");
         	
-        }else if(toPerson == "Nurse"){
+        }else if(toPerson == "Nurse" && !msg.equals("")){
         	// Sends Msg to Nurse
         	a.nurseMessage(msg, "Patient");
         	textMessage.setText("");
