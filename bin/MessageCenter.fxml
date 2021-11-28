@@ -15,8 +15,10 @@
       </Label>
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="41.0" prefHeight="37.0" prefWidth="161.0" text="Patient Message Portal" />
       <TextField fx:id="tfMessageBoard" alignment="TOP_LEFT" layoutX="14.0" layoutY="78.0" prefHeight="306.0" prefWidth="475.0" promptText="Messages" />
-      <TextField fx:id="textMessage" layoutX="14.0" layoutY="427.0" prefHeight="31.0" prefWidth="412.0" promptText="Type Message..." />
+      <TextField fx:id="textMessage" layoutX="14.0" layoutY="427.0" prefHeight="31.0" prefWidth="405.0" promptText="Type Message..." />
       <Button fx:id="buttonSend" layoutX="427.0" layoutY="427.0" mnemonicParsing="false" onAction="#sendMsgButton" prefHeight="31.0" prefWidth="62.0" text="Send" />
-      <ComboBox fx:id="cbDocOrNurse" onMouseClicked="#setRoleItems" layoutX="14.0" layoutY="391.0" prefHeight="31.0" prefWidth="412.0" promptText="Doctor or Nurse" />
+      <ComboBox fx:id="cbDocOrNurse" layoutX="14.0" layoutY="391.0" onMouseClicked="#setRoleItems" prefHeight="31.0" prefWidth="337.0" promptText="Doctor or Nurse" />
+      <Button fx:id="buttonBack" layoutX="427.0" layoutY="391.0" mnemonicParsing="false" onAction="#backBtn" prefHeight="31.0" prefWidth="62.0" text="Home" />
+      <Button fx:id="buttonUpdate" layoutX="358.0" layoutY="391.0" mnemonicParsing="false" onAction="#updateBtn" prefHeight="31.0" prefWidth="62.0" text="Update" />
    </children>
 </AnchorPane>

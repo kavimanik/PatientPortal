@@ -29,6 +29,12 @@ public class MessageCenterController {
 	@FXML // fx:id="buttonSend"
 	private Button buttonSend;
 	
+	@FXML // fx:id="buttonHome"
+	private Button buttonHome;
+	
+	@FXML // fx:id="buttonUpdate"
+	private Button buttonUpdate;
+	
     @FXML
     //code for the combo box to select either doctor or nurse
     public void setRoleItems(MouseEvent event) {
@@ -62,5 +68,69 @@ public class MessageCenterController {
         // Update the Message Board with the New Msg
         
 	}
+	
+	@FXML
+	//code for the send message button
+    private void backBtn(ActionEvent event) throws IOException {
+        event.consume();
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+        //thisStage.hide();
+        Parent loader = FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml"));
+        thisStage.getScene().setRoot(loader);
         
+        // Pulls the information from the JavaFx Page
+        //String toPerson = cbDocOrNurse.getValue();
+        //Patient a = Storage.searchPatient(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+
+        /*
+        // Determines the receiver of the msg
+        if(toPerson == "Doctor") {
+        	// Sends Msg to Doctor
+        	a.docMessage("Doctor", msg);
+        	
+        }else if(toPerson == "Nurse"){
+        	// Sends Msg to Nurse
+        	a.nurseMessage("Nurse", msg);
+        }else {
+        	System.out.println("Wasn't able to send message to a Nurse or Doctor"); // Should Not Get Here
+        }
+        */
+        
+        // Update the Message Board with the New Msg
+        
+	}
+	
+	
+	@FXML
+	//code for the send message button
+    private void updateBtn(ActionEvent event) throws IOException {
+        event.consume();
+        Node node = (Node) event.getSource();
+        Stage thisStage = (Stage) node.getScene().getWindow();
+        //thisStage.hide();
+        Parent loader = FXMLLoader.load(getClass().getResource("../PatientHomePage.fxml"));
+        thisStage.getScene().setRoot(loader);
+        
+        // Pulls the information from the JavaFx Page
+        //String toPerson = cbDocOrNurse.getValue();
+        //Patient a = Storage.searchPatient(Storage.getCurrentUser().getFirstName(), Storage.getCurrentUser().getLastName());
+
+        /*
+        // Determines the receiver of the msg
+        if(toPerson == "Doctor") {
+        	// Sends Msg to Doctor
+        	a.docMessage("Doctor", msg);
+        	
+        }else if(toPerson == "Nurse"){
+        	// Sends Msg to Nurse
+        	a.nurseMessage("Nurse", msg);
+        }else {
+        	System.out.println("Wasn't able to send message to a Nurse or Doctor"); // Should Not Get Here
+        }
+        */
+        
+        // Update the Message Board with the New Msg
+        
+	}
 }
