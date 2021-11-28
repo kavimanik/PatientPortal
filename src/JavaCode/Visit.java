@@ -6,7 +6,6 @@ import java.util.Date;
 
 public class Visit {
 
-	//private int date;
 	private String date;
 	private String weight;
 	private String height;

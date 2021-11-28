@@ -27,14 +27,17 @@ public class Doctor extends Nurse {
 		a.setDoctor(null); //patient is no longer associated with a doctor
 		patientList.remove(a);
 	}
+	
+	// Message Patient
+	public void msgPatient(Patient p, String msg) { p.docMessage(msg, "Doctor"); } //doctors can only message patients
+	
+	//to format and print the Doctor's information
 	public String toString()
 	{
 		return "First name: " + this.getFirstName() + "\nLastName: " + this.getLastName() + "\nUsername: " + this.getUser() + "\nPassword: " + this.getPass() + "\nBirth: " + this.getBirth();
 	}
-	
-	// Message Patient
-	public void msgPatient(Patient p, String msg) { p.docMessage(msg, "Doctor"); } //doctors can only message patients
 
+	//to format and print the Doctor's information when writing to the file
 	public String fileToString() 
 	{
 		return "DOCI " + this.getFirstName() + ":" + this.getLastName() + ";" + this.getUser() + "," + this.getPass() + ".Doctor/" + this.getBirth() + "\n";
